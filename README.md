@@ -24,3 +24,9 @@ Activate environment:
 $ source env.sh
 ```
 
+Build manuscript:
+
+```bash
+$ ./latex.sh
+```
+
