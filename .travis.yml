@@ -1,0 +1,44 @@
+sudo: false
+
+branches:
+  only:
+  - master
+  - /^draft-.*$/
+
+# handle git submodules ourselves
+git:
+  submodules: false
+
+# replace the SSH URL with the public URL, then initialize submodules
+before_install:
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive
+  - pwd
+  - ls -lh
+  - ls -lh ./*
+  # uncomment these to re-install dependencies
+#  - rm -rf deps
+#  - rm deps/texlive.installed
+#  - rm deps/miniconda.installed
+
+install:
+  # main install script for dependencies
+  - ./agam-report-base/install/install.sh
+
+cache:
+  timeout: 1000
+  directories:
+  - deps
+
+script:
+  - source env.sh
+  - ./latex.sh
+
+deploy:
+  provider: releases
+  api_key:
+    secure: eufJEoEn00XCEeVD99kopAvzPPpiJY8Lrn+JacVnKhfEUgl+Mx/O3UifuPUF+mIf4f/WPFQfP9af1Qdh9XaiErHJua/m0i6vygav93Picc+tMGbxh2v3ilWZW9BTClnq9FF+6esz6skoCxdpHgrrsopM1dzsZ40+e6R9SzgqjQZqs/PYHDNjzZQJaf0atwtfsw09i8ycpgvhIs5cn4CEpPDHl5BUrWO3eMLy7b1lcMuch/kLnb6inD91KukJ+0h9Jpyx4Pp6n/z+/WRotbLsz3zKDfHm2Pqi4Hdmnwldyq4lN7ZwY/scOuXuw8gfVO24iPEx399hfJZ165rcReO6meNyhayYIIFU8XKrdLc0vAYS7rfdq0ak8WarIPHZKj0Q6DGgj/Jn9K5wrPMyIP5mwHPxRCDRThXVba0qVk4gGokpEFUVERXt4a28v/WpgbiiQ9mQVYSsfvDLtWO2li/HOfG607Rai982RdzczFfjN2McQBHbq9RAoJM3T9S5SZTY4sG0C+YOUPKtLvEhBmbNlDafMFtZIfpbtWVmgA7lRsmVMwttY4PD3NCPZCbjpOJmKnj/0VAtcFPoRLHPexABe62xyffTp96c+9FgHpww8l9R0jva5eqEw1KVJAR76gxHKqiXekI3Ddbv1ltXzr1JC8KKXKnSv1apsn6qTnw3qI4=
+  file: build/main.pdf
+  skip_cleanup: true
+  on:
+    tags: true

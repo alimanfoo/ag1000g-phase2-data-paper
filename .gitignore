@@ -99,3 +99,15 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# custom ignores
+deps
+build
+main.aux
+main.bbl
+main.bcf
+main.blg
+main.out
+main.pdf
+main.run.xml
+main.synctex.gz
