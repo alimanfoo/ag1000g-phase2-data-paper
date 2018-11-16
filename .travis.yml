@@ -23,7 +23,8 @@ before_install:
 
 install:
   # main install script for dependencies
-  - ./agam-report-base/install/install.sh
+  - ./agam-report-base/install/install-conda.sh
+  - ./agam-report-base/install/install-texlive.sh
 
 cache:
   timeout: 1000
