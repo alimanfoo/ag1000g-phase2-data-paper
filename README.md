@@ -8,7 +8,7 @@ Repo for building a data descriptor paper for the Ag1000G phase 2 resource.
 Fork the repo to your own user account, then clone, e.g.:
 
 ```bash
-$ git clone git@github.com:alimanfoo/ag1000g-phase2-data-paper.git
+$ git clone git@github.com:malariagen/ag1000g-phase2-data-paper.git
 ```
 
 Install conda and latex:
