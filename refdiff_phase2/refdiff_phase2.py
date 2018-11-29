@@ -41,7 +41,7 @@ rcParams['svg.fonttype'] = 'none'
 %config InlineBackend.figure_formats = {'retina', 'png'}
 
 import sys
-sys.path.insert(0, '/home/eric/vector-ops/agam-report-base/src/python')
+sys.path.insert(0, '../agam-report-base/src/python')
 from util import *
 import zcache
 import veff
