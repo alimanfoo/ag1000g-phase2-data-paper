@@ -41,7 +41,7 @@ rcParams['svg.fonttype'] = 'none'
 %config InlineBackend.figure_formats = {'retina', 'png'}
 
 import sys
-sys.path.insert(0, '../agam-report-base/src/python')
+sys.path.insert(0, '../../agam-report-base/src/python')
 from util import *
 import zcache
 import veff
@@ -49,6 +49,7 @@ import os
 import numpy as np
 import pandas as pd
 import allel
+import re
 
 # Set up the chromatin data for the genome
 _data_chromatin = b"""CHX     chro    X       20009764        24393108
@@ -153,8 +154,8 @@ hap_wild = {'2L': hap_wild_auto,
 chroms = ['2L', '2R', '3L', '3R', 'X']
 autosomes = chroms[:4]
 # Here is where we will save the figures
-boxplot_filename = 'refdiff_phase2_boxplot.eps'
-chromplot_filename = 'refdiff_phase2_chromplot.eps'
+boxplot_filename = 'refdiff_phase2_boxplot.jpg'
+chromplot_filename = 'refdiff_phase2_chromplot.jpg'
 # This is where we will store the output 
 hamming = pd.DataFrame(columns = autosomes)
 accessible_sites = pd.Series(index = autosomes)
@@ -226,7 +227,7 @@ all_the_sites = np.sum(accessible_sites)
 all_the_dxy = pd.DataFrame(all_the_ham / all_the_sites, columns = ['dxy'])
 		
 # Plot the boxplot	
-def dxy_boxplot(data, group, fig, ax, pal):
+def dxy_boxplot(data, group, fig, ax, pal, fn=None, save_dpi=200):
 	grouped_dxy = data.groupby(list(group))
 	bx = ax.boxplot([x[1]['dxy'] for x in list(grouped_dxy)], notch = True, bootstrap = 1000, whis = [5, 95], showfliers = False, 
 					patch_artist= True, medianprops = dict(linestyle='-', color='k'),
@@ -239,11 +240,15 @@ def dxy_boxplot(data, group, fig, ax, pal):
 	for patch, color in zip(bx['boxes'], palette):
 		patch.set_facecolor(color)
 	fig.tight_layout()
+	if fn:
+		if re.search('\.eps', fn):
+			fig.savefig(fn, format='eps', dpi=save_dpi, bbox_inches='tight')
+		else:
+			fig.savefig(fn, jpeg_quality=100, dpi=save_dpi, bbox_inches='tight')
 
 palette = sns.color_palette('husl',n_colors = len(populations))
 fig, ax = plt.subplots(figsize=(7, 4))
-dxy_boxplot(all_the_dxy, hap_meta_auto['population'], fig, ax, palette)
-plt.savefig(boxplot_filename, format = 'eps', dpi = 300)
+dxy_boxplot(all_the_dxy, hap_meta_auto['population'], fig, ax, palette, boxplot_filename)
 
 
 # Now plot the dxy along the chromsomomes
@@ -303,15 +308,17 @@ def plot_heterochromatin(chrom, ax, clip_patch, tbl_chr, colors=None, legend_fra
                   fancybox=True, labelspacing=.1, title='Chromatin state');
 
 
-def fig_assemble(fw=4.3, fn=None, dpi=150, save_dpi=300, legend_frameon=False, fh=0.8):
+def fig_assemble(fw=4.3, fn=None, dpi=150, save_dpi=200, legend_frameon=False, fh=0.8):
 	figsize = fw, fh
 	fig = plt.figure(figsize=(fw, fh), dpi=dpi)
 	fig_linear_genome(plot_dxy, phase2_ar1.genome_agamp3, chromomsomes = chroms, fig=fig, bottom=0.1, height=.7, legend_frameon=legend_frameon, dxy = dxy_by_window)
 	fig_linear_genome(plot_heterochromatin, phase2_ar1.genome_agamp3, fig=fig, bottom=0, height=.07, legend_frameon=legend_frameon, clip_patch_kwargs=dict(edgecolor='k', lw=.5), tbl_chr = tbl_chromatin)
 
 	if fn:
-		#fig.savefig(fn, jpeg_quality=100, dpi=save_dpi, bbox_inches='tight')
-		fig.savefig(fn, format = 'eps', dpi = 300, bbox_inches='tight')
+		if re.search('\.eps', fn):
+			fig.savefig(fn, format = 'eps', dpi=save_pdi, bbox_inches='tight')
+		else:
+			fig.savefig(fn, jpeg_quality=100, dpi=save_dpi, bbox_inches='tight')
 
 
 fig_assemble(fn = chromplot_filename)
