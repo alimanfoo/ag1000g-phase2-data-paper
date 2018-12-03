@@ -38,7 +38,7 @@ rcParams['mathtext.sf'] = 'Arial'
 rcParams['mathtext.it'] = 'Arial:italic'
 rcParams['mathtext.bf'] = 'Arial:bold'
 rcParams['svg.fonttype'] = 'none'
-%config InlineBackend.figure_formats = {'retina', 'png'}
+#%config InlineBackend.figure_formats = {'retina', 'png'}
 
 import sys
 sys.path.insert(0, '../../agam-report-base/src/python')
@@ -116,7 +116,7 @@ def fig_linear_genome(plotf, genome, chromosomes=None, fig=None,
 		clip_patch = mpl.patches.PathPatch(path, transform=ax.transAxes, **clip_patch_kwargs)
 
 		# do the plotting
-		plotf(chrom=chrom, ax=ax, clip_patch=clip_patch, **kwargs)
+		plotf(chrom=chrom, ax=ax, clip_patch=clip_patch, genome=genome, **kwargs)
 
 		# increment left coordinate
 		left += len(genome[chrom]) / (genome_size * width_factor)
@@ -225,11 +225,13 @@ del these_haplotypes
 all_the_ham = np.sum(hamming, 1)
 all_the_sites = np.sum(accessible_sites)
 all_the_dxy = pd.DataFrame(all_the_ham / all_the_sites, columns = ['dxy'])
+all_the_dxy['population'] = list(hap_meta_auto['population'][hap_wild_auto])
+all_the_dxy.to_csv('all_the_dxy.csv', sep = '\t')
 		
 # Plot the boxplot	
 def dxy_boxplot(data, group, fig, ax, pal, fn=None, save_dpi=200):
 	grouped_dxy = data.groupby(list(group))
-	bx = ax.boxplot([x[1]['dxy'] for x in list(grouped_dxy)], notch = True, bootstrap = 1000, whis = [5, 95], showfliers = False, 
+	bx = ax.boxplot([x[1] for x in list(grouped_dxy)], notch = True, bootstrap = 1000, whis = [5, 95], showfliers = False, 
 					patch_artist= True, medianprops = dict(linestyle='-', color='k'),
 					whiskerprops = dict(linestyle = '-', linewidth = 1.5, color = 'k'),
 					boxprops = dict(linestyle = '-', linewidth = 1.5, color = 'k'))
@@ -248,7 +250,7 @@ def dxy_boxplot(data, group, fig, ax, pal, fn=None, save_dpi=200):
 
 palette = sns.color_palette('husl',n_colors = len(populations))
 fig, ax = plt.subplots(figsize=(7, 4))
-dxy_boxplot(all_the_dxy, hap_meta_auto['population'], fig, ax, palette, boxplot_filename)
+dxy_boxplot(all_the_dxy['dxy'], all_the_dxy['population'], fig, ax, palette, boxplot_filename)
 
 
 # Now plot the dxy along the chromsomomes
@@ -284,7 +286,7 @@ def plot_dxy(chrom, ax, dxy, ymax=0.02, offset=5, legend_frameon=False, **kwargs
 	ax.set_xticks([])
 	ax.set_title(chrom)
 
-def plot_heterochromatin(chrom, ax, clip_patch, tbl_chr, colors=None, legend_frameon=False, **kwargs):
+def plot_heterochromatin(chrom, ax, clip_patch, tbl_chr, genome, colors=None, legend_frameon=False, **kwargs):
     if colors is None:
         colors = {'PE': 'w', 'IH': 'k', 'CH': 'k'}
 
