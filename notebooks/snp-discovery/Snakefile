@@ -1,0 +1,19 @@
+import os
+configfile: 'config.yml'
+
+
+rule all:
+  input:
+    expand('genotype_call_acc_{chrom}.csv', chrom=config["chromosomes"])
+
+
+rule compute_error:
+  input:
+    cross_callset=os.path.join(config['release_dir'], 'variation', 'crosses', 'hdf5',  'ag1000g.crosses.phase2.ar1sites.{chrom}.h5'),
+    phase2_callset=os.path.join(config['release_dir'], 'variation', 'main', 'zarr2', 'ag1000g.phase2.ar1.pass'),
+    metadata=os.path.join(config['release_dir'], 'samples', 'cross.samples.meta.txt')
+  output:
+    csv='genotype_call_acc_{chrom}.csv'
+  script:
+    'compute-error-rates.py'
+
