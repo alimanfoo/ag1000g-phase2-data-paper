@@ -23,8 +23,8 @@ before_install:
 
 install:
   # main install script for dependencies
-  - ./binder/install/install-conda.sh
-  - ./binder/install/install-texlive.sh
+  - ./binder/install-conda.sh
+  - ./binder/install-texlive.sh
 
 cache:
   timeout: 1000
