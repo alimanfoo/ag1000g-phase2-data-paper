@@ -33,7 +33,7 @@ cache:
 
 script:
   - source binder/env.sh
-  - ./binder/latex.sh
+  - ./latex.sh
 
 deploy:
   provider: releases
