@@ -23,8 +23,8 @@ before_install:
 
 install:
   # main install script for dependencies
-  - ./agam-report-base/install/install-conda.sh
-  - ./agam-report-base/install/install-texlive.sh
+  - ./binder/install/install-conda.sh
+  - ./binder/install/install-texlive.sh
 
 cache:
   timeout: 1000
@@ -32,8 +32,8 @@ cache:
   - deps
 
 script:
-  - source env.sh
-  - ./latex.sh
+  - source binder/env.sh
+  - ./binder/latex.sh
 
 deploy:
   provider: releases
