@@ -7,7 +7,6 @@ sns.set_context('paper')
 sns.set_style('white')
 sns.set_style('ticks')
 rcParams = plt.rcParams
-rcParams['font.family'] = 'sans-serif'
 _font_size = 7
 rcParams['font.size'] = _font_size
 rcParams['figure.titlesize'] = _font_size
@@ -30,7 +29,7 @@ rcParams['figure.figsize'] = (4.85, 3)
 #rcParams['text.latex.unicode'] = True
 rcParams['text.usetex'] = False
 rcParams['font.family'] = 'sans-serif'
-rcParams['font.sans-serif'] = ['Arial']
+#rcParams['font.sans-serif'] = ['Arial']
 rcParams['mathtext.fontset'] = 'custom'
 rcParams['mathtext.tt'] = 'Courier New'
 rcParams['mathtext.rm'] = 'Arial'
@@ -151,14 +150,15 @@ for chrom in chroms:
 	dxy_by_window[chrom] = pd.read_csv('refdiff_phase2_' + chrom + '_table.csv', sep = '\t')
 
 # Now plot the dxy along the chromsomomes
-def plot_dxy(chrom, ax, dxy, pops=None, offset=5, legend_frameon=False, **kwargs):
+def plot_dxy(chrom, ax, dxy, pops=None, offset=5, legend_offset=0, legend_frameon=False, labely = True, **kwargs):
 	if chrom == '2R':
 		sns.despine(ax=ax, bottom=True, offset=offset)
-		ax.set_yticks([0, 0.005, 0.01, 0.015], minor=False)
-		ax.set_yticks(np.arange(0, 0.015, 0.001), minor=True)
-		ax.set_yticklabels([0, 0.005, 0.01, 0.015])
-		ax.set_ylabel('Dxy', ha='left', va='top', rotation=0)
+		ax.set_yticks([0, 0.005, 0.01], minor=False)
+		ax.set_yticks(np.arange(0, 0.011, 0.001), minor=True)
+		ax.set_yticklabels([0, 0.005, 0.01])
 		ax.yaxis.set_label_coords(-0.25, 1.3)
+		if labely:
+			ax.set_ylabel('Dxy', ha='left', va='top', rotation=0)
 	else:
 		sns.despine(ax=ax, left=True, bottom=True, offset=offset)
 		ax.set_yticks([])
@@ -173,22 +173,26 @@ def plot_dxy(chrom, ax, dxy, pops=None, offset=5, legend_frameon=False, **kwargs
 	# Create the handles for each population
 	h = []
 	for p in pops:
-		h.append(ax.plot(x, dxy[chrom][p], color=colours[p], label = p))
+		h.append(ax.plot(x, dxy[chrom][p], color=colours[p], label = p, lw = 0.4))
 
 	# Draw the legend
 	if chrom == 'X':
+		if labely:
+			legend_title = 'Species'
+		else:
+			legend_title = None
 		handles = []
 		for this_h in h[::-1]:
-			handles.append(plt.plot([0, 1], [0, 0], color = this_h[0].get_c(), lw=2, label=this_h[0].get_label())[0])
-		ax.legend(handles=handles, bbox_to_anchor=(1, 1.5), loc='upper left', frameon=legend_frameon, fancybox=False, 
-				  title='Species', labelspacing=.1);
+			handles.append(plt.plot([0, 1], [0, 0], color = this_h[0].get_c(), lw=1.5, label=this_h[0].get_label())[0])
+		ax.legend(handles=handles, bbox_to_anchor=(1, 1.5 + legend_offset), loc='upper left', frameon=legend_frameon, fancybox=False, 
+				  title=legend_title, labelspacing=.1);
 
-	ax.set_ylim(0, 0.015)
+	ax.set_ylim(0, 0.011)
 	ax.set_xlim(0, max(x))
 	ax.set_xticks([])
 	ax.set_title(chrom)
 
-def plot_heterochromatin(chrom, ax, clip_patch, tbl_chr, genome, colors=None, legend_frameon=False, **kwargs):
+def plot_heterochromatin(chrom, ax, clip_patch, tbl_chr, genome, colors=None, legend_offset = 0, legend_frameon=False, **kwargs):
 	if colors is None:
 		colors = {'PE': 'w', 'IH': 'k', 'CH': 'k'}
 
@@ -208,15 +212,35 @@ def plot_heterochromatin(chrom, ax, clip_patch, tbl_chr, genome, colors=None, le
 		a = plt.Rectangle((0, 0.2), 1, 1, ec='k', fc='w', label='euchromatin')
 		b = plt.Rectangle((0, 0.2), 1, 1, ec='k', fc='k', label='heterochromatin')
 		handles = [a, b]
-		ax.legend(handles=handles, bbox_to_anchor=(1, 2), loc='center left', frameon=legend_frameon, 
+		ax.legend(handles=handles, bbox_to_anchor=(1, 2 + legend_offset), loc='center left', frameon=legend_frameon, 
 				  fancybox=True, labelspacing=.1, title='Chromatin state');
 
 
-def fig_assemble(populations=None, fw=4.3, fn=None, dpi=150, save_dpi=200, legend_frameon=False, fh=0.8):
-	figsize = fw, fh
-	fig = plt.figure(figsize=(fw, fh), dpi=dpi)
-	fig_linear_genome(plot_dxy, phase2_ar1.genome_agamp3, chromomsomes = chroms, fig=fig, bottom=0.1, height=.7, legend_frameon=legend_frameon, dxy = dxy_by_window, pops = populations)
-	fig_linear_genome(plot_heterochromatin, phase2_ar1.genome_agamp3, fig=fig, bottom=0, height=.07, legend_frameon=legend_frameon, clip_patch_kwargs=dict(edgecolor='k', lw=.5), tbl_chr = tbl_chromatin)
+def fig_assemble(populations, fw=4.3, fn=None, dpi=150, save_dpi=200, legend_frameon=False):
+	# What we do now depends on whether populations was a list of lists
+	if type(populations[0]) == list:
+		populations = populations[::-1]
+		# Calculate the height of each plot such that the heterochromatin plot is 7 times smaller than the others
+		genploth = 1 / (len(populations) + 1/7)
+		hetploth = genploth / 7
+		fh = 0.7*int(len(populations)) + 0.1
+		figsize = fw, fh
+		fig = plt.figure(figsize=(fw, fh), dpi=dpi)
+		for i, pl in enumerate(populations):
+			b = hetploth + i * genploth
+			h = genploth * 0.9
+			if i == (len(populations)-1):
+				ylab = True
+			else:
+				ylab = False
+			fig_linear_genome(plot_dxy, phase2_ar1.genome_agamp3, chromomsomes = chroms, fig=fig, bottom=b, height=h, legend_offset = -0.6, legend_frameon=legend_frameon, labely = ylab, dxy = dxy_by_window, pops = pl)
+		fig_linear_genome(plot_heterochromatin, phase2_ar1.genome_agamp3, fig=fig, bottom=0, height=hetploth/1.5, legend_offset=-3, legend_frameon=legend_frameon, clip_patch_kwargs=dict(edgecolor='k', lw=.5), tbl_chr = tbl_chromatin)
+	else:
+		fh = 0.8
+		figsize = fw, fh
+		fig = plt.figure(figsize=(fw, fh), dpi=dpi)
+		fig_linear_genome(plot_dxy, phase2_ar1.genome_agamp3, chromomsomes = chroms, fig=fig, bottom=0.1, height=.7, legend_frameon=legend_frameon, dxy = dxy_by_window, pops = populations)
+		fig_linear_genome(plot_heterochromatin, phase2_ar1.genome_agamp3, fig=fig, bottom=0, height=.07, legend_frameon=legend_frameon, clip_patch_kwargs=dict(edgecolor='k', lw=.5), tbl_chr = tbl_chromatin)
 
 	if fn:
 		if re.search('\.eps', fn):
@@ -229,4 +253,19 @@ fig_assemble(['BFcol', 'AOcol', 'GHcol'], fn = 'refdiff_phase2_col.jpg')
 fig_assemble(['CMgam', 'UGgam', 'BFgam'], fn = 'refdiff_phase2_gam.jpg')
 fig_assemble(['GM', 'GW', 'KE'], fn = 'refdiff_phase2_unk.jpg')
 fig_assemble(['An. gambiae', 'An. coluzzii'], fn = 'refdiff_phase2_species.jpg')
+fig_assemble(['CMgam', 'KE'], fn = 'refdiff_phase2_KE_vs_CM.jpg')
+fig_assemble(['AOcol', 'GM', 'GW'], fn = 'refdiff_phase2_GMGW_vs_AOcol.jpg')
+fig_assemble(['An. gambiae', 'An. coluzzii', 'GM'], fn = 'refdiff_phase2_GM_vs_species.jpg')
+fig_assemble(['An. gambiae', 'An. coluzzii', 'GW'], fn = 'refdiff_phase2_GW_vs_species.jpg')
+fig_assemble(['An. gambiae', 'An. coluzzii', 'KE'], fn = 'refdiff_phase2_KE_vs_species.jpg')
+
+# And now the full combined figure
+fig_assemble([['An. gambiae', 'An. coluzzii'], 
+              ['BFcol', 'AOcol', 'GHcol'], 
+              ['CMgam', 'UGgam', 'BFgam'],
+              ['An. gambiae', 'An. coluzzii', 'GM'],
+              ['An. gambiae', 'An. coluzzii', 'GW'],
+              ['An. gambiae', 'An. coluzzii', 'KE']],
+              fn = 'refdiff_phase2_combined.jpg')
+
 
