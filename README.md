@@ -30,3 +30,7 @@ Build manuscript:
 $ ./latex.sh
 ```
 
+## Further Documentation
+
+<a rel="sandbox" href="https://docs.google.com/document/d/1cdL_Re8PUfEyCcW-LDPS0h9XC0nk3A6glX2YUXbtn2E/edit?usp=sharing">Sandbox document</a>.
+
