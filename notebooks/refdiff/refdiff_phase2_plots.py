@@ -132,30 +132,23 @@ from ag1k import phase2_ar1
 phase2_ar1.init(os.path.join(ag1k_dir, 'phase2.AR1'))
 chroms = list(phase2_ar1.callset_phased.keys())
 colours = phase2_ar1.pop_colors
-colours['An. gambiae'] = 'red'
-colours['An. coluzzii'] = 'blue'
+colours['An. gambiae'] = 'blue'
+colours['An. coluzzii'] = 'red'
 
-subpops = phase2_ar1.df_samples.groupby('population').indices
-subpops_ix = {k: list(v) for k, v in subpops.items()}
-species = phase2_ar1.df_samples.groupby('m_s').indices
-species['An. gambiae'] = species.pop('S')
-species['An. coluzzii'] = species.pop('M')
-species['Unknown'] = species.pop('M/S')
-species_ix = {k: list(v) for k, v in species.items()}
-
-window_size = 100000
+# Load the dxy data calculated by the script refdiff_phase2.py
 dxy_by_window = dict()
-
 for chrom in chroms:
-	dxy_by_window[chrom] = pd.read_csv('refdiff_phase2_' + chrom + '_table.csv', sep = '\t')
+	dxy_by_window[chrom] = pd.read_csv('refdiff_phase2_' + chrom + '_table.csv', sep = '\t', index_col = 0)
+	# We will use the data for females as the default data, so we take "_F" away from the names of the female columns
+	dxy_by_window[chrom].columns = [re.sub('_F$', '', x) for x in dxy_by_window[chrom].columns]
 
 # Now plot the dxy along the chromsomomes
 def plot_dxy(chrom, ax, dxy, pops=None, offset=5, legend_offset=0, legend_frameon=False, labely = True, **kwargs):
 	if chrom == '2R':
 		sns.despine(ax=ax, bottom=True, offset=offset)
-		ax.set_yticks([0, 0.005, 0.01], minor=False)
-		ax.set_yticks(np.arange(0, 0.011, 0.001), minor=True)
-		ax.set_yticklabels([0, 0.005, 0.01])
+		ax.set_yticks([0, 0.01, 0.02], minor=False)
+		ax.set_yticks(np.arange(0, 0.022, 0.002), minor=True)
+		ax.set_yticklabels([0, 0.01, 0.02])
 		ax.yaxis.set_label_coords(-0.25, 1.3)
 		if labely:
 			ax.set_ylabel('Dxy', ha='left', va='top', rotation=0)
@@ -187,7 +180,7 @@ def plot_dxy(chrom, ax, dxy, pops=None, offset=5, legend_offset=0, legend_frameo
 		ax.legend(handles=handles, bbox_to_anchor=(1, 1.5 + legend_offset), loc='upper left', frameon=legend_frameon, fancybox=False, 
 				  title=legend_title, labelspacing=.1);
 
-	ax.set_ylim(0, 0.011)
+	ax.set_ylim(0, 0.022)
 	ax.set_xlim(0, max(x))
 	ax.set_xticks([])
 	ax.set_title(chrom)

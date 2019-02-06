@@ -19,18 +19,25 @@ colours = phase2_ar1.pop_colors
 colours['An. gambiae'] = 'red'
 colours['An. coluzzii'] = 'blue'
 
-subpops = phase2_ar1.df_samples.groupby('population').indices
+# Give species their full names in the metadata
+samples_df = phase2_ar1.df_samples.copy()
+samples_df['m_s'] = samples_df['m_s'].fillna('M/S')
+samples_df['species'] = [re.sub('M/S', 'Unknown', str(x)) for x in samples_df['m_s']]
+samples_df['species'] = [re.sub('M', 'An. coluzzii', str(x)) for x in samples_df['species']]
+samples_df['species'] = [re.sub('S', 'An. gambiae', str(x)) for x in samples_df['species']]
+
+# Create columns concatenating two population and sex (or species and sex)
+samples_df['pop_sex'] = samples_df['population'] + '_' + samples_df['sex']
+samples_df['sp_sex'] = samples_df['species'] + '_' + samples_df['sex']
+
+subpops = samples_df.groupby('pop_sex').indices
 subpops_ix = {k: list(v) for k, v in subpops.items()}
-species = phase2_ar1.df_samples.groupby('m_s').indices
-species['An. gambiae'] = species.pop('S')
-species['An. coluzzii'] = species.pop('M')
-species['Unknown'] = species.pop('M/S')
+species = samples_df.groupby('sp_sex').indices
 species_ix = {k: list(v) for k, v in species.items()}
 
 def compute_divergence(allele_freqs):
 	sum_alt = allele_freqs.sum(axis=0)
-	# Why divide by 2 here?
-	return (sum_alt[1:].sum()/2)
+	return (sum_alt[1:].sum())
 
 window_size = 100000
 dxy_by_window = dict()
