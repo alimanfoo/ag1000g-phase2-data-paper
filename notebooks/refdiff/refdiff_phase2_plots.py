@@ -143,7 +143,7 @@ for chrom in chroms:
 	dxy_by_window[chrom].columns = [re.sub('_F$', '', x) for x in dxy_by_window[chrom].columns]
 
 # Now plot the dxy along the chromsomomes
-def plot_dxy(chrom, ax, dxy, pops=None, offset=5, legend_offset=0, legend_frameon=False, labely = True, **kwargs):
+def plot_dxy(chrom, ax, dxy, pops=None, offset=5, legend_offset=0, legend_frameon=False, labely = True, sublabel = '', **kwargs):
 	if chrom == '2R':
 		sns.despine(ax=ax, bottom=True, offset=offset)
 		ax.set_yticks([0, 0.01, 0.02], minor=False)
@@ -152,6 +152,8 @@ def plot_dxy(chrom, ax, dxy, pops=None, offset=5, legend_offset=0, legend_frameo
 		ax.yaxis.set_label_coords(-0.25, 1.3)
 		if labely:
 			ax.set_ylabel('Dxy', ha='left', va='top', rotation=0)
+		# Add the plot sublabel
+		plt.text(-35000000,0.02,sublabel, fontweight = 'bold')
 	else:
 		sns.despine(ax=ax, left=True, bottom=True, offset=offset)
 		ax.set_yticks([])
@@ -226,7 +228,7 @@ def fig_assemble(populations, fw=4.3, fn=None, dpi=150, save_dpi=200, legend_fra
 				ylab = True
 			else:
 				ylab = False
-			fig_linear_genome(plot_dxy, phase2_ar1.genome_agamp3, chromomsomes = chroms, fig=fig, bottom=b, height=h, legend_offset = -0.6, legend_frameon=legend_frameon, labely = ylab, dxy = dxy_by_window, pops = pl)
+			fig_linear_genome(plot_dxy, phase2_ar1.genome_agamp3, chromomsomes = chroms, fig=fig, bottom=b, height=h, legend_offset = -0.6, legend_frameon=legend_frameon, labely = ylab, dxy = dxy_by_window, pops = pl, sublabel = 'a')
 		fig_linear_genome(plot_heterochromatin, phase2_ar1.genome_agamp3, fig=fig, bottom=0, height=hetploth/1.5, legend_offset=-3, legend_frameon=legend_frameon, clip_patch_kwargs=dict(edgecolor='k', lw=.5), tbl_chr = tbl_chromatin)
 	else:
 		fh = 0.8
@@ -242,15 +244,15 @@ def fig_assemble(populations, fw=4.3, fn=None, dpi=150, save_dpi=200, legend_fra
 			fig.savefig(fn, jpeg_quality=100, dpi=save_dpi, bbox_inches='tight')
 
 
-fig_assemble(['BFcol', 'AOcol', 'GHcol'], fn = 'refdiff_phase2_col.jpg')
-fig_assemble(['CMgam', 'UGgam', 'BFgam'], fn = 'refdiff_phase2_gam.jpg')
-fig_assemble(['GM', 'GW', 'KE'], fn = 'refdiff_phase2_unk.jpg')
-fig_assemble(['An. gambiae', 'An. coluzzii'], fn = 'refdiff_phase2_species.jpg')
-fig_assemble(['CMgam', 'KE'], fn = 'refdiff_phase2_KE_vs_CM.jpg')
-fig_assemble(['AOcol', 'GM', 'GW'], fn = 'refdiff_phase2_GMGW_vs_AOcol.jpg')
-fig_assemble(['An. gambiae', 'An. coluzzii', 'GM'], fn = 'refdiff_phase2_GM_vs_species.jpg')
-fig_assemble(['An. gambiae', 'An. coluzzii', 'GW'], fn = 'refdiff_phase2_GW_vs_species.jpg')
-fig_assemble(['An. gambiae', 'An. coluzzii', 'KE'], fn = 'refdiff_phase2_KE_vs_species.jpg')
+#fig_assemble(['BFcol', 'AOcol', 'GHcol'], fn = 'refdiff_phase2_col.jpg')
+#fig_assemble(['CMgam', 'UGgam', 'BFgam'], fn = 'refdiff_phase2_gam.jpg')
+#fig_assemble(['GM', 'GW', 'KE'], fn = 'refdiff_phase2_unk.jpg')
+#fig_assemble(['An. gambiae', 'An. coluzzii'], fn = 'refdiff_phase2_species.jpg')
+#fig_assemble(['CMgam', 'KE'], fn = 'refdiff_phase2_KE_vs_CM.jpg')
+#fig_assemble(['AOcol', 'GM', 'GW'], fn = 'refdiff_phase2_GMGW_vs_AOcol.jpg')
+#fig_assemble(['An. gambiae', 'An. coluzzii', 'GM'], fn = 'refdiff_phase2_GM_vs_species.jpg')
+#fig_assemble(['An. gambiae', 'An. coluzzii', 'GW'], fn = 'refdiff_phase2_GW_vs_species.jpg')
+#fig_assemble(['An. gambiae', 'An. coluzzii', 'KE'], fn = 'refdiff_phase2_KE_vs_species.jpg')
 
 # And now the full combined figure
 fig_assemble([['An. gambiae', 'An. coluzzii'], 
