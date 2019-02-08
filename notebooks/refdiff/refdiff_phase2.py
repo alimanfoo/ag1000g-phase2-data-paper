@@ -15,9 +15,6 @@ ag1k_dir = '/home/elucas/data'
 from ag1k import phase2_ar1
 phase2_ar1.init(os.path.join(ag1k_dir, 'phase2.AR1'))
 chroms = list(phase2_ar1.callset_phased.keys())
-colours = phase2_ar1.pop_colors
-colours['An. gambiae'] = 'red'
-colours['An. coluzzii'] = 'blue'
 
 # Give species their full names in the metadata
 samples_df = phase2_ar1.df_samples.copy()
