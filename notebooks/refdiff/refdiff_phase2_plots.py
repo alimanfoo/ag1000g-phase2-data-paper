@@ -49,6 +49,7 @@ import numpy as np
 import pandas as pd
 import allel
 import re
+import string
 
 # Set up the chromatin data for the genome
 _data_chromatin = b"""CHX	 chro	X	   20009764		24393108
@@ -134,13 +135,26 @@ chroms = list(phase2_ar1.callset_phased.keys())
 colours = phase2_ar1.pop_colors
 colours['An. gambiae'] = 'blue'
 colours['An. coluzzii'] = 'red'
+colours['KE - An. gambiae'] = 'blue'
+colours['KE - An. coluzzii'] = 'red'
+colours['GW - An. gambiae'] = 'blue'
+colours['GW - An. coluzzii'] = 'red'
+colours['GM - An. gambiae'] = 'blue'
+colours['GM - An. coluzzii'] = 'red'
 
 # Load the dxy data calculated by the script refdiff_phase2.py
 dxy_by_window = dict()
 for chrom in chroms:
-	dxy_by_window[chrom] = pd.read_csv('refdiff_phase2_' + chrom + '_table.csv', sep = '\t', index_col = 0)
+	table1 = pd.read_csv('refdiff_phase2_' + chrom + '_table.csv', sep = '\t', index_col = 0)
 	# We will use the data for females as the default data, so we take "_F" away from the names of the female columns
-	dxy_by_window[chrom].columns = [re.sub('_F$', '', x) for x in dxy_by_window[chrom].columns]
+	table1.columns = [re.sub('_F$', '', x) for x in table1.columns]
+	table2 = pd.read_csv('pairwisediff_phase2_' + chrom + '_table.csv', sep = '\t', index_col = 0)
+	# Rename the columns to something that makes for sense for the legens
+	table2.columns = [re.sub('-', ' - ', re.sub('_F', '', x)) for x in table2.columns]
+	# Join tables 1 and 2
+	joined_table = pd.concat([table1, table2], axis = 1)
+	dxy_by_window[chrom] = joined_table
+
 
 # Now plot the dxy along the chromsomomes
 def plot_dxy(chrom, ax, dxy, pops=None, offset=5, legend_offset=0, legend_frameon=False, labely = True, sublabel = '', **kwargs):
@@ -214,6 +228,7 @@ def plot_heterochromatin(chrom, ax, clip_patch, tbl_chr, genome, colors=None, le
 def fig_assemble(populations, fw=4.3, fn=None, dpi=150, save_dpi=200, legend_frameon=False):
 	# What we do now depends on whether populations was a list of lists
 	if type(populations[0]) == list:
+		plot_labels = string.ascii_lowercase[:len(populations)][::-1]
 		populations = populations[::-1]
 		# Calculate the height of each plot such that the heterochromatin plot is 7 times smaller than the others
 		genploth = 1 / (len(populations) + 1/7)
@@ -228,7 +243,7 @@ def fig_assemble(populations, fw=4.3, fn=None, dpi=150, save_dpi=200, legend_fra
 				ylab = True
 			else:
 				ylab = False
-			fig_linear_genome(plot_dxy, phase2_ar1.genome_agamp3, chromomsomes = chroms, fig=fig, bottom=b, height=h, legend_offset = -0.6, legend_frameon=legend_frameon, labely = ylab, dxy = dxy_by_window, pops = pl, sublabel = 'a')
+			fig_linear_genome(plot_dxy, phase2_ar1.genome_agamp3, chromomsomes = chroms, fig=fig, bottom=b, height=h, legend_offset = -0.6, legend_frameon=legend_frameon, labely = ylab, dxy = dxy_by_window, pops = pl, sublabel = plot_labels[i])
 		fig_linear_genome(plot_heterochromatin, phase2_ar1.genome_agamp3, fig=fig, bottom=0, height=hetploth/1.5, legend_offset=-3, legend_frameon=legend_frameon, clip_patch_kwargs=dict(edgecolor='k', lw=.5), tbl_chr = tbl_chromatin)
 	else:
 		fh = 0.8
@@ -244,23 +259,33 @@ def fig_assemble(populations, fw=4.3, fn=None, dpi=150, save_dpi=200, legend_fra
 			fig.savefig(fn, jpeg_quality=100, dpi=save_dpi, bbox_inches='tight')
 
 
-#fig_assemble(['BFcol', 'AOcol', 'GHcol'], fn = 'refdiff_phase2_col.jpg')
-#fig_assemble(['CMgam', 'UGgam', 'BFgam'], fn = 'refdiff_phase2_gam.jpg')
-#fig_assemble(['GM', 'GW', 'KE'], fn = 'refdiff_phase2_unk.jpg')
-#fig_assemble(['An. gambiae', 'An. coluzzii'], fn = 'refdiff_phase2_species.jpg')
-#fig_assemble(['CMgam', 'KE'], fn = 'refdiff_phase2_KE_vs_CM.jpg')
-#fig_assemble(['AOcol', 'GM', 'GW'], fn = 'refdiff_phase2_GMGW_vs_AOcol.jpg')
-#fig_assemble(['An. gambiae', 'An. coluzzii', 'GM'], fn = 'refdiff_phase2_GM_vs_species.jpg')
-#fig_assemble(['An. gambiae', 'An. coluzzii', 'GW'], fn = 'refdiff_phase2_GW_vs_species.jpg')
-#fig_assemble(['An. gambiae', 'An. coluzzii', 'KE'], fn = 'refdiff_phase2_KE_vs_species.jpg')
+fig_assemble(['BFcol', 'AOcol', 'GHcol'], fn = 'refdiff_phase2_col.jpg')
+fig_assemble(['CMgam', 'UGgam', 'BFgam'], fn = 'refdiff_phase2_gam.jpg')
+fig_assemble(['GM', 'GW', 'KE'], fn = 'refdiff_phase2_unk.jpg')
+fig_assemble(['An. gambiae', 'An. coluzzii'], fn = 'refdiff_phase2_species.jpg')
+fig_assemble(['CMgam', 'KE'], fn = 'refdiff_phase2_KE_vs_CM.jpg')
+fig_assemble(['AOcol', 'GM', 'GW'], fn = 'refdiff_phase2_GMGW_vs_AOcol.jpg')
+fig_assemble(['An. gambiae', 'An. coluzzii', 'GM'], fn = 'refdiff_phase2_GM_vs_species.jpg')
+fig_assemble(['An. gambiae', 'An. coluzzii', 'GW'], fn = 'refdiff_phase2_GW_vs_species.jpg')
+fig_assemble(['An. gambiae', 'An. coluzzii', 'KE'], fn = 'refdiff_phase2_KE_vs_species.jpg')
 
 # And now the full combined figure
+# This would be to show difference against the genome is all plots
+#fig_assemble([['An. gambiae', 'An. coluzzii'], 
+#              ['BFcol', 'AOcol', 'GHcol'], 
+#              ['CMgam', 'UGgam', 'BFgam'],
+#              ['An. gambiae', 'An. coluzzii', 'GM'],
+#              ['An. gambiae', 'An. coluzzii', 'GW'],
+#              ['An. gambiae', 'An. coluzzii', 'KE']],
+#              fn = 'refdiff_phase2_combined.jpg')
+
+# But instead we want to show Dxy between populations for the last three
 fig_assemble([['An. gambiae', 'An. coluzzii'], 
               ['BFcol', 'AOcol', 'GHcol'], 
               ['CMgam', 'UGgam', 'BFgam'],
-              ['An. gambiae', 'An. coluzzii', 'GM'],
-              ['An. gambiae', 'An. coluzzii', 'GW'],
-              ['An. gambiae', 'An. coluzzii', 'KE']],
+              ['GM - An. gambiae', 'GM - An. coluzzii'],
+              ['GW - An. gambiae', 'GW - An. coluzzii'],
+              ['KE - An. gambiae', 'KE - An. coluzzii']],
               fn = 'refdiff_phase2_combined.jpg')
 
 
