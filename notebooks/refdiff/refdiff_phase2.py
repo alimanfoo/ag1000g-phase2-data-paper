@@ -31,13 +31,16 @@ subpops = samples_df.groupby('pop_sex').indices
 subpops_ix = {k: list(v) for k, v in subpops.items()}
 species = samples_df.groupby('sp_sex').indices
 species_ix = {k: list(v) for k, v in species.items()}
+unknown_subpops = ['GM_F', 'GW_F', 'KE_F']
+main_species = ['An. coluzzii_F', 'An. gambiae_F']
 
 def compute_divergence(allele_freqs):
 	sum_alt = allele_freqs.sum(axis=0)
 	return (sum_alt[1:].sum())
 
 window_size = 100000
-dxy_by_window = dict()
+vref_dxy_by_window = dict()
+xpop_dxy_by_window = dict()
 
 for chrom in chroms:
 	print('\nChromosome ' + chrom)
@@ -47,13 +50,15 @@ for chrom in chroms:
 
 	pos = allel.SortedIndex(phase2_ar1.callset_pass[chrom]['variants/POS'])
 
-	eqa = allel.equally_accessible_windows(phase2_ar1.accessibility[chrom]['is_accessible'], window_size)
+	accessibility = phase2_ar1.accessibility[chrom]['is_accessible']
+	eqa = allel.equally_accessible_windows(accessibility, window_size)
 
 	# Use the middle of the window as the index
 	window_middle = np.sum(eqa, axis=1)/2
-	dxy_by_window[chrom] = pd.DataFrame(index=window_middle.astype(int), columns=list(subpops.keys()) + list(species.keys()))
-	dxy_by_window[chrom] = pd.DataFrame(index=window_middle.astype(int), columns= species.keys())
+	vref_dxy_by_window[chrom] = pd.DataFrame(index=window_middle.astype(int), columns=list(subpops.keys()) + list(species.keys()))
+	xpop_dxy_by_window[chrom] = pd.DataFrame(index=window_middle.astype(int))
 
+	# Calculate distance from the reference in each sub-population
 	for pop in subpops.keys():
 		print('processing', pop)
 
@@ -65,8 +70,9 @@ for chrom in chroms:
 
 		vals, windows, counts = allel.windowed_statistic(
 			pop_pos, pop_ac.to_frequencies(), compute_divergence, windows=eqa)
-		dxy_by_window[chrom][pop] = vals / window_size
+		vref_dxy_by_window[chrom][pop] = vals / window_size
 
+	# Calculate distance from the reference in each species
 	for pop in species.keys():
 		print('processing', pop)
 
@@ -78,7 +84,16 @@ for chrom in chroms:
 
 		vals, windows, counts = allel.windowed_statistic(
 			pop_pos, pop_ac.to_frequencies(), compute_divergence, windows=eqa)
-		dxy_by_window[chrom][pop] = vals / window_size
+		vref_dxy_by_window[chrom][pop] = vals / window_size
 	# And save that table to file
-	dxy_by_window[chrom].to_csv('refdiff_phase2_' + chrom + '_table.csv', sep = '\t')
+	vref_dxy_by_window[chrom].to_csv('refdiff_phase2_' + chrom + '_table.csv', sep = '\t')
+
+	# Now calculate the xy between each of the three unknown populations and each of the three species
+	for main_sp in main_species:
+		for unk_pop in unknown_subpops:
+			dxy, windows, n_bases, counts = allel.stats.windowed_divergence(pos, ac[unk_pop], ac_species[main_sp], windows = eqa, is_accessible = accessibility)
+			xpop_dxy_by_window[chrom][unk_pop + '-' + main_sp] = dxy
+	# And save that table to file
+	xpop_dxy_by_window[chrom].to_csv('pairwisediff_phase2_' + chrom + '_table.csv', sep = '\t')
+
 
