@@ -157,7 +157,7 @@ for chrom in chroms:
 
 
 # Now plot the dxy along the chromsomomes
-def plot_dxy(chrom, ax, dxy, pops=None, offset=5, legend_offset=0, legend_frameon=False, labely = True, sublabel = '', **kwargs):
+def plot_dxy(chrom, ax, dxy, pops=None, offset=5, legend_offset=0, legend_frameon=False, labely = True, label_legend = False, sublabel = '', **kwargs):
 	if chrom == '2R':
 		sns.despine(ax=ax, bottom=True, offset=offset)
 		ax.set_yticks([0, 0.01, 0.02], minor=False)
@@ -186,7 +186,7 @@ def plot_dxy(chrom, ax, dxy, pops=None, offset=5, legend_offset=0, legend_frameo
 
 	# Draw the legend
 	if chrom == 'X':
-		if labely:
+		if label_legend:
 			legend_title = 'Species'
 		else:
 			legend_title = None
@@ -270,22 +270,18 @@ fig_assemble(['An. gambiae', 'An. coluzzii', 'GW'], fn = 'refdiff_phase2_GW_vs_s
 fig_assemble(['An. gambiae', 'An. coluzzii', 'KE'], fn = 'refdiff_phase2_KE_vs_species.jpg')
 
 # And now the full combined figure
-# This would be to show difference against the genome is all plots
+fig_assemble([['An. gambiae', 'An. coluzzii'], 
+              ['BFcol', 'AOcol', 'GHcol'], 
+              ['CMgam', 'UGgam', 'BFgam']],
+              fn = 'refdiff_phase2_combined.jpg')
+
+# Use this code instead to include some plots showing Dxy between populations 
 #fig_assemble([['An. gambiae', 'An. coluzzii'], 
 #              ['BFcol', 'AOcol', 'GHcol'], 
 #              ['CMgam', 'UGgam', 'BFgam'],
-#              ['An. gambiae', 'An. coluzzii', 'GM'],
-#              ['An. gambiae', 'An. coluzzii', 'GW'],
-#              ['An. gambiae', 'An. coluzzii', 'KE']],
+#              ['GM - An. gambiae', 'GM - An. coluzzii'],
+#              ['GW - An. gambiae', 'GW - An. coluzzii'],
+#              ['KE - An. gambiae', 'KE - An. coluzzii']],
 #              fn = 'refdiff_phase2_combined.jpg')
-
-# But instead we want to show Dxy between populations for the last three
-fig_assemble([['An. gambiae', 'An. coluzzii'], 
-              ['BFcol', 'AOcol', 'GHcol'], 
-              ['CMgam', 'UGgam', 'BFgam'],
-              ['GM - An. gambiae', 'GM - An. coluzzii'],
-              ['GW - An. gambiae', 'GW - An. coluzzii'],
-              ['KE - An. gambiae', 'KE - An. coluzzii']],
-              fn = 'refdiff_phase2_combined.jpg')
 
 
