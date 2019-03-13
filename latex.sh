@@ -15,7 +15,7 @@ rm -v main.synctex.gz
 set -eo pipefail
 
 # setup environment
-source env.sh
+source binder/env.sh
 
 # run pdflatex + biber + pdflatex
 pdflatex -interaction=nonstopmode -halt-on-error main.tex
