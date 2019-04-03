@@ -323,8 +323,26 @@ Cluster generation and sequencing were undertaken per the manufacturer's protoco
 Target coverage was 30X per individual.
 %%
 
+
+\subsection*{2.2 Sequence analysis and variant calling}
+
+Sequencing pipelines were unchanged from phase 1 of the Anopheles 1000 genomes project\cite{Miles2017}.
+%
+Briefly, sequence reads were aligned to the AgamP3 reference genome using \texttt{bwa v0.6.2} and SNPs were discovered using \texttt{GATK Unified Genotyper 2.7.4} following best practice recommendations.
+%
+Discovered variants were subject to quality control filters as described below.
+
+\subsection*{2.3 Genome accessibility}
+
+The alignments were also used to identify genome regions accessible to SNP calling, where short reads could be uniquely mapped and there was minimal evidence for structural variation.
+
+\subsection*{2.4 Variant Filtering}
+
+Mendelian errors in the crosses were used to guide the design of filters to remove poor-quality variant calls.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{?.? SNP validation}
+\subsection*{2.5 SNP validation}
 
 We used 11 laboratory crosses to estimate the error associated with genotyping from short reads. 
 %
@@ -338,20 +356,18 @@ Therefore we can generate ascertainment error estimates for heterozygous, homozy
 %
 To meet the confidence threshold for homozygous calls, both parents must have 30x coverage, and have no discordant reads.
 %
-%
 Sites are considered erroneously called if at least 10 progeny have genotypes called at that locus, and one or more do not match the expected genotype. 
 %
 Sites are considered correctly called if at least 10 progeny have genotypes called and all match the expected genotype. 
 %
 Crosses had between 14-20 progeny, except cross 61-3 (n=8) which was excluded from this analysis.
 %
-%
 Error in ascertainment rates are computed over each cross, and errors are reported as the median over all 11 crosses. 
 %
 %
-Raw error rates were 0.72 (0.39, 2.44) for heterozygotes, 0.07 (0.03, 0.25) for homozygous reference calls, and 0.82 (0.37, 1.47) for homozygous alternate calls. 
+Raw error rates were 0.72\% (0.39, 2.44) for heterozygotes, 0.07\% (0.03, 0.25) for homozygous reference calls, and 0.82\% (0.37, 1.47) for homozygous alternate calls. 
 %
-Following variant filtering via QC thresholds and the accessibility map these values dropped to 0.26 (0.15, 1.23) for heterozygotes, 0.02 (0.01, 0.12) for homozygous reference calls, and 0.80 (0.31, 1.51) for homozygous alternate calls. 
+Following variant filtering via QC thresholds and the accessibility map these values dropped to 0.26\% (0.15, 1.23) for heterozygotes, 0.02\% (0.01, 0.12) for homozygous reference calls, and 0.80\% (0.31, 1.51) for homozygous alternate calls. 
 %%
 
 
