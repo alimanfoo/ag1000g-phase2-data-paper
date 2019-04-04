@@ -324,13 +324,24 @@ Target coverage was 30X per individual.
 %%
 
 
-\subsection*{2.2 Sequence analysis and variant calling}
+\subsection*{2.2 Sequence alignment and variant discovery}
 
-Sequencing pipelines were unchanged from phase 1 of the Anopheles 1000 genomes project\cite{Miles2017}.
+Sequencing pipelines were unchanged from phase 1 of the Anopheles 1000 genomes project \cite{Ag1000gConsortium2017}.
 %
-Briefly, sequence reads were aligned to the AgamP3 reference genome using \texttt{bwa v0.6.2} and SNPs were discovered using \texttt{GATK Unified Genotyper 2.7.4} following best practice recommendations.
+Briefly, sequence reads were aligned to the AgamP3 reference genome \cite{sharakhova2007update} using \texttt{bwa v0.6.2}, duplicate reads marked \cite{li2009}then SNPs discovered using \texttt{GATK Unified Genotyper 2.7.4} \cite{van2013} following best practice recommendations. 
+%%
+
+
+\subsection*{2.3 Sample quality control}
 %
-Discovered variants were subject to quality control filters as described below.
+A total of 1285 individual mosquitoes were sequenced as part of Ag1000G phase 2 and included in variant discovery. 
+%
+After variant discovery, quality-control (QC) steps were performed to exclude individuals with poor quality sequence and/or genotype data as detailed in \citep{Ag1000gConsortium2017}.
+%
+In short by using coverage and contamination filters alongside principal component analysis and meta data concordance, outlying individuals were removed.
+%
+A total of 143 individuals were excluded at this stage, retaining 1142 individuals for downstream analyses.
+%%
 
 \subsection*{2.3 Genome accessibility}
 
@@ -379,7 +390,8 @@ Following variant filtering via QC thresholds and the accessibility map these va
 %%
 
 %
-\textbf{Partner working group}: Martin J. Donnelly (chair), Diego Ayala, Nora J. Besansky, Austin Burt, Beniamino Caputo, Alessandra della Torre, Michael C. Fontaine, H. Charles J. Godfray, Matthew W. Hahn, Andrew D. Kern, Dominic P. Kwiatkowski, Mara K. N. Lawniczak, Janet Midega, Daniel E. Neafsey, Samantha O'Loughlin, Jo\~{a}o Pinto, Michelle M. Riehle, Igor Sharakhov, Kenneth D. Vernick, David Weetman, Craig S. Wilding and Bradley J. White.
+\textbf{Partner working group}: Martin J. DoDiscovered variants were subject to quality control filters as described below.
+nnelly (chair), Diego Ayala, Nora J. Besansky, Austin Burt, Beniamino Caputo, Alessandra della Torre, Michael C. Fontaine, H. Charles J. Godfray, Matthew W. Hahn, Andrew D. Kern, Dominic P. Kwiatkowski, Mara K. N. Lawniczak, Janet Midega, Daniel E. Neafsey, Samantha O'Loughlin, Jo\~{a}o Pinto, Michelle M. Riehle, Igor Sharakhov, Kenneth D. Vernick, David Weetman, Craig S. Wilding and Bradley J. White.
 %%
 
 %
