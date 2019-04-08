@@ -1,27 +1,15 @@
-3.5.  Variant filtering and annotation
+
 %
-There are various sources of error in discovering SNPs from short read sequence data and raw (i.e., unfiltered) call sets typically contain many false discoveries. 
+Following \cite{AG1000G@@ phase 1 - Supp Text 3.5. Variant filtering and annotation}, to reduce the number of false SNP discoveries, we applied the following SNP filters. 
 %
-To reduce the number of false discoveries, we applied the following SNP filters. 
+We filtered any SNP that occurred at a genome position classified as inaccessible as described in the section on genome accessibility above, removing SNPs with evidence for excessively high or low coverage or ambiguous alignment. 
 %
-We filtered any SNP that occurred at a genome position classified as inaccessible as described in the section on genome accessibility above. 
+We then applied additional filters using variant annotations produced by GATK based on an analysis of Mendelian error in all 11 crosses present in phase 2 and Ti/Tv ratio similar to that described above for the genome accessibility analysis.
 %
-This removed SNPs with evidence for excessively high or low coverage or ambiguous alignment. 
+We filtered any SNP that failed any of the following criteria: QD < 5; FS > 100; ReadPosRankSum < -8; BaseQRankSum < -50. 
 %
-We also applied additional filters using variant annotations produced by GATK. 
-%
-We filtered any SNP that failed any of the following criteria: QD < 5; FS > 60; ReadPosRankSum < -8; HRun > 4. 
-%
-The choice of these additional filters was based on an analysis of Mendelian error in the crosses and Ti/Tv ratio similar to that described above for the genome accessibility analysis.
+
 %%
-
-
-def_is_snp = (
-'(QD >= 5) '
-'& (ReadPosRankSum >= -8) '
-'& (FS <= 100)'
-'&(BaseQRankSum >= -50)'
-)
 
 %
 Of 95,335,499 SNPs reported in the raw callset, 52,525,957 passed all quality filters. 

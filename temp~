@@ -1,0 +1,42 @@
+3.5.  Variant filtering and annotation
+%
+There are various sources of error in discovering SNPs from short read sequence data and raw (i.e., unfiltered) call sets typically contain many false discoveries. 
+%
+To reduce the number of false discoveries, we applied the following SNP filters. 
+%
+We filtered any SNP that occurred at a genome position classified as inaccessible as described in the section on genome accessibility above. 
+%
+This removed SNPs with evidence for excessively high or low coverage or ambiguous alignment. 
+%
+We also applied additional filters using variant annotations produced by GATK. 
+%
+We filtered any SNP that failed any of the following criteria: QD < 5; FS > 60; ReadPosRankSum < -8; HRun > 4. 
+%
+The choice of these additional filters was based on an analysis of Mendelian error in the crosses and Ti/Tv ratio similar to that described above for the genome accessibility analysis.
+%%
+
+
+def_is_snp = (
+'(QD >= 5) '
+'& (ReadPosRankSum >= -8) '
+'& (FS <= 100)'
+'&(BaseQRankSum >= -50)'
+)
+
+%
+Of 95,335,499 SNPs reported in the raw callset, 52,525,957 passed all quality filters. 
+%
+Prior to filtering, the rate of Mendelian error in genotype calls expected to be heterozygous in the progeny of the crosses (parents 0/0 x 1/1 or vice versa) 
+was between 13.0-21.7% depending on the cross. 
+%
+After filtering, the Mendelian error rate was 0.3-0.9%.
+%
+To produce an analysis-ready VCF file for each chromosome arm, we first removed all non-SNP variants. 
+%
+We then removed genotype calls for individuals excluded by the sample QC analysis described above, 
+and then removed any variants that were no longer variant after excluding individuals. 
+%
+We then added INFO annotations with genome accessibility metrics and added FILTER annotations per the criteria defined above. 
+%
+Finally, we added INFO annotations with information about functional consequences of mutations using SNPEFF version 4.1b (Cingolani et al. 2012).
+%%
