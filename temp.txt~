@@ -1,0 +1,57 @@
+3.4.  Genome accessibility
+
+For various population-genomic analyses, it is necessary to have a map of which positions in the reference genome can be considered accessible. 
+
+A position can be considered accessible if any single nucleotide variation at that position could be discovered and genotyped with confidence, 
+given sequence data and methods comparable to those used in this study. 
+
+The reasons why a position might be inaccessible are varied but include: paralogy/repeats within the reference genome causing ambiguous sequence read alignment; 
+structural variation such as copy number variation or large deletions near to or spanning the site; 
+reference genome assembly errors; 
+and genome regions where individuals contain sequence that is sufficiently diverged from the reference genome that some or all sequence reads don’t map (allelic dropout).
+
+We constructed an accessibility map for the AgamP3 reference genome following an approach similar to that used for the human genome by The 1000 Genomes Project Consortium (2010). 
+
+For each position in the genome, we computed metrics from pileups of sequence read alignments across all individuals. 
+
+We used metrics computed from depth of coverage and mapping quality similar to those used by The 1000 Genomes Project Consortium (2010) but with some adaptations to increase sensitivity 
+to resolve sites where total coverage across all individuals might appear normal but some individuals have excessively low coverage while others have excessively high coverage. 
+
+The following metrics were computed from alignments for the 765 individual specimens that passed all sample QC criteria defined above:
+No Coverage: The percentage of individuals with zero coverage at the given position.
+Low Coverage: The percentage of individuals with low coverage at the given position (less than half modal coverage for the whole chromosome arm).
+High Coverage: The percentage of individuals with high coverage at the given position (more than twice modal coverage for the whole chromosome).
+Ambiguous Alignment: The percentage of individuals with more than 10% of reads ambiguously aligned (mapping quality zero) at the given position.
+Low Mapping Quality: The percentage of individuals with average mapping quality less than 30 at the given position.
+Low Read Pairing: The percentage of individuals with less than 90% of reads aligned as part of a proper pair (mate pair is aligned in expected orientation within a reasonable distance) at the given position.
+We also included publicly available repeat annotations for the AgamP3 genome in the analysis of genome accessibility. These comprise annotations from three algorithms: RepeatMasker, Tandem Repeat Finder (TRF) and DUST. The DUST algorithm was originally a module within BLAST (Altschul et al. 1990) and is designed to mask low complexity sequences only. The RepeatMasker software (Smit et al. 2013) is primarily designed for masking interspersed repeats matching a library of known repeat sequences (transposable elements etc.). TRF (Benson, 1999) specializes in locating tandem repeats.
+
+
+To help guide our decisions about which of the above metrics and annotations to use in defining the accessible genome, and where to set appropriate thresholds, 
+we analysed the association between these metrics and two properties of putative SNPs reported in the raw (unfiltered) call set. 
+
+The first property we analysed was Mendelian error, i.e., the fraction of putative SNPs called with any non-Mendelian genotypes in one or more of the four crosses. 
+
+While a small number of Mendelian errors are expected due to de novo mutation, the vast majority will be due to spurious variant calling, 
+and hence Mendelian errors are a good indicator of poor quality variant calls (Laurie et al. 2010). 
+
+The second property was the transition/transversion ratio of putative SNPs discovered in the 765 unrelated individuals from natural populations. 
+
+Some bias towards transition mutations is expected and so a low Ti/Tv ratio (approaching 0.5 expected if variants were called randomly) is an indicator 
+of poor variant quality (Guo et al. 2014). 
+
+For the numerical factors (No Coverage, Low Coverage, etc.) we looked at which parts of the numerical range were associated with high Mendel error rates and/or low Ti/Tv. 
+
+For the three repeat annotations, we looked at whether repeat annotated positions were enriched for Mendel errors and/or low Ti/Tv. 
+
+In most cases, there was a clear association with error indicators that was consistent with biological expectations. 
+
+The final decision was to classify a reference genome position as accessible if and only if all of the following conditions were met:
+Not repeat masked by DUST
+No Coverage <= 0.2% (at most 1 individual had zero coverage)
+Ambiguous Alignment <= 0.2% (at most 1 individual had ambiguous alignments)
+High Coverage <= 2% (15 individuals)
+Low Coverage <= 10% (76 individuals)
+Low Mapping Quality <= 10% (76 individuals)
+
+This classified 63% (141Mbp) of the genome as accessible, including 91% (18Mbp) of the exome and 60% (123Mbp) of non-coding positions.
