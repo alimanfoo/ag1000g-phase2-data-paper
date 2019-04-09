@@ -324,7 +324,7 @@ Target coverage was 30X per individual.
 %%
 
 
-\subsection*{2.2 Sequence analysis and variant calling}
+\subsection*{2.1 Sequence analysis and variant calling}
 
 Sequencing pipelines were unchanged from phase 1 of the Anopheles 1000 genomes project\cite{Miles2017}.
 %
@@ -332,17 +332,39 @@ Briefly, sequence reads were aligned to the AgamP3 reference genome using \textt
 %
 Discovered variants were subject to quality control filters as described below.
 
-\subsection*{2.3 Genome accessibility}
+\subsection*{2.2 Genome accessibility}
 
 The alignments were also used to identify genome regions accessible to SNP calling, where short reads could be uniquely mapped and there was minimal evidence for structural variation.
 
-\subsection*{2.4 Variant Filtering}
+\subsection*{2.3 Variant Filtering}
+%
+Following \cite{Ag1000gConsortium2017}, we applied the following SNP filters to reduce the number of false SNP discoveries.
+%
+We filtered any SNP that occurred at a genome position classified as inaccessible as described in the section on genome accessibility above, removing SNPs with evidence for excessively high or low coverage or ambiguous alignment. 
+%
+We then applied additional filters using variant annotations produced by GATK based on an analysis of Mendelian error in all 11 crosses present in phase 2 and Ti/Tv ratio similar to that described above for the genome accessibility analysis.
+%
+We filtered any SNP that failed any of the following criteria: QD < 5; FS > 100; ReadPosRankSum < -8; BaseQRankSum < -50. 
+%%
 
-Mendelian errors in the crosses were used to guide the design of filters to remove poor-quality variant calls.
+
+%
+Of 105,486,698 SNPs reported in the raw callset, 57,837,885 passed all quality filters, 13,760,984 (23.8%) of which were multi-allelic (>= 3 alleles).
+%
+The 377 additional individuals in phase 2 result in >5 million more filter passing SNPS than in phase 1 \cite{Ag1000gConsortium2017}.
+%
+To produce an analysis-ready VCF file for each chromosome arm, we first removed all non-SNP variants. 
+%
+We then removed genotype calls for individuals excluded by the sample QC analysis described above, then removed any variants that were no longer variant after excluding individuals. 
+%
+We then added INFO annotations with genome accessibility metrics and added FILTER annotations per the criteria defined above. 
+%
+Finally, we added INFO annotations with information about functional consequences of mutations using SNPEFF version 4.1b (Cingolani et al. 2012).
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{2.5 SNP validation}
+\subsection*{2.4 SNP validation}
 
 We used 11 laboratory crosses to estimate the error associated with genotyping from short reads. 
 %
