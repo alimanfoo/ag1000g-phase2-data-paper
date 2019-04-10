@@ -338,20 +338,20 @@ The alignments were also used to identify genome regions accessible to SNP calli
 
 \subsection*{2.3 Variant Filtering}
 %
-Following \cite{Ag1000gConsortium2017}, we applied the following SNP filters to reduce the number of false SNP discoveries.
+Following AG1000G phase 1 \cite{Ag1000gConsortium2017}, we applied the following SNP filters to reduce the number of false SNP discoveries.
 %
-We filtered any SNP that occurred at a genome position classified as inaccessible as described in the section on genome accessibility above, removing SNPs with evidence for excessively high or low coverage or ambiguous alignment. 
+We filtered any SNP that occurred at a genome position classified as inaccessible as described in the section on genome accessibility above, thus removing SNPs with evidence for excessively high or low coverage or ambiguous alignment. 
 %
 We then applied additional filters using variant annotations produced by GATK based on an analysis of Mendelian error in all 11 crosses present in phase 2 and Ti/Tv ratio similar to that described above for the genome accessibility analysis.
 %
-We filtered any SNP that failed any of the following criteria: QD < 5; FS > 100; ReadPosRankSum < -8; BaseQRankSum < -50. 
+We filtered any SNP that failed any of the following criteria: QD <5; FS >100; ReadPosRankSum <-8; BaseQRankSum <-50. 
 %%
 
 
 %
-Of 105,486,698 SNPs reported in the raw callset, 57,837,885 passed all quality filters, 13,760,984 (23.8%) of which were multi-allelic (>= 3 alleles).
+Of 105,486,698 SNPs reported in the raw callset, 57,837,885 passed all quality filters, 13,760,984 (23.8\%) of which were multi-allelic (>= 3 alleles).
 %
-The 377 additional individuals in phase 2 result in >5 million more filter passing SNPS than in phase 1 \cite{Ag1000gConsortium2017}.
+The 377 additional individuals in phase 2 resulted in >5 million more filter-passing SNPS than in phase 1 \cite{Ag1000gConsortium2017}.
 %
 To produce an analysis-ready VCF file for each chromosome arm, we first removed all non-SNP variants. 
 %
@@ -359,7 +359,7 @@ We then removed genotype calls for individuals excluded by the sample QC analysi
 %
 We then added INFO annotations with genome accessibility metrics and added FILTER annotations per the criteria defined above. 
 %
-Finally, we added INFO annotations with information about functional consequences of mutations using SNPEFF version 4.1b (Cingolani et al. 2012).
+Finally, we added INFO annotations with information about functional consequences of mutations using SNPEFF version 4.1b \cite{Cingolani2012}.
 %%
 
 
