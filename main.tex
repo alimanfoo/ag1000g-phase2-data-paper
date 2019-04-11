@@ -98,7 +98,7 @@ Accessible regions of the genome are those in which we can confidently call SNPs
 %
 Following analysis we identified 61\% (140Mbp) of the genome as accessible, including 91\% (18Mbp) of the exome and 58\% (121Mbp) of non-coding positions.
 %
-From these accessible regions of genome we identified 57,837,885 high-quality SNPs, of which 24\% were classed as multi-allelic (three or more alleles), generating an average of one variant allele every 1.9 bases of accessible genome (decreasing from one in every 2.2 bases in Phase 1 \cite{Ag1000gConsortium2017}). 
+From these accessible regions of genome we identified 57,837,885 high-quality SNPs, of which 24\% were classed as multi-allelic (three or more alleles), generating an average of one variant allele every 1.9 bases of accessible genome (increasing from one in every 2.2 bases in Phase 1 \cite{Ag1000gConsortium2017}). 
 %
 The addition of 377 Phase 2 samples added over five million new SNPs to the AG1000G data set.
 %%
@@ -196,7 +196,7 @@ Throughout, we use species nomenclature following Coetzee \textit{et al}. \cite{
 %
 prior to	 Coetzee	 \textit{et al}., \textit{An. gambiae} was known as \textit{An. gambiae sensu stricto} (S form) and \textit{An. coluzzii} was known as \textit{An. gambiae sensu stricto} (M form).
 %
-Details of the eighteen collection sites novel to Ag1000g Phase 2 (dates, collection and DNA extraction methods) can be found in the Methods section below.
+Details of the eighteen collection sites novel to Ag1000g Phase 2 (dates, collection and DNA extraction methods) can be found in the Methods section.
 %
 Information pertaining to the collection of samples released as part of Ag1000g Phase 1 can be found in the supplementary methods of Ag1000g Consortium (2017) \cite{Ag1000gConsortium2017}.
 %
@@ -237,7 +237,7 @@ After the intervention \textit{An. gambiae} was declining, and more recently alm
 %
 Larvae were stored in 80\% ethanol prior to DNA extraction. 
 %
-All specimens contributed to Ag1000G phase 2 were \textit{An. gambiae} \cite{Santolamazza2004} with the standard 2L\textsuperscript{+a}/2L\textsuperscript{+a} or inverted 2L\textsuperscript{a}/2L\textsuperscript{a} karyotype as determined by the molecular PCR diagnostics \cite{White2007}.
+All specimens contributed to Ag1000G Phase 2 were \textit{An. gambiae} \cite{Santolamazza2004} with the standard 2L\textsuperscript{+a}/2L\textsuperscript{+a} or inverted 2L\textsuperscript{a}/2L\textsuperscript{a} karyotype as determined by the molecular PCR diagnostics \cite{White2007}.
 %
 The samples were identified as males or females by the sequencing read coverage of the X chromosome using LookSeq \cite{Manske2009}.
 %%
@@ -330,9 +330,9 @@ Target coverage was 30X per individual.
 %
 For various population-genomic analyses, it is necessary to have a map of which positions in the reference genome can be considered accessible (in which we can confidently call genetic variation).
 %
-For phase 2 we repeated the phase 1 acccessibility analyses \cite{Ag1000gConsortium2017} with 1142 samples and the additional Mendelian error information provided by the 11 crosses (in phase 1 there were four crosses).
+For Phase 2 we repeated the Phase 1 acccessibility analyses \cite{Ag1000gConsortium2017} with 1142 samples and the additional Mendelian error information provided by the 11 crosses (in Phase 1 there were four crosses).
 %
-Following these analyses it was apparent that the phase 1 accessibility classifications were also applicable to the phase 2 data set.
+Following these analyses it was apparent that the Phase 1 accessibility classifications were also applicable to the Phase 2 data set.
 %
 Reference genome positions were accessible if: 
 Not repeat masked by DUST; 
@@ -345,7 +345,7 @@ Low Mapping Quality <= 10\% (114 individuals).
 
 \subsection*{2.2 Sequence analysis and variant calling}
 %
-Sequencing pipelines were unchanged from phase 1 of the Anopheles 1000 genomes project\cite{Ag1000gConsortium2017}.
+Sequencing pipelines were unchanged from Phase 1 of the Anopheles 1000 genomes project\cite{Ag1000gConsortium2017}.
 %
 Briefly, sequence reads were aligned to the AgamP3 reference genome using \texttt{bwa v0.6.2} and SNPs were discovered using \texttt{GATK Unified Genotyper 2.7.4} following best practice recommendations.
 %
@@ -354,11 +354,11 @@ Discovered variants were subject to quality control filters as described below.
 
 \subsection*{2.3 Variant Filtering}
 %
-Following AG1000G phase 1 \cite{Ag1000gConsortium2017}, we applied the following SNP filters to reduce the number of false SNP discoveries.
+Following AG1000G Phase 1 \cite{Ag1000gConsortium2017}, we applied the following SNP filters to reduce the number of false SNP discoveries.
 %
 We filtered any SNP that occurred at a genome position classified as inaccessible as described in the section on genome accessibility above, thus removing SNPs with evidence for excessively high or low coverage or ambiguous alignment. 
 %
-We then applied additional filters using variant annotations produced by GATK based on an analysis of Mendelian error in all 11 crosses present in phase 2 and Ti/Tv ratio similar to that described above for the genome accessibility analysis.
+We then applied additional filters using variant annotations produced by GATK based on an analysis of Mendelian error in all 11 crosses present in Phase 2 and Ti/Tv ratio similar to that described above for the genome accessibility analysis.
 %
 We filtered any SNP that failed any of the following criteria: QD <5; FS >100; ReadPosRankSum <-8; BaseQRankSum <-50. 
 %%
