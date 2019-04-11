@@ -92,15 +92,13 @@ In Phase 2 of the AG1000G Project we sequenced the genomes from 655 \textit{Anop
 %
 The project now spans 16 populations of wild-caught mosquitoes, sampled from 13 countries across Sub-Saharan Africa (Figure 1; Table 1). 
 %
-Single nucleotide polymorphism (SNPs) were identified after read alignment to the AgamP3 reference genome \cite{Holt2002} (Methods: SNP discovery, filtering and phasing).
+Single nucleotide polymorphism (SNPs) were identified after read alignment to the AgamP3 reference genome \cite{Holt2002}.
 %
-After rigorous data quality control, utilising whole genome data from parents and siblings of lab-colony experimental crosses to quantify error rates, we identified a total of 139.7Mbp 
-(60.6\% of the reference genome) that were accessible and from which SNP data could be taken for analysis of population variation (Methods: Genome accessibility).
+Accessible regions of the genome are those in which we can confidently call SNPs which can then be used in analysis of population variation.
 %
-Analysis of the AG1000G Phase 1 sequencing data found a slightly higher proportion of the genome to be accessible, 141.5Mbp (61.4\% of the reference genome \cite{Ag1000gConsortium2017}), but this was expected as Mendelian errors in the offspring of lab crosses were used to evaluate accessibility, and more crosses contributed to this evaluation in Phase 2 (11 crosses were used here compared to just four in Phase 1).
+Following analysis we identified 61\% (140Mbp) of the genome as accessible, including 91\% (18Mbp) of the exome and 58\% (121Mbp) of non-coding positions.
 %
-From these accessible regions of genome we identified 57,837,885 high-quality SNPs, of which 24\% were classed as multi-allelic (three or more alleles), generating an average of one variant allele every 1.9 bases of accessible genome 
-(decreasing from one in every 2.2 bases in Phase 1 \cite{Ag1000gConsortium2017}). 
+From these accessible regions of genome we identified 57,837,885 high-quality SNPs, of which 24\% were classed as multi-allelic (three or more alleles), generating an average of one variant allele every 1.9 bases of accessible genome (decreasing from one in every 2.2 bases in Phase 1 \cite{Ag1000gConsortium2017}). 
 %
 The addition of 377 Phase 2 samples added over five million new SNPs to the AG1000G data set.
 %%
@@ -198,11 +196,12 @@ Throughout, we use species nomenclature following Coetzee \textit{et al}. \cite{
 %
 prior to	 Coetzee	 \textit{et al}., \textit{An. gambiae} was known as \textit{An. gambiae sensu stricto} (S form) and \textit{An. coluzzii} was known as \textit{An. gambiae sensu stricto} (M form).
 %
-Details of the eighteen collection sites novel to Ag1000g Phase 2 (dates, collection and DNA extraction methods) can be found in the Methods section below \textbf{1.1 Novel Phase 2 natural populations}.
+Details of the eighteen collection sites novel to Ag1000g Phase 2 (dates, collection and DNA extraction methods) can be found in the Methods section below.
 %
 Information pertaining to the collection of samples released as part of Ag1000g Phase 1 can be found in the supplementary methods of Ag1000g Consortium (2017) \cite{Ag1000gConsortium2017}.
 %
 Unless otherwise stated, the DNA extraction method used for the collections described below was Qiagen DNeasy Blood and Tissue Kit (Qiagen Science, MD, USA).
+%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{1.1 Novel Phase 2 natural populations}
@@ -329,70 +328,20 @@ Target coverage was 30X per individual.
 \subsection*{2.1 Genome accessibility}
 
 %
-For various population-genomic analyses, it is necessary to have a map of which positions in the reference genome can be considered accessible. 
+For various population-genomic analyses, it is necessary to have a map of which positions in the reference genome can be considered accessible (in which we can confidently call genetic variation).
 %
-Briefly, for phase 2 we repeated the phase 1 acccessibility analyses \cite{Ag1000gConsortium2017} with 1142 samples and the additional Mendelian error information provided by the 11 crosses (in phase 1 there were four crosses).
+For phase 2 we repeated the phase 1 acccessibility analyses \cite{Ag1000gConsortium2017} with 1142 samples and the additional Mendelian error information provided by the 11 crosses (in phase 1 there were four crosses).
 %
-For each position in the genome, we computed metrics from pileups of sequence read alignments across all individuals. 
-%%
-
+Following these analyses it was apparent that the phase 1 accessibility classifications were also applicable to the phase 2 data set.
 %
-The following metrics were computed from alignments for the 1142 individual specimens that passed all sample QC criteria defined above:
-%
-No Coverage: The percentage of individuals with zero coverage at the given position.
-%
-Low Coverage: The percentage of individuals with low coverage at the given position (less than half modal coverage for the whole chromosome arm).
-%
-High Coverage: The percentage of individuals with high coverage at the given position (more than twice modal coverage for the whole chromosome).
-%
-Ambiguous Alignment: The percentage of individuals with more than 10\% of reads ambiguously aligned (mapping quality zero) at the given position.
-%
-Low Mapping Quality: The percentage of individuals with average mapping quality less than 30 at the given position.
-%
-Low Read Pairing: The percentage of individuals with less than 90\% of reads aligned as part of a proper pair (mate pair is aligned in expected orientation within a reasonable distance) at the given position.
-%%
-
-%
-We also included publicly available repeat annotations for the AgamP3 genome in the analysis of genome accessibility. 
-%
-These comprise annotations from three algorithms: RepeatMasker, Tandem Repeat Finder (TRF) and DUST. 
-%
-The DUST algorithm was originally a module within BLAST \cite{altschul1990} and is designed to mask low complexity sequences only. 
-%
-The RepeatMasker software \cite{smit2015} is primarily designed for masking interspersed repeats matching a library of known repeat sequences (transposable elements \textit{etc}.). 
-%
-TRF \cite{benson1999} specializes in locating tandem repeats.
-%%
-%
-To help guide our decisions about which of the above metrics and annotations to use in defining the accessible genome, and where to set appropriate thresholds, 
-we analysed the association between these metrics and two properties of putative SNPs reported in the raw (unfiltered) call set. 
-%
-The first property we analysed was Mendelian error, \textit{i.e.}, the fraction of putative SNPs called with any non-Mendelian genotypes in one or more of the 11 crosses. 
-%
-While a small number of Mendelian errors are expected due to de novo mutation, the vast majority will be due to spurious variant calling, 
-and hence Mendelian errors are a good indicator of poor quality variant calls \cite{laurie2010}. 
-%
-The second property was the transition/transversion ratio of putative SNPs discovered in the 1142 unrelated individuals from natural populations. 
-%
-Some bias towards transition mutations is expected and so a low Ti/Tv ratio (approaching 0.5 expected if variants were called randomly) is an indicator 
-of poor variant quality \cite{guo2014}. 
-%
-For the numerical factors (No Coverage, Low Coverage, etc.) we looked at which parts of the numerical range were associated with high Mendelian error rates and/or low Ti/Tv. 
-%
-For the three repeat annotations, we looked at whether repeat annotated positions were enriched for Mendel errors and/or low Ti/Tv. 
-%
-In most cases, there was a clear association with error indicators that was consistent with biological expectations. 
-%
-The final decision was to classify a reference genome position as accessible if and only if all of the following conditions were met: 
+Reference genome positions were accessible if: 
 Not repeat masked by DUST; 
 No Coverage <= 0.1\% (at most 1 individual had zero coverage); 
 Ambiguous Alignment <= 0.1\% (at most 1 individual had ambiguous alignments); 
 High Coverage <= 2\% (20 individuals); 
 Low Coverage <= 10\% (114 individuals); 
 Low Mapping Quality <= 10\% (114 individuals).
-
-This classified 61\% (140Mbp) of the genome as accessible, including 91\% (18Mbp) of the exome and 58\% (121Mbp) of non-coding positions.
-
+%%
 
 \subsection*{2.2 Sequence analysis and variant calling}
 %
@@ -417,8 +366,6 @@ We filtered any SNP that failed any of the following criteria: QD <5; FS >100; R
 
 %
 Of 105,486,698 SNPs reported in the raw callset, 57,837,885 passed all quality filters, 13,760,984 (23.8\%) of which were multi-allelic (>= 3 alleles).
-%
-The 377 additional individuals in phase 2 resulted in >5 million more filter-passing SNPS than in phase 1 \cite{Ag1000gConsortium2017}.
 %
 To produce an analysis-ready VCF file for each chromosome arm, we first removed all non-SNP variants. 
 %
