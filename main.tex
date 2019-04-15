@@ -96,7 +96,7 @@ Single nucleotide polymorphism (SNPs) were identified after read alignment to th
 %
 Accessible regions of the genome are those in which we can confidently call SNPs which can then be used in analysis of population variation.
 %
-Following analysis we identified 61\% (140Mbp) of the genome as accessible, including 91\% (18Mbp) of the exome and 58\% (121Mbp) of non-coding positions.
+Following analysis we defined 61\% (140Mbp) of the genome as accessible, including 91\% (18Mbp) of the exome and 58\% (121Mbp) of non-coding positions.
 %
 From these accessible regions of genome we identified 57,837,885 high-quality SNPs, of which 24\% were classed as multi-allelic (three or more alleles), generating an average of one variant allele every 1.9 bases of accessible genome (increasing from one in every 2.2 bases in Phase 1 \cite{Ag1000gConsortium2017}). 
 %
@@ -155,7 +155,7 @@ An exception to this is the pericentromeric region of chromosome X, a known geno
 %
 This similarity to \textit{An. coluzzii} on the X chromosome may be due to the history of artificial selection for the X-linked pink eye mutation in the reference strain \cite{Holt2002}, as this originated in the \textit{An. coluzzii} parent it may have led to the removal of any \textit{An. gambiae} ancestry in this region.
 %
-Reductions in divergence from the reference genome in regions of low recombination are apparent in the centromeres and telomeres, as well as in the large 2La polymorphic inversion in both species \cite{coluzzi2002} (Fig. \ref{refdiff}b \& c). 
+Reductions in divergence from the reference genome in regions of low recombination are apparent in the centromeres and telomeres, as well as in the large 2La polymorphic inversion in both species \cite{coluzzi2002} (Figure \ref{refdiff}b \& c). 
 %
 All analyses of geographical population structure were conducted on euchromatic regions of Chromosome 3, which avoids regions of polymorphic inversions, reduced recombination and unequal divergence from the reference genome \cite{Ag1000gConsortium2017}.
 
@@ -190,7 +190,7 @@ TODO
 Ag1000g Phase 2 mosquitoes were collected from natural populations at 33 sites from 23
 geographical locations in 13 sub-Saharan African countries. 
 %
-Samples have been grouped into 16 populations based on collection country and species (@@TODO Figure 1, Table 1).
+Samples have been grouped into 16 populations based on collection country and species (Figure \ref{sample_map} \& Table \ref{table:sampling_locations}).
 %
 Throughout, we use species nomenclature following Coetzee \textit{et al}. \cite{Coetzee2013};	
 %
@@ -293,7 +293,7 @@ Both \textit{An. gambiae} and \textit{An. coluzzii} were collected from these si
 %
 Malaria is hyperendemic in the region and transmitted by members of the Anopheles gambiae complex (Vicente et al., 2017).
 %
-\textit{Anopheles arabiensis, An. melas, A. coluzzii} and \textit{A. gambiae}, as well as hybrids between the latter two species, are known to occur in the region \cite{Gordicho2014, Vicente2017}.
+\textit{Anopheles arabiensis, An. melas, An. coluzzii} and \textit{An. gambiae}, as well as hybrids between the latter two species, are known to occur in the region \cite{Gordicho2014, Vicente2017}.
 %
 Mosquitoes were preserved individually on 0.5ml micro-tubes filled with silica gel and cotton. DNA extraction was performed by a phenol-chloroform protocol \cite{Donnelly1999}.
 %
@@ -323,9 +323,6 @@ Target coverage was 30X per individual.
 %%
 
 
-
-
-
 \subsection*{2.1 Genome accessibility}
 
 %
@@ -333,7 +330,7 @@ For various population-genomic analyses, it is necessary to have a map of which 
 %
 For Phase 2 we repeated the Phase 1 acccessibility analyses \cite{Ag1000gConsortium2017} with 1142 samples and the additional Mendelian error information provided by the 11 crosses (in Phase 1 there were four crosses).
 %
-Following these analyses it was apparent that the Phase 1 accessibility classifications were also applicable to the Phase 2 data set.
+Following these analyses it was apparent that the Phase 1 accessibility classifications were also appropriate in application to Phase 2.
 %
 Reference genome positions were accessible if: 
 Not repeat masked by DUST; 
@@ -351,16 +348,6 @@ Sequencing pipelines were unchanged from Phase 1 of the Anopheles 1000 genomes p
 Briefly, sequence reads were aligned to the AgamP3 reference genome \cite{sharakhova2007update} using \texttt{bwa v0.6.2}, duplicate reads marked \cite{li2009} and SNPs discovered using \texttt{GATK Unified Genotyper 2.7.4} \cite{van2013} following best practice recommendations. 
 %%
 
-
-\subsection*{2.3 Sample quality control}
-%
-A total of 1285 individual mosquitoes were sequenced as part of Ag1000G phase 2 and included in the cohort for variant discovery. 
-%
-After variant discovery, quality-control (QC) steps using coverage and contamination filters alongside principal component analysis and meta data concordance were performed to exclude individuals with poor quality sequence and/or genotype data as detailed in \cite{Ag1000gConsortium2017}.
-%
-A total of 143 individuals were excluded at this stage, retaining 1142 individuals for downstream analyses.
-
-%%
 
 \subsection*{2.3 Variant Filtering}
 %
@@ -387,10 +374,21 @@ Finally, we added INFO annotations with information about functional consequence
 %%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{2.4 SNP validation}
+\subsection*{2.4 Sample quality control}
+%
+A total of 1285 individual mosquitoes were sequenced as part of Ag1000G phase 2 and included in the cohort for variant discovery. 
+%
+After variant discovery, quality-control (QC) steps using coverage and contamination filters alongside principal component analysis and meta data concordance were performed to exclude individuals with poor quality sequence and/or genotype data as detailed in \cite{Ag1000gConsortium2017}.
+%
+A total of 143 individuals were excluded at this stage, retaining 1142 individuals for downstream analyses.
 
-We used 11 laboratory crosses to estimate the error associated with genotyping from short reads. 
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{2.5 SNP validation}
+
+We used 11 laboratory crosses, each with between 14-20 progeny, to estimate the error associated with genotyping from short reads. 
 %
 We defined errors at sites where given confident parental genotypes and Mendelian inheritance, the expected genotypes of progeny are known. 
 %
@@ -405,8 +403,6 @@ To meet the confidence threshold for homozygous calls, both parents must have 30
 Sites are considered erroneously called if at least 10 progeny have genotypes called at that locus, and one or more do not match the expected genotype. 
 %
 Sites are considered correctly called if at least 10 progeny have genotypes called and all match the expected genotype. 
-%
-Crosses had between 14-20 progeny, except cross 61-3 (n=8) which was excluded from this analysis.
 %
 Error in ascertainment rates are computed over each cross, and errors are reported as the median over all 11 crosses. 
 %
