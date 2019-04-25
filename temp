@@ -15,19 +15,30 @@ movement of insecticide resistance mutations across Sub-Saharan Africa (@@Ref).
 Here we revisit population structure analyses but include the seven populations novel
 to Phase 2.
 
-Of particular importance to the Phase 2 release are the two new An. coluzzii populations, 
-Cote d'Ivoire (CIcol) and Ghana (GHcol). In Phase 1, only two of the nine populations 
+Of particular importance to the Phase 2 data release are the three An. coluzzii populations, 
+Cote d'Ivoire (CIcol), Guinea (GNcol) and Ghana (GHcol) (@@AIM). In Phase 1, only two of the nine populations 
 belonged to this species and these, Burkina Faso (BFcol) and Angola (AOcol) appeared quite 
 different to each other in principal component analysis (PCA), doubleton sharing and FST, 
 making conclusions about the population structure of this major malaria vector problematic
-and the relationship to An. gambiae (sister species) difficult to investigate.
+and the relationship to An. gambiae (sister species) difficult to investigate (@@Ref).
+
+Less population structure is found between the the three novel Phase 2 An. coluzzii populations
+than between the Phase 1 An. coluzzii populations. PCA analyses found CIcol, GNcol and GHcol clustering together in initial PCA components, 
+Phase 1 BFcol clusters closely but is separated by PC1, with AOcol distant by both PC1 and PC2  (@@PCA). 
+Despite the PC1 separation of BFcol from the new An. coluzzii samples, doubleton sharing and FST analyses
+reveal high sharing and weak allelic differention respectively between all An. coluzzii populations with the exception of AOcol.
+
+The novel Gambian (GM) population is strikingly similar in multiple aspects to the the samples from neighbouring Guinea Bissau (GW). 
+Both populations have highly 'hybridised' autosomes (@@AIM), fall together in early principal components (@@PCA),
+show high doubleton sharing with each other but not between other populations (@@DBLTON) and are weakly differentiated (FST = 0.007 @@FST).
+
+The Phase 2 cohort includes two An. gambiae populations collected from islands, Bioko (GQgam) off the west coast of Africa and Mayotte (FRgam)
+off the eastern seaboard; despite their island collection our analyses found them highly dissimilar. GQgam clusters with Ugandan, 
+Ghanaian and Cameroonian An. gambiae in early PCA components (@@PCA) though has elevated levels of genetic differentiation when compared to other 
+An. gambiae x An. gambiae FST values (exluding FRgam) (@@FST). FRgam, however, is an outlier in principal components three and four, has almost no
+doubleton sharing with any other populations and the only population more differentiated is Kenya (KE) which known to be highly bottlenecked (@@FST). 
+Unlike Kenya, which appears 'hybridised' in AIM analysis, FRgam is comparable to other An. gambiae populations.
 
 
 
 
-
-
-Of particular interest are the three Phase 2 An. Coluzzii populations
-
-s	both	can	play	a	role	in	the	spread	of	medically-
-important	variants,	including	insecticide	resistance	mutations.	
