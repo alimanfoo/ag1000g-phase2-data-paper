@@ -159,7 +159,7 @@ Reductions in divergence from the reference genome in regions of low recombinati
 %
 All analyses of geographical population structure were conducted on euchromatic regions of Chromosome 3, which avoids regions of polymorphic inversions, reduced recombination and unequal divergence from the reference genome \cite{Ag1000gConsortium2017}.
 
-\begin{figure}[h]
+\begin{figure}[h](sister species)
 	\begin{center}
 		\includegraphics*[width=6.3in]{notebooks/refdiff/refdiff_phase2_combined.jpg}
 	\end{center}
@@ -167,6 +167,81 @@ All analyses of geographical population structure were conducted on euchromatic 
 	\label{refdiff}
 \end{figure}
 
+
+
+
+%% Population Structure
+\subsection*{Population structure}
+
+Analysis of population structure in the nine AG1000G Phase 1 populations revealed medically important demographic features such a levels of differentiation between populations and movement of insecticide resistance mutations across Sub-Saharan Africa \cite{Ag1000gConsortium2017}.
+% 
+Here we revisit population structure analyses to include the seven populations novel to Phase 2.
+%%
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=6.3in]{artwork/pca_3L_main_text.jpeg}
+	\end{center}
+	\caption{Principal component analysis of the 1142 wild-caught mosquitoes derived from nucleotide variation in the accessible region of chromosome 3L.}
+	\label{pca}
+\end{figure}
+
+%
+Of particular importance to the Phase 2 data release are the three \textit{An. coluzzii} populations, Cote d'Ivoire (CIcol), Guinea (GNcol) and Ghana (GHcol) (Figure \ref{sample_map}). 
+%
+In Phase 1, just two of the nine populations belonged to this species and these, Burkina Faso (BFcol) and Angola (AOcol), appeared quite different to each other in population structure (principal component analysis (PCA), doubleton sharing and F\raisebox{-.4ex}{\scriptsize ST}).
+%
+Consequently, making general conclusions about the history and population structure of this major malaria vector was problematic and the relationship to its sister species \textit{An. gambiae} difficult to investigate \cite{Ag1000gConsortium2017}.
+%
+Less population structure is found between the the three novel Phase 2 \textit{An. coluzzii} populations than between the Phase 1 \textit{An. coluzzii} populations.
+%
+PCA analyses found CIcol, GNcol and GHcol clustering together in initial PCA components, the Phase 1 population of BFcol clusters closely but is separated by PC1, with AOcol distant by both PC1 and PC2 (Figure \ref{pca}).
+%
+Despite the PC1 separation of BFcol from the new \textit{An. coluzzii} samples, doubleton sharing and F\raisebox{-.4ex}{\scriptsize ST}) analyses
+reveal high sharing and weak allelic differentiation respectively between all \textit{An. coluzzii} populations with the exception of AOcol (Figure \ref{doubletons}; Figure \ref{fst}).
+%%
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=4.3in]{artwork/doubletons.jpeg}
+	\end{center}
+	\caption{Allele sharing in doubleton (\textit{f2}) variants. The height of the coloured bars represent the probability of sharing a doubleton allele between two populations. Heights are normalized row-wise for each population.}
+	\label{doubletons}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=5.3in]{artwork/pairwise_fst.jpeg}
+	\end{center}
+	\caption{Average allele frequency differentiation (F\raisebox{-.4ex}{\scriptsize ST}) between pairs of populations. The bottom left triangle shows average F\raisebox{-.4ex}{\scriptsize ST} values between each population pair. The top right triangle shows the Z score for each F\raisebox{-.4ex}{\scriptsize ST} value estimated via a block-jackknife procedure.}
+	\label{fst}
+\end{figure}
+
+
+
+%
+The Phase 2 Gambian (GM) population is strikingly similar in multiple aspects to the the samples from neighbouring Guinea Bissau (GW).
+%
+Both populations have highly 'hybridised' autosomes (Figure \ref{aim}), fall together in early principal components (Figure \ref{pca}), show high doubleton sharing with each other but not between other populations (Figure \ref{doubletons}) and are weakly differentiated (F\raisebox{-.4ex}{\scriptsize ST} = 0.007 Figure \ref{fst}).
+%
+The Phase 2 cohort also includes two \textit{An. gambiae} populations collected from islands, Bioko (GQgam) off the west coast of Africa and Mayotte (FRgam) off the eastern seaboard; despite their island collection our analyses found them highly dissimilar. 
+%
+GQgam clusters with Ugandan (UGcol), Ghanaian (GHcol) and Cameroonian (CMcol) \textit{An. gambiae} in early PCA components (Figure \ref{pca}), though has elevated levels of genetic differentiation when compared to other 
+\textit{An. gambiae vs. An. gambiae} F\raisebox{-.4ex}{\scriptsize ST} values (exluding FRgam) (Figure \ref{fst}). 
+%
+FRgam, however, is an outlier in principal components three and four, has almost no doubleton sharing with any other populations and the only population more genetically differentiated in pairwise comparisons is Kenya (KE) which known to be highly bottlenecked \cite{Ag1000gConsortium2017} (Figure \ref{fst}).
+% 
+Unlike KE, which appears 'hybridised' in AIM analysis, FRgam is comparable to other An. gambiae populations (Figure \ref{aim}).
+%%
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=6.3in]{artwork/AIM_figure_scaled.jpg}
+	\end{center}
+	\caption{Ancestry informative markers (AIM). Rows represent individual mosquitoes (grouped by population) and columns represent SNPs (grouped by chromosome arm). Colours represent species genotype. The column at the far left shows the species assignment according to the conventional molecular test based on a single marker on the X chromosome, which was performed for all populations except Guinea Bissau (GW), The Gambia (GM) and Kenya (KE). The column at the far right shows the genotype for kdr variants in \textit{Vgsc} codon 995. Lines at the lower edge show the physical locations of the AIM SNPs.}
+	\label{aim}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -410,6 +485,16 @@ Error in ascertainment rates are computed over each cross, and errors are report
 Raw error rates were 0.72\% (0.39, 2.44) for heterozygotes, 0.07\% (0.03, 0.25) for homozygous reference calls, and 0.82\% (0.37, 1.47) for homozygous alternate calls. 
 %
 Following variant filtering via QC thresholds and the accessibility map these values dropped to 0.26\% (0.15, 1.23) for heterozygotes, 0.02\% (0.01, 0.12) for homozygous reference calls, and 0.80\% (0.31, 1.51) for homozygous alternate calls. 
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{3 Population structure}
+
+%
+Population structure analyses, AIM, F\raisebox{-.4ex}{\scriptsize ST} and PCA were conducted following methods defined in \cite{Ag1000gConsortium2017}.
+%
+Doubleton sharing was also conducted following \cite{Ag1000gConsortium2017}, except that due low sample sizes in GHgam (12 samples), GNcol (4) and GQgam (9) were excluded.  
 %%
 
 
