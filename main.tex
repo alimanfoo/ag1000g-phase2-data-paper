@@ -101,6 +101,8 @@ Following analysis we defined 61\% (140Mbp) of the genome as accessible, includi
 From these accessible regions of genome we identified 57,837,885 high-quality SNPs, of which 24\% were classed as multi-allelic (three or more alleles), generating an average of one variant allele every 1.9 bases of accessible genome (increasing from one in every 2.2 bases in Phase 1 \cite{Ag1000gConsortium2017}). 
 %
 The addition of 377 Phase 2 samples added over five million new SNPs to the AG1000G data set.
+%
+Whole genome phasing was also conduced for all wild samples.. @@TODO switch error-rate?
 %%
 
 \begin{figure}[h]
@@ -487,6 +489,18 @@ Raw error rates were 0.72\% (0.39, 2.44) for heterozygotes, 0.07\% (0.03, 0.25) 
 Following variant filtering via QC thresholds and the accessibility map these values dropped to 0.26\% (0.15, 1.23) for heterozygotes, 0.02\% (0.01, 0.12) for homozygous reference calls, and 0.80\% (0.31, 1.51) for homozygous alternate calls. 
 %%
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{2.6 Haplotype estimation}
+
+%
+Haplotype estimation, also known as phasing, was performed on all phase 2 wild-caught individuals using methodology unchanged from Phase 1 of the Anopheles 1000 genomes project\cite{Ag1000gConsortium2017}.
+%
+In short, SHAPEIT2 was used to perform statistical phasing with information from sequence reads.
+%
+Phasing performance was evaluated by comparison with haplotypes generated from the crosses and from male X chromosome haplotypes.
+%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{3 Population structure}
