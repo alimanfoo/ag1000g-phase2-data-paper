@@ -189,9 +189,9 @@ Here we revisit population structure analyses to include the seven populations n
 \end{figure}
 
 %
-Of particular importance to the Phase 2 data release are the three \textit{An. coluzzii} populations, Cote d'Ivoire (CIcol), Guinea (GNcol) and Ghana (GHcol) (Figure \ref{sample_map}). 
+Of particular importance to the Phase 2 data release are the three \textit{An. coluzzii} populations, C\^{o}te d'Ivoire (CIcol), Guinea (GNcol) and Ghana (GHcol) (Figure \ref{sample_map}). 
 %
-In Phase 1, just two of the nine populations belonged to this species and these, Burkina Faso (BFcol) and Angola (AOcol), appeared quite different to each other in population structure (principal component analysis (PCA), doubleton sharing and F\raisebox{-.4ex}{\scriptsize ST}).
+In Phase 1, just two of the nine populations were \textit{An. coluzzii} and these, Burkina Faso (BFcol) and Angola (AOcol), were highly differentiated with regard to population structure (principal component analysis (PCA), doubleton sharing and F\raisebox{-.4ex}{\scriptsize ST}).
 %
 Consequently, making general conclusions about the history and population structure of this major malaria vector was problematic and the relationship to its sister species \textit{An. gambiae} difficult to investigate \cite{Ag1000gConsortium2017}.
 %
@@ -199,7 +199,7 @@ Less population structure is found between the the three novel Phase 2 \textit{A
 %
 PCA analyses found CIcol, GNcol and GHcol clustering together in initial PCA components, the Phase 1 population of BFcol clusters closely but is separated by PC1, with AOcol distant by both PC1 and PC2 (Figure \ref{pca}).
 %
-Despite the PC1 separation of BFcol from the new \textit{An. coluzzii} samples, doubleton sharing and F\raisebox{-.4ex}{\scriptsize ST}) analyses reveal high sharing and weak allelic differentiation respectively between all \textit{An. coluzzii} populations with the exception of AOcol (Figure \ref{doubletons}; Figure \ref{fst}).
+Despite the PC1 separation of BFcol from the new \textit{An. coluzzii} samples, doubleton sharing and F\raisebox{-.4ex}{\scriptsize ST}) analyses reveal high sharing and weak allelic differentiation respectively between all \textit{An. coluzzii} populations with the exception of AOcol (Figure \ref{fstdbl}).
 %%
 
 \begin{figure}[H]
@@ -216,26 +216,18 @@ Despite the PC1 separation of BFcol from the new \textit{An. coluzzii} samples, 
 %
 The Phase 2 Gambian (GM) population is strikingly similar in multiple aspects to the the samples from neighbouring Guinea Bissau (GW).
 %
-Both populations have highly 'hybridised' autosomes (Figure \ref{aim}), fall together in early principal components (Figure \ref{pca}), show high doubleton sharing with each other but not between other populations (Figure \ref{doubletons}) and are weakly differentiated (F\raisebox{-.4ex}{\scriptsize ST} = 0.007 Figure \ref{fst}).
+Both populations have similar patterns of ancestry informative marker painting (Figure \ref{aim}), fall together in early principal components (Figure \ref{pca}), show high doubleton sharing with each other but not between other populations (Figure \ref{fstdbl}b) and are weakly differentiated (F\raisebox{-.4ex}{\scriptsize ST} = 0.007 Figure \ref{fstdbl}a).
 %
 The Phase 2 cohort also includes two \textit{An. gambiae} populations collected from islands, Bioko (GQgam) off the west coast of Africa and Mayotte (FRgam) off the eastern seaboard; despite their island collection our analyses found them highly dissimilar. 
 %
 GQgam clusters with Ugandan (UGcol), Ghanaian (GHcol) and Cameroonian (CMcol) \textit{An. gambiae} in early PCA components (Figure \ref{pca}), though has elevated levels of genetic differentiation when compared to other 
-\textit{An. gambiae vs. An. gambiae} F\raisebox{-.4ex}{\scriptsize ST} values (exluding FRgam) (Figure \ref{fst}). 
+\textit{An. gambiae vs. An. gambiae} F\raisebox{-.4ex}{\scriptsize ST} values (exluding FRgam) (Figure \ref{fstdbl}a). 
 %
-FRgam, however, is an outlier in principal components three and four, has almost no doubleton sharing with any other populations and the only population more genetically differentiated in pairwise comparisons is Kenya (KE) which known to be highly bottlenecked \cite{Ag1000gConsortium2017} (Figure \ref{fst}).
+FRgam is an outlier in principal components three and four, has almost no doubleton sharing with any other populations and the only population more genetically differentiated in pairwise comparisons is Kenya (KE) which is known to be highly bottlenecked \cite{Ag1000gConsortium2017} (Figure \ref{fstdbl}).
 % 
-Unlike KE, which appears 'hybridised' in AIM analysis, FRgam is comparable to other An. gambiae populations (Figure \ref{aim}).
+Unlike KE, which appears 'hybridised' in AIM analysis, FRgam is comparable to other An. gambiae populations (Figure S1).
 %%
 
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics*[width=6.3in]{artwork/AIM_figure_scaled.jpg}
-	\end{center}
-	\caption{Ancestry informative markers (AIM). Rows represent individual mosquitoes (grouped by population) and columns represent SNPs (grouped by chromosome arm). Colours represent species genotype. The column at the far left shows the species assignment according to the conventional molecular test based on a single marker on the X chromosome, which was performed for all populations except Guinea Bissau (GW), The Gambia (GM) and Kenya (KE). The column at the far right shows the genotype for kdr variants in \textit{Vgsc} codon 995. Lines at the lower edge show the physical locations of the AIM SNPs.}
-	\label{aim}
-\end{figure}
 
 %% Genetic diversity
 \subsection*{Genetic diversity within populations}
@@ -260,32 +252,58 @@ TODO - isolation by distance
 %%
 
 %
-An important question currently facing malaria vector control programmes concerns the procurement and deployment of "next-generation" LLINs which combine pyrethroid with a PBO synergist which counteracts metabolic resistance caused by cytochrome P450 genes.
+An important question currently facing malaria vector control programmes concerns the procurement and deployment of "next-generation" LLINs which combine pyrethroid with a piperonyl butoxide (PBO) synergist, counteracting metabolic resistance caused by cytochrome P450 genes \cite{churcher2016, killeen2018, toe2018}.
 %
-There are no published markers for P450-based pyrethroid resistance, however it is known that P450 resistance can be achieved via over-expression of P450 genes, which in turn can be achieved by copy number amplification of the relevant gene within the genome (@@ref).
+There are no published markers for P450-based pyrethroid resistance, however it is known that P450 resistance can be achieved via over-expression of P450 genes, which in turn can be driven by copy number amplification of the relevant gene within the genome \cite{riveron2014, muller2008}.
 %
-We scanned the genomes of the mosquitoes in the phase 2 cohort for evidence of copy number variation, described in more detail in (Lucas et al. 2019), these CNV results are part of the phase 2 data resource.
+We scanned the genomes of the mosquitoes in the Phase 2 cohort for evidence of copy number variation, described in more detail in (Lucas et al. 2019), these CNV results are released as part of the Phase 2 data resource.
 %
 At two P450 loci in particular, the \textit{Cyp6p/aa} gene cluster and the \textit{cyp9k1} gene (referred to hereafter as \textit{Cyp6} and \textit{Cyp9} respectively), we found a high frequency of copy number variation in multiple populations.
 %
-These loci have also been found under recent positive selection in multiple populations \cite{Ag1000gConsortium2017}, and have been associated with pyrethroid resistance in other studies (@@refs).
+These loci have also been found under recent positive selection in multiple populations \cite{Ag1000gConsortium2017}, and have been associated with mosquito pyrethroid resistance in other studies (\textit{Cyp6} - \cite{nikou2003, edi2014, faucon2015, main2018}, \textit{Cyp9} - \cite{main2018, tchigossou2018, vontas2018}).
 %
 Thus it is reasonable to assume that the presence of CNVs at these loci is an adaptation to pyrethroids, although this remains to be tested.
-%
-We then combined these data with data on nucleotide variation within the \textit{Vgsc} gene, which is the target for pyrethroids, to provide an estimate for the population frequencies of mosquitoes carrying some form of \textit{kdr} target-site pyrethroid resistance, amplifications at either of the two P450 loci, or both (Figure 13). 
 %%
 
+
 %%
-We found that [tell the story of what the figure shows]...
+We combined the amplification data with data on nucleotide variation within the \textit{Vgsc} gene (Clarkson et al, 2019), the target for pyrethroids, to provide an estimate for the population frequencies of mosquitoes carrying some form of \textit{kdr} target-site pyrethroid resistance, amplifications at either of the two P450 loci, or both (Figure \ref{ir}). 
+%
+PBO impregnated nets may only offer benefits over traditional LLINs where metabolic resistance to pyrethroids is present at appreciable frequencies.
+%
+Our analysis reveals several features of the pyrethroid resistance landscape that could determine the effectiveness of PBO bed-nets and therefore inform national malaria control programmes (NMCPs) with respect to bed-net roll-out.
+%%
+
+
 %%
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics*[width=6.3in]{artwork/pyrethroid_resistance_map_purple-orange.jpg}
+		\includegraphics*[width=6.3in]{artwork/pyrethroid_resistance_simplified.jpg}
 	\end{center}
-	\caption{Pyrethroid resistance genotypes. The distribution of four pyrethroid insecticide resistance genotype states of all Phase 2 wild caught mosquitoes are shown by country across Sub-Saharan Africa. The four pie chart colours represent geneotype state: purple - these individuals we either homozygous or heterozygous for at least one of the two widespread \textit{kdr} pyrethroid target site mutations \textit{Vgsc-995F/S}; yellow - these individuals carried any duplication within genes contained in either the \textit{Cyp6} or \textit{Cyp9} gene clusters; orange - these individuals carried at least one \textit{kdr} mutation and one \textit{Cyp} cluster duplication; grey - these individuals carried no known pyrethroid resistance genotypes (no \textit{kdr} or \textit{Cyp} duplications). Colour of circle denotes species collected at location and area represents sample size. Colours on the map represent ecosystem classes; dark green designates forest ecosystems; see figure 9 in \cite{sayre2013} for a compete colour legend.}
+	\caption{Pyrethroid resistance genotypes. The geographical distribution of four pyrethroid insecticide resistance genotype states for all 1142 Phase 2 wild caught mosquitoes are shown by country across Sub-Saharan Africa. The four pie chart colours represent geneotype state: purple - these individuals were either homozygous or heterozygous for at least one of the two widespread \textit{kdr} pyrethroid target site mutations \textit{Vgsc-995F/S}; yellow - these individuals carried any duplication within genes contained in either the \textit{Cyp6} or \textit{Cyp9} gene clusters; orange - these individuals carried at least one \textit{kdr} mutation and one \textit{Cyp} cluster duplication; grey - these individuals carried no known pyrethroid resistance genotypes (no \textit{kdr} or \textit{Cyp} duplications).}
 	\label{ir}
 \end{figure}
+%%
+
+
+%%
+In West Africa, P450 amplification frequency appears geographically clustered and therefore the potential impact of a PBO bed-net over a traditional LLIN maybe regionally described (Figure \ref{ir}).
+%
+In the "Far-West" populations of Guinea Bissau and The Gambia \cite{caputo2011}, no known \textit{kdr} mutations are detected, however many individuals carry P450 amplifications (in Guinea Bissau 58\% samples carry a P450 amplification, The Gambia 11\%); 
+%
+a result which suggests PBO net roll-out may be highly advantageous, particularly in Guinea Bissau.
+%
+The individuals sampled from Guinea, Burkina Faso and C\^{o}te d'Ivoire have high levels of \textit{kdr} mutations but also the highest frequencies of P450 amplifications (Guinea 84\%, Burkina Faso 93\%, C\^{o}te d'Ivoire 97\%), therefore the addition of PBO may increase the level of protection bed-nets provide.
+%
+Further east, in samples from Gabon, Cameron, Angola and Ghana, lower frequencies of P450 amplification (Gabon 1\%, Cameroon 7\%, Angola 15\%, Ghana 27\%), alongside high \textit{kdr} frequencies, suggest the net gain of PBO inclusion may be small.
+%
+Eastern populations appear split by the rift valley system, with Uganda presenting high frequencies of P450 mutations (81\%), and therefore the potential for PBO gains, whereas Kenya has almost no P450 amplification (4\%) (Figure \ref{ir}).
+%
+On the two island population of Bioko and Mayotte no pyrethroid resistance, target-site or metabolic, markers are detected.
+%%
+
+
 
 
 %% CAS9
@@ -320,9 +338,56 @@ TODO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Discussion}
 
+
 %%
 TODO
 %%
+
+
+%% 
+\subsection*{IR discussion}
+%%
+
+%%
+Pyrethroid insecticides are currently used in all LLINs, consequently the pervasive increase in pyrethroid resistance detected across Sub-Saharan Africa is raising fears of vector control failure ultimately leading to increases in malaria morbidity and morbidity \cite{churcher2016, Hemingway2016}.
+%
+To ameliorate the risk of vector control failure, pyrethoid LLINs containing the synergist PBO have been in development and testing for some time \cite{darriet2011, protopopoff2018}.
+%
+PBO enhances the potency of certain insecticides (including pyrethroids), where resistance to these chemicals is cytochrome P450 mediated (metabolic resistance).
+%
+A study using  meta-analysis to parameterise mathematical models suggests that PBO bednets could avert up to 0.5 clinical cases per person per year in some locations \cite{churcher2016}.
+%
+More recently an experimental hut trial in Tanzania found that PBO nets were more effective that traditional LLINS where pyrethroid resistance was prevalent \cite{protopopoff2018}, however, these bed-nets are more expensive than pyrethroid only LLINs \cite{churcher2016}.
+%
+An important question, therefore, is where deployment of PBO nets could most impact vector populations and conversely, where there is no benefit over traditional LLINs \cite{protopopoff2018, toe2018}.
+%%
+
+%%
+By combining genomic data on loci associated with pyrethroid target-site and metabolic resistance, we were able to create a snapshot of resistance topology across Africa.
+%
+Results revealed that resistance topology fell broadly into three types (Figure \ref{ir}), each informative to the potential impact of PBO nets on vector populations:
+%
+\textbf{1.} Regions with only metabolic resistance loci, where the PBO nets may drastically reduce the pyrethroid resistance phenotype.
+%
+\textbf{2.} Regions with both high target-site and high metabolic resistance associated loci frequencies, many individuals in these regions carry markers for both modes of resistance.
+%
+The outcome of PBO nets is less intuitive in these regions, as the addition of the synergist can only reduce the metabolic resistance mediated fraction of the pyrethroid resistance phenotype.
+%
+\textbf{3.} Regions with low frequency or no markers for metabolic resistance, here the combination of low potential benefits and the increased cost of the nets may render roll-out inadvisable.
+%%
+
+%%
+It must be reiterated that our results are a snapshot of predicated pyrethroid resistance at the time of sample collection (Table \ref{table:sampling_locations}).
+%
+It is likely that the four loci we analysed do not explain all phenotypic variation in all locations \cite{donnelly2009}, and although all loci involve resistance associated genomic regions, the specific P450 CNVs used here have yet to undergo molecular validation (lucas et al 2019).
+%
+To be most informative, future analysis should be routinely run on recently collected and sequenced samples and resistance associated loci regularly updated;
+%
+data fitting this profile are currently being generated by the Malaria Gen Vector Observatory (www.malariagen.net).
+%
+Our analyses show the value of genomic data that (with small amounts of bioassay based ground-truthing) could quickly, easily and relatively cheaply inform PBO net-rollout and more generally NMCP insecticide choice.
+%%
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -653,7 +718,13 @@ Doubleton sharing was also conducted following \cite{Ag1000gConsortium2017}, exc
 } % end afterpage
 %% end Table 1
 
-
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=6.3in]{artwork/AIM_figure_scaled.jpg}
+	\end{center}
+	\caption{Ancestry informative markers (AIM). Rows represent individual mosquitoes (grouped by population) and columns represent SNPs (grouped by chromosome arm). Colours represent species genotype. The column at the far left shows the species assignment according to the conventional molecular test based on a single marker on the X chromosome, which was performed for all populations except Guinea Bissau (GW), The Gambia (GM) and Kenya (KE). The column at the far right shows the genotype for kdr variants in \textit{Vgsc} codon 995. Lines at the lower edge show the physical locations of the AIM SNPs.}
+	\label{aim}
+\end{figure}
 \clearpage
 
 
