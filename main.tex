@@ -104,13 +104,17 @@ Following analysis we defined 61\% (140Mbp) of the genome as accessible, includi
 From these accessible regions of genome we identified 57,837,885 high-quality SNPs, of which 24\% were classed as multi-allelic (three or more alleles), generating an average of one variant allele every 1.9 bases of accessible genome (increasing from one in every 2.2 bases in Phase 1 \cite{Ag1000gConsortium2017}). 
 %
 The addition of 377 Phase 2 samples added over five million new SNPs to the AG1000G data set.
-%
-Whole genome phasing was also conduced for all wild samples.. @@TODO switch error-rate?
 %%
 
 %%
-@@TODO CROSSES
+Genetic crosses from lab colonies provide a resource for calibration and validation of population genetic analyses.
+%
+Alongside new wild caught sample genomes, Phase 2 also sees the public release of seven additional lab colony crosses including genomes from both parents and between 14-20 offspring per cross, bringing the total number of available crosses to 11 (Table \ref{table:colony crosses}).
+%
+Whole genome phasing was also conduced for all samples.. ..@@TODO switch error-rate (issue 153?).
 %%
+
+
 
 \begin{figure}[h]
 	\begin{center}
@@ -565,7 +569,16 @@ Guinea-Bissau is another region where defining species is problematic (Vicente),
 \subsection*{1.2 Colony populations}
 
 %%
-TODO
+The Ag1000g Phase 2 data release includes the genomes of seven additional lab colony crosses, both parents and offspring (Table \ref{table:colony crosses}):
+%
+cross 18-5 (Ghana mother x Kisumu/G3 father, 20 offspring); 37-3 (Kisumu x Pimperena, 20 offspring); 45-1 (Mali x Kisumu, 20 offspring); 47-6 (Mali x Kisumu, 20 offspring); 73-2 (Akron x Ghana, 19 offspring); 78-2 (Mali x Kisumu/Ghana, 19 offspring); 80-2 (Kisumu x Akron, 20 offspring).
+%
+Father colonies with two names, \textit{e.g.} "Kisumu/G3", signify that the father is from one of these two colonies, but exactly which one is unknown.
+%
+The	colony labels, \textit{e.g.}	"18-5", are	identifiers used for	
+each of the crosses	within the project and	have no special meaning.	
+%
+Information pertaining to the crosses released as part of Ag1000g Phase 1 can be found in the supplementary methods of Ag1000g Consortium (2017) alongside methods for cross creation and processing. \cite{Ag1000gConsortium2017}.
 %%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -762,12 +775,8 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 %
 \textbf{colony crosses}.
 }
-
   \label{table:colony crosses}
-
   \input{tables/crosses.tex}
-
-
   \end{threeparttable}
 
 \end{table}
