@@ -97,7 +97,9 @@ The project now spans 16 populations of wild-caught mosquitoes, sampled from 13 
 %
 Single nucleotide polymorphism (SNPs) were identified after read alignment to the AgamP3 reference genome \cite{Holt2002}.
 %
-Accessible regions of the genome are those in which we can confidently call SNPs which can then be used in analysis of population variation.
+Accessible regions of the genome are defined as regions in which we can confidently call SNPs which can then be used in analysis of population variation.
+%
+Inaccessibility may be caused by frequent repeats and consequent mapping errors, copy number variants violating the diploid model, or regions of very high divergence from the reference.
 %
 Following analysis we defined 61\% (140Mbp) of the genome as accessible, including 91\% (18Mbp) of the exome and 58\% (121Mbp) of non-coding positions.
 %
@@ -111,10 +113,20 @@ Genetic crosses from lab colonies provide a resource for calibration and validat
 %
 Alongside new wild caught sample genomes, Phase 2 also sees the public release of seven additional lab colony crosses including genomes from both parents and between 14-20 offspring per cross, bringing the total number of available crosses to 11 (Table \ref{table:colony crosses}).
 %
-Whole genome phasing was also conduced for all samples.. ..@@TODO switch error-rate (issue 153?).
+Whole genome phasing was performed for all samples. 
+%
+Phasing was evaluated based on successful recovery of haplotypes of cross parents, which were phased by transmission using their progeny.
 %%
-
-
+Quality of phasing varied across the genome. 
+%
+In the autosomes the mean switch distance of 2Mbp regions varied between 26.5kb and 1.7kb, with a median of 2.7kb.
+%
+The overall phasing accuracy rate over the autosomes was 92.2\%, and 89.0\% on the X chromosome.
+%
+On the X chromosome the median switch distance was 3.3kb, with a low of 1.9kb and high of 30.8kbp.
+%
+Distance between switch errors in the centromeric region was much higher, the 10 windows with the greatest switch distance all appeared after 15Mbp.
+%%
 
 \begin{figure}[h]
 	\begin{center}
