@@ -355,22 +355,40 @@ On the two island population of Bioko and Mayotte no pyrethroid resistance, targ
 \subsection*{Implications for CAS9 gene drive}
 %%
 
+In a recent study investigating possibilities of gene drive as a means of vector control, a Cas9 target was designed against a 23bp region spanning an intron-exon boundary in the doublesex (\textit{dsx}) gene on chromosome 2R \cite{kyrou2018}.
+%
+This region was found to contain very little genetic diversity in the Ag1000G Phase 1 samples, perhaps because it is a site of alternative splicing, with the exon being female-specific. 
+%
+Lack of diversity in the Cas9 target is crucial to the success of this gene drive method, as any variation could inhibit the drive mechanism and thus constitute a resistant genotype that could spread and resist control.
+%
+We used the Phase 2 dataset to extend the study of diversity in the dsx Cas9 target region to more samples and new populations. 
+%
+As was previously found, only one variant site was present within the Cas9 target.
+%
+The alternative allele at this site was present at 2.9\% frequency in Phase 1, and is now at 2.5\% frequency in Phase 2, being found in \textit{An.coluzzii} from Angola (26.5\% frequency), and \textit{An. gambiae} from Cameroon (1.3\%) and Gabon (5.8\%).
+%
+This site has previously been shown not to interfere with the gene drive process \cite{kyrou2018}, and as we found no other variant sites, there is no evidence from the 1142 samples in Phase 2 of naturally-occuring variation that could disrupt this gene drive target. 
+
+The occurence of alternative splicing at the site of this gene drive target may explain the low diversity in the region, and could impose purifying selection pressures on a wider area than these 23bp.
+%
+We investigated variation in the wider region around the target and found that it was lower than the mean variation in other genes on chromsome 2R (\ref{dsx1}). 
+%
+Diversity was particularly low in the region of the intron near the intron-exon boundary.
+%
+After removing filtered positions, mean genetic diversity ($\pi$) over the last 100bp of the intron was 0.00046, which was smaller than 99.2\% of comparable introns (at least 300bp in size, with at least 70 of the first 100bp passing filtering) on the chromsome.
+%
+Diversity in the exon was also low, with $\pi = 0.00055$ over the 92bp of the exon, which is lower than 91.9\% of comparable exons (smaller than 100bp, with at least 70bp passing filtering) on the chromosome. [in case anyone asks, if we only look at the third coding position then about 88\% of exons have higher diversity than this one].
+
+%TODO
+%Find out what the sitch is in Drosophila: do we know how large the region is that is critical to correct splicing?
+
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics*[width=5.5in]{artwork/temp-cas9dsx/cas9dsx1.png}
+		\includegraphics*[width=5.5in]{artwork/temp-cas9dsx/Cas9_target_diversity.jpg}
 	\end{center}
-	\caption{Gene-drive cas9 doublesex. The blue bars are mean +- 95\% confidence calculated across 2R. The line shows the observed values for the dsx focal intron (orange = accessible, red = inaccessible, bearing in mind that inacessible SNPs were not counted, so mpd is always 0 here).}
+	\caption{Genetic variation (orange line) around the intron-exon boundary targeted by the gene drive mechanism in \textcite{kyrou2018} is low compared to the average intronic (green bars) or exonic (blue bars) variation on chromosome 2R. Bars show mean and 95\% confidence intervals for each position relative to the start (light blue) or end (green and dark blue) of the genomic feature. To adequately compare with the \textit{dsx} exon and intron plotted here, mean exonic diversity was calculated using exons smaller than 100bp whose first base was the second codon position, and mean intronic diversity was caculated using introns larger than 300bp. Red points indicate positions on the \textit{dsx} gene that were inaccessible and thus where diversity could not be calculated.}
 	\label{dsx1}
 \end{figure}
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics*[width=5.5in]{artwork/temp-cas9dsx/cas9dsx2.png}
-	\end{center}
-	\caption{Gene-drive cas9 doublesex. mpd distribution}
-	\label{dsx2}
-\end{figure}
-
 
 
 %% Recombination
