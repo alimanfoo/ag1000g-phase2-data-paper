@@ -88,30 +88,24 @@ TODO
 
 %% Population sampling
 \subsection*{Population Sampling}
-
-
 %
-In Phase 2 of the AG1000G Project we sequenced the genomes from 655 \textit{Anopheles gambiae} individuals, 283 \textit{An. coluzzii} and 204 individuals of "unknown" species (individuals with apparent mixed or unclear ancestry), 1142 individuals in total.
+In Phase 2 of the AG1000G Project we have sequenced the genomes of 1142 wild caught \emph{Anopheles} mosquitoes; 655 \textit{Anopheles gambiae} individuals, 283 \textit{An. coluzzii} and 204 individuals of undetermined species (individuals with apparent mixed or unclear ancestry).
 %
-The project now spans 16 populations of wild-caught mosquitoes, sampled from 13 countries across Sub-Saharan Africa (Figure 1; Table 1). 
+The project now includes 16 distinct populations of mosquitoes, sampled from 13 countries across Sub-Saharan Africa (Figure 1; Table 1). 
 %
-Single nucleotide polymorphism (SNPs) were identified after read alignment to the AgamP3 reference genome \cite{Holt2002}.
+Single nucleotide polymorphism (SNPs) were identified after read alignment to the AgamP4 reference genome \cite{Holt2002}.
 %
-Accessible regions of the genome are defined as regions in which we can confidently call SNPs which can then be used in analysis of population variation.
+We identified accessible regions of the genome; regions in which we can call SNPs with sufficient confidence to be used in analysis of population variation.
 %
 Inaccessibility may be caused by frequent repeats and consequent mapping errors, copy number variants violating the diploid model, or regions of very high divergence from the reference.
 %
 Following analysis we defined 61\% (140Mbp) of the genome as accessible, including 91\% (18Mbp) of the exome and 58\% (121Mbp) of non-coding positions.
 %
-From these accessible regions of genome we identified 57,837,885 high-quality SNPs, of which 24\% were classed as multi-allelic (three or more alleles), generating an average of one variant allele every 1.9 bases of accessible genome (increasing from one in every 2.2 bases in Phase 1 \cite{Ag1000gConsortium2017}). 
-%
-The addition of 377 Phase 2 samples added over five million new SNPs to the AG1000G data set.
-%%
-
-%%
-Genetic crosses from lab colonies provide a resource for calibration and validation of population genetic analyses.
+From these genomic regions we identified 57,837,885 high-quality SNPs (an addition of over 5 million variants from Phase 1\cite{Ag1000gConsortium2017}), of which 24\% were classed as multi-allelic (three or more alleles), generating an average of one variant allele every 1.9 bases of accessible genome.
 %
 Alongside new wild caught sample genomes, Phase 2 also sees the public release of seven additional lab colony crosses including genomes from both parents and between 14-20 offspring per cross, bringing the total number of available crosses to 11 (Table \ref{table:colony crosses}).
+%
+Crosses from lab colonies provide a valuable resource for calibration and validation of population genetic analyses.
 %
 Whole genome phasing was performed for all samples. 
 %
@@ -119,9 +113,9 @@ Phasing was evaluated based on successful recovery of haplotypes of cross parent
 %%
 Quality of phasing varied across the genome. 
 %
-In the autosomes the mean switch distance of 2Mbp regions varied between 26.5kb and 1.7kb, with a median of 2.7kb.
-%
 The overall phasing accuracy rate over the autosomes was 92.2\%, and 89.0\% on the X chromosome.
+%
+In the autosomes the mean switch distance of 2Mbp regions varied between 26.5kb and 1.7kb, with a median of 2.7kb.
 %
 On the X chromosome the median switch distance was 3.3kb, with a low of 1.9kb and high of 30.8kbp.
 %
@@ -170,15 +164,15 @@ Distance between switch errors in the centromeric region was much higher, the 10
 
 
 %% Difference from reference
-\subsection*{AgamP4 reference genome is equally similar to both species in the study}
+\subsection*{Both species in the study are similarly diverged from the AgamP4 reference genome}
 
-The genomes of \textit{An. coluzzii} and \textit{An. gambiae} samples were similarly diverged from the reference genome used for alignment, AgamP4 \cite{Holt2002}, indicating that comparisons can be made between the two species based on our results (Fig. \ref{refdiff}a).
+The genomes of \textit{An. coluzzii} and \textit{An. gambiae} samples were similarly diverged from the reference genome used for alignment, AgamP4 \cite{Holt2002}, indicating that unbiased comparisons can be made between the two species based on our results (Fig. \ref{refdiff}a).
 %
 The similarity in levels of divergence reflect the mixed ancestry of the PEST strain from which the reference genome was derived \cite{Holt2002}.
 %
-An exception to this is the pericentromeric region of chromosome X, a known genomic region of divergence between the two species \cite{Ag1000gConsortium2017}, where the reference genome is more similar to \textit{An. coluzzii} than to \textit{An. gambiae}.
+The pericentromeric region of chromosome X is an exception to this, a known genomic region of divergence between the two species \cite{Ag1000gConsortium2017}, here the reference genome is more similar to \textit{An. coluzzii} than to \textit{An. gambiae}.
 %
-This similarity to \textit{An. coluzzii} on the X chromosome may be due to the history of artificial selection for the X-linked pink eye mutation in the reference strain \cite{Holt2002}, as this originated in the \textit{An. coluzzii} parent it may have led to the removal of any \textit{An. gambiae} ancestry in this region.
+The similarity of this region to \textit{An. coluzzii} may be due to artificial selection for the X-linked pink eye mutation in the reference strain \cite{Holt2002}, as this originated in the \textit{An. coluzzii} parent it may have led to the removal of any \textit{An. gambiae} ancestry in this region.
 %
 Reductions in divergence from the reference genome in regions of low recombination are apparent in the centromeres and telomeres, as well as in the large 2La polymorphic inversion in both species \cite{coluzzi2002} (Figure \ref{refdiff}b \& c). 
 %
@@ -193,14 +187,12 @@ All analyses of geographical population structure were conducted on euchromatic 
 \end{figure}
 
 
-
-
 %% Population Structure
 \subsection*{Population structure}
 
-Analysis of population structure in the nine AG1000G Phase 1 populations revealed medically important demographic features such a levels of differentiation between populations and movement of insecticide resistance mutations across Sub-Saharan Africa \cite{Ag1000gConsortium2017}.
+Analysis of population structure in the nine AG1000G Phase 1 populations revealed medically relevant demographic features including connectivity between populations and movement of insecticide resistance mutations across Sub-Saharan Africa \cite{Ag1000gConsortium2017}.
 % 
-Here we revisit population structure analyses to include the seven populations novel to Phase 2.
+Here we revisit population structure analyses to include the seven additional populations in Phase 2.
 %%
 
 \begin{figure}[H]
@@ -212,13 +204,13 @@ Here we revisit population structure analyses to include the seven populations n
 \end{figure}
 
 %
-Of particular importance to the Phase 2 data release are the three \textit{An. coluzzii} populations, C\^{o}te d'Ivoire (CIcol), Guinea (GNcol) and Ghana (GHcol) (Figure \ref{sample_map}). 
+The three \textit{An. coluzzii} populations, C\^{o}te d'Ivoire (CIcol), Guinea (GNcol) and Ghana (GHcol) (Figure \ref{sample_map}) are of particular importance to the Phase 2 data release.
 %
 In Phase 1, just two of the nine populations were \textit{An. coluzzii} and these, Burkina Faso (BFcol) and Angola (AOcol), were highly differentiated with regard to population structure (principal component analysis (PCA), doubleton sharing and F\raisebox{-.4ex}{\scriptsize ST}).
 %
-Consequently, making general conclusions about the history and population structure of this major malaria vector was problematic and the relationship to its sister species \textit{An. gambiae} difficult to investigate \cite{Ag1000gConsortium2017}.
+This made general conclusions about the history and population structure of this major malaria vector problematic and the relationship to its sister species \textit{An. gambiae} difficult to investigate \cite{Ag1000gConsortium2017}.
 %
-Less population structure is found between the the three novel Phase 2 \textit{An. coluzzii} populations than between the Phase 1 \textit{An. coluzzii} populations.
+Relative to Phase 1, less population structure is found between the the three additional Phase 2 \textit{An. coluzzii} populations.
 %
 PCA analyses found CIcol, GNcol and GHcol clustering together in initial PCA components, the Phase 1 population of BFcol clusters closely but is separated by PC1, with AOcol distant by both PC1 and PC2 (Figure \ref{pca}).
 %
@@ -233,8 +225,6 @@ Despite the PC1 separation of BFcol from the new \textit{An. coluzzii} samples, 
 }
 	\label{fstdbl}
 \end{figure}
-
-
 
 %
 The Phase 2 Gambian (GM) population is strikingly similar in multiple aspects to the the samples from neighbouring Guinea Bissau (GW).
