@@ -122,7 +122,7 @@ On the X chromosome the median switch distance was 3.3kb, with a low of 1.9kb an
 Distance between switch errors in the centromeric region was much higher, the 10 windows with the greatest switch distance all appeared after 15Mbp.
 %%
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics*[width=5.8in]{artwork/collection_site_map.jpg}
 	\end{center}
@@ -178,7 +178,7 @@ Reductions in divergence from the reference genome in regions of low recombinati
 %
 All analyses of geographical population structure were conducted on euchromatic regions of Chromosome 3, which avoids regions of polymorphic inversions, reduced recombination and unequal divergence from the reference genome \cite{Ag1000gConsortium2017}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics*[width=6.3in]{notebooks/refdiff/refdiff_phase2_combined.jpg}
 	\end{center}
@@ -290,8 +290,65 @@ Identity by descent (IBD) metrics... (Figure \ref{div}d)@@Nick?
 
 
 %%
-\subsection*{IBD}
-TODO - isolation by distance 
+\subsection*{Isolation by distance}
+%%
+
+%%
+The expanded sampling of the phase 2 dataset allows analysis of fine-scale geographic differentiation among \textit{Anopheles} populations.
+%
+To assess how geographic distance relates to genetic differentiation we calculated Wright's "Neighborhood Size" \cite{wright1946isolation} for \textit{A. gambiae} and \textit{A. coluzzii} populations in West Africa (Figure \ref{fig:ibd_fig}a).
+%
+This statistic is an approximation of the (effective) number of potential mates for an individual and can be viewed as a measure of the strength of isolation by distance -- low values indicate strong differentiation across space, and high values weak differentiation.
+%
+We used Rousset's \cite{rousset1997genetic} method for estimating neighborhood size based on a regression of normalized $F_{st}$ against the logarithm of geographic distance, and calculated this statistic in 200,000 base pair windows across the genome for all pairs of localities in western Africa, excluding Angola. 
+%
+Comparisons were limited to pairs for which both populations belonged to the same species.
+%%
+
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=6.3in]{artwork/west_africa_multipanel_edit.pdf}
+	\end{center}
+	\caption{Isolation by distance in west African \textit{Anopheles}. \textbf{(a)} Study region and pairwise $F_{st}$. \textbf{(b)} Regressions of average genome-wide $F_{st}$ against geographic distance, following Rousset \cite{rousset1997genetic}. Neighborhood size is estimated as the inverse slope of the regression line. \textbf{(c)} Difference in neighborhood size estimates by species, with each point represenging a 200kb region of the genome. \textbf{(d)} Neighborhood size estimates across the genome, demonstrating heterogeneity relating to inversions (grey bars) and sites implicated in insecticide resistance (black triangles).}
+	\label{fig:ibd_fig}
+\end{figure}
+
+
+%%
+We found that average neighborhood sizes are lower in \textit{A. coluzzii} (median=84.7) than in \textit{A. gambiae} (median=260.5; Figure \ref{fig:ibd_fig}b, c), reflecting stronger population structure and potentially lower dispersal in \textit{A. coluzzii} populations.
+%
+Though both figures are strikingly low relative to census population sizes, our estimate for \textit{A. gambiae} is quite similar to a recent study in a Malaysian population of \textit{A. aegypti} in which neighborhood size was estimated at 268 \cite{jasper2019genomic}.
+%%
+
+%%
+Levels of isolation by distance also vary across the genome in both species (Figure \ref{fig:ibd_fig}d).
+%
+These patterns appear to reflect the influence of local $N_{e}$ and selection on population differentiation.
+%
+For example, the large 2La inversion on chromosome 2L coincides with a roughly 10-fold drop in neighbourhood size relative to surrounding regions of the genome in both \textit{A. coluzzii} and \textit{A. gambiae}.
+%
+One interpretation of this pattern is that the 2La inversion leads to locally reduced $N_{e}$ because of a mix of increased purifying selection (due to reduced recombination) and potentially selection against hybrids with mixed inversion types.
+%
+Reduced $N_{e}$ could then lead to accelerated drift and stronger genetic differentiation across space.
+%%
+
+%%
+Loci involved in insecticide resistance also reflected departures from average levels of isolation by distance.
+%
+In \textit{A. gambiae} the lowest neighborhood sizes across the genome occur in the region surrounding the \textit{VGSC} locus on chromosome 2L.
+%
+This region has experienced strong recent selection as a result of insecticide use, with haploptype structure reflecting a series of recent soft sweeps in populations across Africa \cite{anopheles2017genetic}.
+%
+An observation of strong structure near this gene thus squares with theory predicting that population structure can be increased at sites linked to recent selective sweeps \cite{slatkin1998genetic}.
+%
+However, we observed the opposite pattern in \textit{A. coluzzii}, with neighborhood size estimates near \textit{VGSC} instead strongly \emph{inflated} relative to surrounding regions.
+%
+This reflects high levels of genetic differentiation among some nearby populations of \textit{A. coluzzii}, which results in a flat or even negative slope of $F_{st}$ as a function of distance (Supplementary Figure \ref{fig:vgsc_ibd}).
+%
+Dips in estimated neighbourhood sizes were also observed near several other genes implicated in insecticide resistance (Figure \ref{fig:ibd_fig}d). 
+%%
 
 
 %%
@@ -813,6 +870,15 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 	\caption{Ancestry informative markers (AIM). Rows represent individual mosquitoes (grouped by population) and columns represent SNPs (grouped by chromosome arm). Colours represent species genotype. The column at the far left shows the species assignment according to the conventional molecular test based on a single marker on the X chromosome, which was performed for all populations except Guinea Bissau (GW), The Gambia (GM) and Kenya (KE). The column at the far right shows the genotype for kdr variants in \textit{Vgsc} codon 995. Lines at the lower edge show the physical locations of the AIM SNPs.}
 	\label{aim}
 \end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{artwork/fst_by_dist_species_VGSC_edit.pdf}
+    \caption{$F_{st}$ as a function of geographic distance on chromosome 2L at sites more and less than 500kb from \textit{VGSC}, a gene involved in insecticide resistance. Differentiation of the \textit{VGSC} regions is strongly related to geographic distance within \textit{A. gambiae}, but not in \textit{A. coluzzii}.}
+    \label{fig:vgsc_ibd}
+\end{figure}
+
+
 \clearpage
 
 
