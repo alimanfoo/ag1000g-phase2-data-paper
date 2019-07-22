@@ -85,7 +85,7 @@ IR
 %% Population sampling
 \subsection*{Population Sampling}
 %
-In Phase 2 of the AG1000G Project we sequenced the genomes of 1142 wild caught \emph{Anopheles} mosquitoes; 655 \textit{Anopheles gambiae} individuals, 283 \textit{An. coluzzii} and 204 individuals of undetermined species (individuals with apparent mixed or unclear ancestry).
+In Phase 2 of the Ag1000G Project we sequenced the genomes of 1142 wild caught \emph{Anopheles} mosquitoes; 655 \textit{Anopheles gambiae} individuals, 283 \textit{An. coluzzii} and 204 individuals of undetermined species (individuals with apparent mixed or unclear ancestry).
 %
 The project now includes 16 distinct populations of mosquitoes, sampled from 13 countries across Sub-Saharan Africa (Figure 1; Table 1). 
 %
@@ -122,7 +122,7 @@ Distance between switch errors in the centromeric region was much higher, the 10
 	\begin{center}
 		\includegraphics*[width=5.8in]{artwork/collection_site_map.jpg}
 	\end{center}
-	\caption{AG1000G Phase 2 sampling locations. Colour of circle denotes species collected at location and area represents sample size. Colours on the map represent ecosystem classes; dark green designates forest ecosystems; see figure 9 in \cite{sayre2013} for a compete colour legend.}
+	\caption{Ag1000G Phase 2 sampling locations. Colour of circle denotes species collected at location and area represents sample size. Colours on the map represent ecosystem classes; dark green designates forest ecosystems; see figure 9 in \cite{sayre2013} for a compete colour legend.}
 	\label{sample_map}
 \end{figure}
 
@@ -142,7 +142,7 @@ Distance between switch errors in the centromeric region was much higher, the 10
 
   \caption{
 %
-\textbf{AG1000G Phase 2 sampling locations}.
+\textbf{Ag1000G Phase 2 sampling locations}.
 }
 
   \label{table:sampling_locations}
@@ -186,7 +186,7 @@ All analyses of geographical population structure were conducted on euchromatic 
 %% Population Structure
 \subsection*{Population structure}
 
-Analysis of population structure in the nine AG1000G Phase 1 populations revealed medically relevant demographic features including connectivity between populations and movement of insecticide resistance mutations across Sub-Saharan Africa \cite{Ag1000gConsortium2017}.
+Analysis of population structure in the nine Ag1000G Phase 1 populations revealed medically relevant demographic features including connectivity between populations and movement of insecticide resistance mutations across Sub-Saharan Africa \cite{Ag1000gConsortium2017}.
 % 
 Here we revisit population structure analyses to include the 7 additional populations included in Phase 2.
 %%
@@ -265,10 +265,14 @@ A previous analysis of Phase 1 populations \cite{Ag1000gConsortium2017} saw Keny
 The additional colony cross parents available for analysis in Phase 2 reveal a much broader spread in both count and fraction ROH between colonies, suggestive of different histories.
 %
 Ghana colony samples appear outbred with similar ROH distributions to wild caught samples, whereas samples from the Kisumu colony have extremely high levels of ROH.    
+%%
+
+%%
+While the population from Kenya remain an outlier in terms of the high fraction of genomes contained in a ROH, values from the new Phase 2 population from Mayotte were also striking.
 %
-The Kenyan population from Kenya remain an outlier in terms of the high fraction of genomes contained in a ROH.
-%
-Values from the new Phase 2 island population from Mayotte were also striking, with significantly elevated ROH fractions even matching some Kisumu samples, though distributed as many smaller regions rather than the large chunks observed in Kenya.
+The island population demonstrates significantly elevated ROH fractions, some samples even matching Kisumu colony samples, though the ROH were distributed as many smaller regions rather than the large chunks observed in Kenya.
+%%
+
 %%
 Within population Identity by descent (IBD) was computed across the cohort. 
 %
@@ -276,13 +280,15 @@ The distribution of IBD can be informative about population demographic history.
 %
 As expected given the results above, we see elevated IBD in Kenya, Mayotte, Gabon and Angola (Figure \ref{div}).
 %
-Compared to other \emph{gambiae} populations Cameroon show a large number of small chunks of shared ancestry.
-
+Compared to other \emph{gambiae} populations, Cameroon shows a large number of small chunks of shared ancestry.
+%
 Pairs from Cameroon \emph{gambiae} showed a mean of 23 IBD chunks, compared to 11 in the otherwise similar Burkina Faso \emph{gambiae} population.
-
+%
 These chunks also tended to be slightly smaller in Cameroon \emph{gambiae} than in Burkina Faso (10.4kb vs 18.3kb). 
-
+%
 Such marked differences in IBD between these populations may suggest a distinct population history for Cameroon.
+%%
+
 
 \begin{figure}[H]
 	\begin{center}
@@ -300,11 +306,11 @@ Such marked differences in IBD between these populations may suggest a distinct 
 %%
 The expanded sampling of the phase 2 dataset allows analysis of fine-scale geographic differentiation among \textit{Anopheles} populations.
 %
-To assess how geographic distance relates to genetic differentiation we calculated Wright's "Neighborhood Size" \cite{wright1946isolation} for \textit{A. gambiae} and \textit{A. coluzzii} populations in West Africa (Figure \ref{fig:ibd_fig}a).
+To assess how geographic distance relates to genetic differentiation we calculated Wright's "Neighbourhood Size" \cite{wright1946isolation} for \textit{An. gambiae} and \textit{An. coluzzii} populations in West Africa (Figure \ref{fig:ibd_fig}a).
 %
-This statistic is an approximation of the (effective) number of potential mates for an individual and can be viewed as a measure of the strength of isolation by distance -- low values indicate strong differentiation across space, and high values weak differentiation.
+This statistic is an approximation of the (effective) number of potential mates for an individual and can be viewed as a measure of the strength of isolation by distance - low values indicate strong differentiation across space, and high values weak differentiation.
 %
-We used Rousset's \cite{rousset1997genetic} method for estimating neighborhood size based on a regression of normalized $F_{st}$ against the logarithm of geographic distance, and calculated this statistic in 200,000 base pair windows across the genome for all pairs of localities in western Africa, excluding Angola. 
+We used Rousset's \cite{rousset1997genetic} method for estimating neighbourhood size based on a regression of normalized $F_{st}$ against the logarithm of geographic distance, and calculated this statistic in 200,000bp windows across the genome for all pairs of localities in western Africa, excluding Angola. 
 %
 Comparisons were limited to pairs for which both populations belonged to the same species.
 %%
@@ -315,15 +321,15 @@ Comparisons were limited to pairs for which both populations belonged to the sam
 	\begin{center}
 		\includegraphics*[width=6.3in]{artwork/west_africa_multipanel_edit.pdf}
 	\end{center}
-	\caption{Isolation by distance in west African \textit{Anopheles}. \textbf{(a)} Study region and pairwise $F_{st}$. \textbf{(b)} Regressions of average genome-wide $F_{st}$ against geographic distance, following Rousset \cite{rousset1997genetic}. Neighborhood size is estimated as the inverse slope of the regression line. \textbf{(c)} Difference in neighborhood size estimates by species, with each point represenging a 200kb region of the genome. \textbf{(d)} Neighborhood size estimates across the genome, demonstrating heterogeneity relating to inversions (grey bars) and sites implicated in insecticide resistance (black triangles).}
+	\caption{Isolation by distance in west African \textit{Anopheles}. \textbf{(a)} Study region and pairwise $F_{st}$. \textbf{(b)} Regressions of average genome-wide $F_{st}$ against geographic distance, following Rousset \cite{rousset1997genetic}. Neighbourhood size is estimated as the inverse slope of the regression line. \textbf{(c)} Difference in neighbourhood size estimates by species, with each point representing a 200kb region of the genome. \textbf{(d)} Neighbourhood size estimates across the genome, demonstrating heterogeneity relating to inversions (grey bars) and sites implicated in insecticide resistance (black triangles).}
 	\label{fig:ibd_fig}
 \end{figure}
 
 
 %%
-We found that average neighborhood sizes are lower in \textit{A. coluzzii} (median=84.7) than in \textit{A. gambiae} (median=260.5; Figure \ref{fig:ibd_fig}b, c), reflecting stronger population structure and potentially lower dispersal in \textit{A. coluzzii} populations.
+We found that average neighbourhood sizes are lower in \textit{An. coluzzii} (median=84.7) than in \textit{A. gambiae} (median=260.5; Figure \ref{fig:ibd_fig}b, c), reflecting stronger population structure and potentially lower dispersal in \textit{An. coluzzii} populations.
 %
-Though both figures are strikingly low relative to census population sizes, our estimate for \textit{A. gambiae} is quite similar to a recent study in a Malaysian population of \textit{A. aegypti} in which neighborhood size was estimated at 268 \cite{jasper2019genomic}.
+Though both figures are strikingly low relative to census population sizes, our estimate for \textit{A. gambiae} is quite similar to a recent study in a Malaysian population of \textit{An. aegypti} in which neighborhood size was estimated at 268 \cite{jasper2019genomic}.
 %%
 
 %%
@@ -331,7 +337,7 @@ Levels of isolation by distance also vary across the genome in both species (Fig
 %
 These patterns appear to reflect the influence of local $N_{e}$ and selection on population differentiation.
 %
-For example, the large 2La inversion on chromosome 2L coincides with a roughly 10-fold drop in neighbourhood size relative to surrounding regions of the genome in both \textit{A. coluzzii} and \textit{A. gambiae}.
+The large 2La inversion on chromosome 2L coincides with a roughly 10-fold drop in neighbourhood size relative to surrounding regions of the genome in both \textit{An. coluzzii} and \textit{An. gambiae}.
 %
 One interpretation of this pattern is that the 2La inversion leads to locally reduced $N_{e}$ because of a mix of increased purifying selection (due to reduced recombination) and potentially selection against hybrids with mixed inversion types.
 %
@@ -339,19 +345,19 @@ Reduced $N_{e}$ could then lead to accelerated drift and stronger genetic differ
 %%
 
 %%
-Loci involved in insecticide resistance also reflected departures from average levels of isolation by distance.
+Regions of the genome around several loci involved in insecticide resistance also reflected departures from average levels of isolation by distance.
 %
-In \textit{A. gambiae} the lowest neighborhood sizes across the genome occur in the region surrounding the \textit{VGSC} locus on chromosome 2L.
+In \textit{An. gambiae} the lowest neighbourhood sizes across the genome occur in the region surrounding the \textit{Vgsc} locus on chromosome 2L.
 %
-This region has experienced strong recent selection as a result of insecticide use, with haploptype structure reflecting a series of recent soft sweeps in populations across Africa \cite{anopheles2017genetic}.
+This region has experienced strong recent selection as a result of insecticide use, with haploptype structure reflecting a series of recent selective sweeps in populations across Africa \cite{lynd2005, anopheles2017genetic}.
 %
 An observation of strong structure near this gene thus squares with theory predicting that population structure can be increased at sites linked to recent selective sweeps \cite{slatkin1998genetic}.
 %
-However, we observed the opposite pattern in \textit{A. coluzzii}, with neighborhood size estimates near \textit{VGSC} instead strongly \emph{inflated} relative to surrounding regions.
+However, we observed the opposite pattern in \textit{An. coluzzii}, with neighbourhood size estimates near \textit{Vgsc} instead strongly inflated relative to surrounding regions.
 %
-This reflects high levels of genetic differentiation among some nearby populations of \textit{A. coluzzii}, which results in a flat or even negative slope of $F_{st}$ as a function of distance (Supplementary Figure \ref{fig:vgsc_ibd}).
+This reflects high levels of genetic differentiation among some nearby populations of \textit{An. coluzzii}, which results in a flat or even negative slope of $F_{st}$ as a function of distance (Supplementary Figure \ref{fig:vgsc_ibd}).
 %
-Dips in estimated neighbourhood sizes were also observed near several other genes implicated in insecticide resistance (Figure \ref{fig:ibd_fig}d). 
+Dips in estimated neighbourhood sizes were also observed in one or both species near several other genes/gene-clusters implicated in insecticide resistance (Figure \ref{fig:ibd_fig}d). 
 %%
 
 
@@ -424,7 +430,7 @@ Lack of diversity in the Cas9 target is crucial to the success of this gene driv
 %
 This region was found to contain very little genetic diversity, with only one variant site being discovered in the Ag1000G Phase 1 samples \cite{kyrou2018}.
 %
-We used the Phase 2 dataset to extend the study of diversity in the dsx Cas9 target region to more samples and new populations. 
+We used the Phase 2 dataset to extend the study of diversity in the \textit{dsx} Cas9 target region to more samples and new populations. 
 %
 No further variant sites were discovered, and the mutant allele at the known site was not found in any of the additional populations in phase 2.
 %
@@ -432,9 +438,9 @@ The mutant allele was present at 2.9\% frequency in Phase 1, and is now at 2.5\%
 %
 This site has previously been shown not to interfere with the gene drive process \cite{kyrou2018}, as the guide RNA was able to cleave both the wild-type and the mutant forms of this sequence. 
 %
-Since we found no other variant sites, there is no evidence from the 1142 samples in Phase 2 of naturally-occuring variation that could disrupt this gene drive target. 
+Since we found no other variant sites, there is no evidence from the 1142 samples in Phase 2 of naturally-occurring variation that could disrupt this gene drive target. 
 
-The occurence of alternative splicing at the site of this gene drive target may explain the low diversity in the region, and could impose purifying selection pressures on a wider area than these 23bp.
+The occurrence of alternative splicing at the site of this gene drive target may explain the low diversity in the region, and could impose purifying selection pressures on a wider area than these 23bp.
 %
 We investigated variation in the wider region around the target and found that it was lower than the mean variation in other genes on chromsome 2R (\ref{dsx1}). 
 %
@@ -442,10 +448,10 @@ Diversity was particularly low in the region of the intron near the intron-exon 
 %
 After removing filtered positions, mean genetic diversity ($\pi$) over the last 100bp of the intron was 0.00046, which was smaller than 99.2\% of comparable introns (at least 300bp in size, with at least 70 of the first 100bp passing filtering) on the chromsome.
 %
-Diversity in the exon was also low, with $\pi = 0.00055$ over the 92bp of the exon, which is lower than 91.9\% of comparable exons (smaller than 100bp, with at least 70bp passing filtering) on the chromosome. [in case anyone asks, if we only look at the third coding position then about 88\% of exons have higher diversity than this one].
+Diversity in the exon was also low, with $\pi = 0.00055$ over the 92bp of the exon, which is lower than 91.9\% of comparable exons (smaller than 100bp, with at least 70bp passing filtering) on the chromosome. 
 
-%TODO
-%Find out what the sitch is in Drosophila: do we know how large the region is that is critical to correct splicing?
+%[in case anyone asks, if we only look at the third coding position then about 88\% of exons have higher diversity than this one].
+
 
 \begin{figure}[H]
 	\begin{center}
@@ -455,12 +461,6 @@ Diversity in the exon was also low, with $\pi = 0.00055$ over the 92bp of the ex
 	\label{dsx1}
 \end{figure}
 
-
-%% Recombination
-\subsection*{Direct recombination map}
-%%
-TODO
-%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -473,7 +473,7 @@ TODO
 
 %%diversity + demography - something like this...
 
-SOMETHING LIKE THIS FOR DIV/DEMO. Analyses of Phase 2 genetic diversity and other demographic investigations, clearly elucidate the benefits of adding additional mosquito populations to the AG1000G public data resource.
+SOMETHING LIKE THIS FOR DIV/DEMO. Analyses of Phase 2 genetic diversity and other demographic investigations, clearly elucidate the benefits of adding additional mosquito populations to the Ag1000G public data resource.
 %
 Success or failure of bednet choice (@@ref), insecticide type (@@ref) and genetically modified mosquitoes release all depend on predicting the response of the natural vector populations to these perturbations.
 %
@@ -535,7 +535,7 @@ Our analyses show the value of genomic data that (with small amounts of bioassay
 \subsection*{1. Population sampling}
 
 %
-Ag1000g Phase 2 mosquitoes were collected from natural populations at 33 sites from 23
+Ag1000G Phase 2 mosquitoes were collected from natural populations at 33 sites from 23
 geographical locations in 13 sub-Saharan African countries. 
 %
 Samples have been grouped into 16 populations based on collection country and species (Figure \ref{sample_map} \& Table \ref{table:sampling_locations}).
@@ -544,9 +544,9 @@ Throughout, we use species nomenclature following Coetzee \textit{et al}. \cite{
 %
 prior to	 Coetzee	 \textit{et al}., \textit{An. gambiae} was known as \textit{An. gambiae sensu stricto} (S form) and \textit{An. coluzzii} was known as \textit{An. gambiae sensu stricto} (M form).
 %
-Details of the eighteen collection sites novel to Ag1000g Phase 2 (dates, collection and DNA extraction methods) can be found in the Methods section.
+Details of the eighteen collection sites novel to Ag1000G Phase 2 (dates, collection and DNA extraction methods) can be found in the Methods section.
 %
-Information pertaining to the collection of samples released as part of Ag1000g Phase 1 can be found in the supplementary methods of Ag1000g Consortium (2017) \cite{Ag1000gConsortium2017}.
+Information pertaining to the collection of samples released as part of Ag1000G Phase 1 can be found in the supplementary methods of Ag1000G Consortium (2017) \cite{Ag1000gConsortium2017}.
 %
 Unless otherwise stated, the DNA extraction method used for the collections described below was Qiagen DNeasy Blood and Tissue Kit (Qiagen Science, MD, USA).
 %%
@@ -652,7 +652,7 @@ Guinea-Bissau is another region where defining species is problematic (Vicente),
 \subsection*{1.2 Colony populations}
 
 %%
-The Ag1000g Phase 2 data release includes the genomes of seven additional lab colony crosses, both parents and offspring (Table \ref{table:colony crosses}):
+The Ag1000G Phase 2 data release includes the genomes of seven additional lab colony crosses, both parents and offspring (Table \ref{table:colony crosses}):
 %
 cross 18-5 (Ghana mother x Kisumu/G3 father, 20 offspring); 37-3 (Kisumu x Pimperena, 20 offspring); 45-1 (Mali x Kisumu, 20 offspring); 47-6 (Mali x Kisumu, 20 offspring); 73-2 (Akron x Ghana, 19 offspring); 78-2 (Mali x Kisumu/Ghana, 19 offspring); 80-2 (Kisumu x Akron, 20 offspring).
 %
@@ -661,7 +661,7 @@ Father colonies with two names, \textit{e.g.} "Kisumu/G3", signify that the fath
 The	colony labels, \textit{e.g.}	"18-5", are	identifiers used for	
 each of the crosses	within the project and	have no special meaning.	
 %
-Information pertaining to the crosses released as part of Ag1000g Phase 1 can be found in the supplementary methods of Ag1000g Consortium (2017) alongside methods for cross creation and processing. \cite{Ag1000gConsortium2017}.
+Information pertaining to the crosses released as part of Ag1000G Phase 1 can be found in the supplementary methods of Ag1000G Consortium (2017) alongside methods for cross creation and processing. \cite{Ag1000gConsortium2017}.
 %%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -708,7 +708,7 @@ Briefly, sequence reads were aligned to the AgamP3 reference genome \cite{sharak
 
 \subsection*{2.3 Variant Filtering}
 %
-Following AG1000G Phase 1 \cite{Ag1000gConsortium2017}, we applied the following SNP filters to reduce the number of false SNP discoveries.
+Following Ag1000G Phase 1 \cite{Ag1000gConsortium2017}, we applied the following SNP filters to reduce the number of false SNP discoveries.
 %
 We filtered any SNP that occurred at a genome position classified as inaccessible as described in the section on genome accessibility above, thus removing SNPs with evidence for excessively high or low coverage or ambiguous alignment. 
 %
