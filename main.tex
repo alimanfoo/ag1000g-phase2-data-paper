@@ -69,20 +69,64 @@ TODO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Introduction}
+%%
+TO DO
+%%
+
+
+%
+Maybe have a more general malaria vector intro without details of Cas9/PBO?
+%
+
+%
+\subsection*{Introduction Cas9}
+%%
+??.
+%%
+The spread of introduced genes will also be affected by the distances move during their lives.
+%%
 
 %%
-TODO
+\subsection*{Introduction Migration}
+%%
+??
 %%
 
+
 %%
-IR
-...FROM THE PROTOPOPOFF LANCET - "Cohort studies have shown that long-lasting insecticidal nets remain protective against malaria infection in areas of moderate insecticide resistance in Malawi8 and Kenya,9 whereas no reduction in incidence was observed after the distribution of these nets in Uganda.10"
+%intro PBO nets
+\subsection*{possible introduction on PBO}
 %%
+Pyrethroid insecticides are currently used in all LLINs, consequently the pervasive increase in pyrethroid resistance detected across Sub-Saharan Africa is raising fears of vector control failure ultimately leading to increases in malaria morbidity and morbidity \cite{churcher2016, Hemingway2016}.
+%
+To ameliorate the risk of vector control failure, pyrethoid LLINs containing the synergist PBO have been in development and testing for some time \cite{darriet2011, protopopoff2018}.
+%
+PBO enhances the potency of certain insecticides (including pyrethroids), where resistance to these chemicals is cytochrome P450 mediated (metabolic resistance).
+%
+A study using  meta-analysis to parameterise mathematical models suggests that PBO bednets could avert up to 0.5 clinical cases per person per year in some locations \cite{churcher2016}.
+%
+More recently an experimental hut trial in Tanzania found that PBO nets were more effective that traditional LLINS where pyrethroid resistance was prevalent \cite{protopopoff2018}, however, these bed-nets are more expensive than pyrethroid only LLINs \cite{churcher2016}.
+%
+An important question, therefore, is where deployment of PBO nets could most impact vector populations and conversely, where there is no benefit over traditional LLINs \cite{protopopoff2018, toe2018}.
+%%
+
+
+
+%%
+Intro outro. --
+%%
+Here, firstly we describe the population diversity and structure of the vector populations now publicly available as Phase 2 the of Ag1000G project, revealing the breadth of demography and evolutionary histories now represented in these data.
+%
+Next, we illustrate the power of this genomic resource to inform malaria eradication efforts.
+%
+Using the data set, we shed new light on three important questions in vector control: migration/estivation of mosquitoes, the introduction of next-generation cytochrome P450 synergist bed-nets and the development of gene-drive technologies. 
+%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Results}
 
-%% Population sampling
 \subsection*{Population Sampling}
 %
 In Phase 2 of the Ag1000G Project we sequenced the genomes of 1142 wild caught \emph{Anopheles} mosquitoes; 655 \textit{Anopheles gambiae} individuals, 283 \textit{An. coluzzii} and 204 individuals of undetermined species (individuals with apparent mixed or unclear ancestry).
@@ -159,8 +203,7 @@ Distance between switch errors in the centromeric region was much higher, the 10
 %% end Table 1
 
 
-%% Difference from reference
-\subsection*{Both species in the study are similarly diverged from the AgamP4 reference genome}
+\subsection*{Divergence from the AgamP4 reference genome}
 
 The genomes of \textit{An. coluzzii} and \textit{An. gambiae} samples were similarly diverged from the reference genome used for alignment, AgamP4 \cite{Holt2002}, indicating that unbiased comparisons can be made between the two species based on our results (Fig. \ref{refdiff}a).
 %
@@ -174,16 +217,7 @@ Reductions in divergence from the reference genome in regions of low recombinati
 %
 All analyses of geographical population structure were conducted on euchromatic regions of Chromosome 3, which avoids regions of polymorphic inversions, reduced recombination and unequal divergence from the reference genome \cite{Ag1000gConsortium2017}.
 
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics*[width=6.3in]{notebooks/refdiff/refdiff_phase2_combined.jpg}
-	\end{center}
-	\caption{Divergence from the AgamP4 reference genome, calculated as \textit{Dxy}, is largely similar for \textit{An. coluzzii} and \textit{An. gambiae}, with the exception of the centromere of chromosome X (a). Comparing three populations of \textit{An. coluzzii} (b) or \textit{An. gambiae} (c) highlights the strong effect of the 2La chromosomal inversion on the accumulation of genetic variation.}
-	\label{refdiff}
-\end{figure}
 
-
-%% Population Structure
 \subsection*{Population structure}
 
 Analysis of population structure in the nine Ag1000G Phase 1 populations revealed medically relevant demographic features including connectivity between populations and movement of insecticide resistance mutations across Sub-Saharan Africa \cite{Ag1000gConsortium2017}.
@@ -200,7 +234,7 @@ Here we revisit population structure analyses to include the 7 additional popula
 \end{figure}
 
 %
-In Phase 1, just two of the nine populations were \textit{An. coluzzii} and these, Burkina Faso (BFcol) and Angola (AOcol), were highly differentiated (principal component analysis (PCA), doubleton sharing and F\raisebox{-.4ex}{\scriptsize ST}).
+In Phase 1, two of the nine populations were \textit{An. coluzzii} and these, Burkina Faso (BFcol) and Angola (AOcol), were highly differentiated (principal component analysis (PCA), doubleton sharing and F\raisebox{-.4ex}{\scriptsize ST}).
 %
 This limited our ability to draw general conclusions about the history and population structure of this major malaria vector, and its relationship to its sister species \textit{An. gambiae} difficult to investigate \cite{Ag1000gConsortium2017}.
 %
@@ -238,9 +272,7 @@ Unlike KE, which appears 'hybridised' in AIM analysis, FRgam is comparable to ot
 %%
 
 
-%% Genetic diversity
 \subsection*{Genetic diversity within populations}
-%%
 
 %%
 We carried out analyses of the genetic diversity within populations to enable inference of their evolutionary histories.
@@ -301,12 +333,11 @@ Such marked differences in IBD between these populations may suggest a distinct 
 
 %%
 \subsection*{Isolation by distance}
-%%
 
 %%
-The expanded sampling of the phase 2 dataset allows analysis of fine-scale geographic differentiation among \textit{Anopheles} populations.
+The expanded sampling of the phase 2 dataset allows analysis of fine-scale geographic differentiation among \textit{Anopheles} populations of both \textit{An. gambiae} and \textit{An. coluzzii}.
 %
-To assess how geographic distance relates to genetic differentiation we calculated Wright's "Neighbourhood Size" \cite{wright1946isolation} for \textit{An. gambiae} and \textit{An. coluzzii} populations in West Africa (Figure \ref{fig:ibd_fig}a).
+To assess how geographic distance relates to genetic differentiation we calculated Wright's "Neighbourhood Size" \cite{wright1946isolation} for \textit{An. gambiae} and \textit{An. coluzzii} in West Africa (Figure \ref{fig:ibd_fig}a).
 %
 This statistic is an approximation of the (effective) number of potential mates for an individual and can be viewed as a measure of the strength of isolation by distance - low values indicate strong differentiation across space, and high values weak differentiation.
 %
@@ -337,31 +368,14 @@ Levels of isolation by distance also vary across the genome in both species (Fig
 %
 These patterns appear to reflect the influence of local $N_{e}$ and selection on population differentiation.
 %
-The large 2La inversion on chromosome 2L coincides with a roughly 10-fold drop in neighbourhood size relative to surrounding regions of the genome in both \textit{An. coluzzii} and \textit{An. gambiae}.
+Deviations from local genomic neighbourhood size coincide with a number of inversions.
 %
-One interpretation of this pattern is that the 2La inversion leads to locally reduced $N_{e}$ because of a mix of increased purifying selection (due to reduced recombination) and potentially selection against hybrids with mixed inversion types.
+The large 2La inverted region on chromosome 2L shows a roughly 10-fold drop in neighbourhood size relative to surrounding regions of the genome in both \textit{An. coluzzii} and \textit{An. gambiae}.
 %
-Reduced $N_{e}$ could then lead to accelerated drift and stronger genetic differentiation across space.
-%%
-
-%%
-Regions of the genome around several loci involved in insecticide resistance also reflected departures from average levels of isolation by distance.
-%
-In \textit{An. gambiae} the lowest neighbourhood sizes across the genome occur in the region surrounding the \textit{Vgsc} locus on chromosome 2L.
-%
-This region has experienced strong recent selection as a result of insecticide use, with haploptype structure reflecting a series of recent selective sweeps in populations across Africa \cite{lynd2005, anopheles2017genetic}.
-%
-An observation of strong structure near this gene thus squares with theory predicting that population structure can be increased at sites linked to recent selective sweeps \cite{slatkin1998genetic}.
-%
-However, we observed the opposite pattern in \textit{An. coluzzii}, with neighbourhood size estimates near \textit{Vgsc} instead strongly inflated relative to surrounding regions.
-%
-This reflects high levels of genetic differentiation among some nearby populations of \textit{An. coluzzii}, which results in a flat or even negative slope of $F_{st}$ as a function of distance (Supplementary Figure \ref{fig:vgsc_ibd}).
-%
-Dips in estimated neighbourhood sizes were also observed in one or both species near several other genes/gene-clusters implicated in insecticide resistance (Figure \ref{fig:ibd_fig}d). 
+Dips in estimated neighbourhood sizes were also observed in one or both species near several genes/gene-clusters implicated in insecticide resistance (Figure \ref{fig:ibd_fig}d). 
 %%
 
 
-%%
 \subsection*{Insecticide resistance}
 %%
 
@@ -465,49 +479,68 @@ Diversity in the exon was also low, with $\pi = 0.00055$ over the 92bp of the ex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Discussion}
+%%
+TO DO
+%%
 
 %1. what is phase 2
-Phase 2 of the Ag1000G project sees an add
+%Phase 2 of the Ag1000G project sees an add
 
 %2.
-Good data - increase in coluzzi, island pop and reference genome divergence. 
+%Good data - increase in coluzzi, island pop and reference genome %divergence. 
 
-Re-analysis of qc demonstrated robustness, the optimum cutoffs from phase 1 remain qualitatively unchanged with addition on of new samples and variation.
+%Re-analysis of qc demonstrated robustness, the optimum cutoffs from %phase 1 remain qualitatively unchanged with addition on of new %samples and variation.
 
 %3.Pop structure and diversity
 %%
-Success or failure of ITN choice (@@ref), insecticide type (@@ref) and genetically modified mosquitoes release may all depend on correctly predicting the response of the natural vector populations to these perturbations.
+%Success or failure of ITN choice (@@ref), insecticide type (@@ref) %and genetically modified mosquitoes release may all depend on %%correctly predicting the response of the natural vector %populations to these perturbations.
 %
-Increased sampling of natural populations, therefore, increases our knowledge about  the pan-Africa distributions of medically important traits that could be used to parameterise predictive models.
+%Increased sampling of natural populations, therefore, increases our %knowledge about  the pan-Africa distributions of medically %important traits that could be used to parameterise predictive %models.
 %
-Analyses of Phase 2 genetic diversity and other demographic investigations clearly elucidate the benefits of adding mosquito populations to the Ag1000G public data resource.
+%Analyses of Phase 2 genetic diversity and other demographic %investigations clearly elucidate the benefits of adding mosquito %populations to the Ag1000G public data resource.
 %%
 
 %%
-Additional sampling, novel to Ag1000G, reveals that ...not all island pops are the same. ...colonies appear very different...something about tajD and selection...something about IBD?
+%Additional sampling, novel to Ag1000G, reveals that ...not %allisland pops are the same. ...colonies appear very %different...something about tajD and selection...something about %IBD?
 
 %4.
-Isolation by distance - how relates to IR/gene-drive
-
+%Isolation by distance - how relates to IR/gene-drive
 %% 
+
+
+
+\subsection*{isolation by distance discussion + cas9}
+
+%%
+WIP
+%%
+
+%%
+The movement of mosquitoes has been a long-standing question in malaria vector control -
+%
+can mosquitoes move their genes long geographical distances during a single lifetime or is long distance gene-flow trans-generational?
+%
+Understanding this aspect of basic biology is important for optimising many aspects vector control,for example gene-drive... 
+
+%
+
+...The expanded geographical sampling in Phase 2 allowed fine-scale analysis of how geographic distance between populations is related to genetic distance.
+%
+Our calculations of Wright's Neighborhood Size \cite{wright1946isolation}...
+%
+Talk about differences between species, changes in local neigbourhood size and then link in the cas9 results to finish.
+%
+
+
+
+
+
+
+
 \subsection*{PBO net deployment discussion}
 %%
-
-%%
-Pyrethroid insecticides are currently used in all LLINs, consequently the pervasive increase in pyrethroid resistance detected across Sub-Saharan Africa is raising fears of vector control failure ultimately leading to increases in malaria morbidity and morbidity \cite{churcher2016, Hemingway2016}.
+With the reliance on pyrethroid insecticides for ITNs and the ubiquity of pyrethroid resistance \cite{Hemingway2016}, it is essential for NMCPs to be able to access information about which regions might benefit from new (and more expensive \cite{churcher2016}) PBO bed-net roll-out.
 %
-To ameliorate the risk of vector control failure, pyrethoid LLINs containing the synergist PBO have been in development and testing for some time \cite{darriet2011, protopopoff2018}.
-%
-PBO enhances the potency of certain insecticides (including pyrethroids), where resistance to these chemicals is cytochrome P450 mediated (metabolic resistance).
-%
-A study using  meta-analysis to parameterise mathematical models suggests that PBO bednets could avert up to 0.5 clinical cases per person per year in some locations \cite{churcher2016}.
-%
-More recently an experimental hut trial in Tanzania found that PBO nets were more effective that traditional LLINS where pyrethroid resistance was prevalent \cite{protopopoff2018}, however, these bed-nets are more expensive than pyrethroid only LLINs \cite{churcher2016}.
-%
-An important question, therefore, is where deployment of PBO nets could most impact vector populations and conversely, where there is no benefit over traditional LLINs \cite{protopopoff2018, toe2018}.
-%%
-
-%%
 By combining genomic data on loci associated with pyrethroid target-site and metabolic resistance, we were able to create a snapshot of resistance topology across Africa.
 %
 Results revealed that resistance topology fell broadly into three types (Figure \ref{ir}), each informative to the potential impact of PBO nets on vector populations:
@@ -532,8 +565,6 @@ data fitting this profile are currently being generated by the Malaria Gen Vecto
 %
 Our analyses show the value of genomic data that (with small amounts of bioassay based ground-truthing) could quickly, easily and relatively cheaply inform PBO net-rollout and more generally NMCP insecticide choice.
 %%
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -849,7 +880,34 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{Supplementary tables and figures}
+\section*{Supplementary figures and tables}
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=6.3in]{notebooks/refdiff/refdiff_phase2_combined.jpg}
+	\end{center}
+	\caption{Divergence from the AgamP4 reference genome, calculated as \textit{Dxy}, is largely similar for \textit{An. coluzzii} and \textit{An. gambiae}, with the exception of the centromere of chromosome X (a). Comparing three populations of \textit{An. coluzzii} (b) or \textit{An. gambiae} (c) highlights the strong effect of the 2La chromosomal inversion on the accumulation of genetic variation.}
+	\label{refdiff}
+\end{figure}
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=6.3in]{artwork/AIM_figure_scaled.jpg}
+	\end{center}
+	\caption{Ancestry informative markers (AIM). Rows represent individual mosquitoes (grouped by population) and columns represent SNPs (grouped by chromosome arm). Colours represent species genotype. The column at the far left shows the species assignment according to the conventional molecular test based on a single marker on the X chromosome, which was performed for all populations except Guinea Bissau (GW), The Gambia (GM) and Kenya (KE). The column at the far right shows the genotype for kdr variants in \textit{Vgsc} codon 995. Lines at the lower edge show the physical locations of the AIM SNPs.}
+	\label{aim}
+\end{figure}
+
+
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=\textwidth]{artwork/fst_by_dist_species_VGSC_edit.pdf}
+    \end{center}
+    \caption{$F_{st}$ as a function of geographic distance on chromosome 2L at sites more and less than 500kb from \textit{Vgsc}, a gene involved in insecticide resistance. Differentiation of the \textit{Vgsc} regions is strongly related to geographic distance within \textit{An. gambiae}, but not in \textit{An. coluzzii}.}
+    \label{fig:vgsc_ibd}
+\end{figure}
 
 %% Table S1 - crosses.
 %
@@ -875,22 +933,6 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 \restoregeometry
 } % end afterpage
 %% end Table 1
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics*[width=6.3in]{artwork/AIM_figure_scaled.jpg}
-	\end{center}
-	\caption{Ancestry informative markers (AIM). Rows represent individual mosquitoes (grouped by population) and columns represent SNPs (grouped by chromosome arm). Colours represent species genotype. The column at the far left shows the species assignment according to the conventional molecular test based on a single marker on the X chromosome, which was performed for all populations except Guinea Bissau (GW), The Gambia (GM) and Kenya (KE). The column at the far right shows the genotype for kdr variants in \textit{Vgsc} codon 995. Lines at the lower edge show the physical locations of the AIM SNPs.}
-	\label{aim}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{artwork/fst_by_dist_species_VGSC_edit.pdf}
-    \caption{$F_{st}$ as a function of geographic distance on chromosome 2L at sites more and less than 500kb from \textit{VGSC}, a gene involved in insecticide resistance. Differentiation of the \textit{VGSC} regions is strongly related to geographic distance within \textit{A. gambiae}, but not in \textit{A. coluzzii}.}
-    \label{fig:vgsc_ibd}
-\end{figure}
-
 
 \clearpage
 
