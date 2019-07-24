@@ -376,6 +376,48 @@ Dips in estimated neighbourhood sizes were also observed in one or both species 
 %%
 
 
+
+%% CAS9
+\subsection*{Implications for CAS9 gene drive}
+%%
+
+In a recent study investigating possibilities of gene drive as a means of vector control, a Cas9 target was designed against a 23bp region spanning an intron-exon boundary that is subject to alternative splicing in the doublesex (\textit{dsx}) gene on chromosome 2R \cite{kyrou2018}.
+%
+Lack of diversity in the Cas9 target is crucial to the success of this gene drive method, as any variation could inhibit the drive mechanism and thus constitute a resistant genotype that could spread and resist control.
+%
+This region was found to contain very little genetic diversity, with only one variant site being discovered in the Ag1000G Phase 1 samples \cite{kyrou2018}.
+%
+We used the Phase 2 dataset to extend the study of diversity in the \textit{dsx} Cas9 target region to more samples and new populations. 
+%
+No further variant sites were discovered, and the mutant allele at the known site was not found in any of the additional populations in phase 2.
+%
+The mutant allele was present at 2.9\% frequency in Phase 1, and is now at 2.5\% frequency in Phase 2, being found in \textit{An.coluzzii} from Angola (26.5\% frequency), and \textit{An. gambiae} from Cameroon (1.3\%) and Gabon (5.8\%).
+%
+This site has previously been shown not to interfere with the gene drive process \cite{kyrou2018}, as the guide RNA was able to cleave both the wild-type and the mutant forms of this sequence. 
+%
+Since we found no other variant sites, there is no evidence from the 1142 samples in Phase 2 of naturally-occurring variation that could disrupt this gene drive target. 
+
+The occurrence of alternative splicing at the site of this gene drive target may explain the low diversity in the region, and could impose purifying selection pressures on a wider area than these 23bp.
+%
+We investigated variation in the wider region around the target and found that it was lower than the mean variation in other genes on chromsome 2R (\ref{dsx1}). 
+%
+Diversity was particularly low in the region of the intron near the intron-exon boundary.
+%
+After removing filtered positions, mean genetic diversity ($\pi$) over the last 100bp of the intron was 0.00046, which was smaller than 99.2\% of comparable introns (at least 300bp in size, with at least 70 of the first 100bp passing filtering) on the chromsome.
+%
+Diversity in the exon was also low, with $\pi = 0.00055$ over the 92bp of the exon, which is lower than 91.9\% of comparable exons (smaller than 100bp, with at least 70bp passing filtering) on the chromosome. 
+
+%[in case anyone asks, if we only look at the third coding position then about 88\% of exons have higher diversity than this one].
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=5.5in]{artwork/temp-cas9dsx/Cas9_target_diversity.jpg}
+	\end{center}
+	\caption{Genetic variation (orange line) around the intron-exon boundary targeted by the gene drive mechanism in \textcite{kyrou2018} is low compared to the average intronic (green bars) or exonic (blue bars) variation on chromosome 2R. Bars show mean and 95\% confidence intervals for each position relative to the start (light blue) or end (green and dark blue) of the genomic feature. To adequately compare with the \textit{dsx} exon and intron plotted here, mean exonic diversity was calculated using exons smaller than 100bp whose first base was the second codon position, and mean intronic diversity was caculated using introns larger than 300bp. Red points indicate positions on the \textit{dsx} gene that were inaccessible and thus where diversity could not be calculated.}
+	\label{dsx1}
+\end{figure}
+
 \subsection*{Insecticide resistance}
 %%
 
@@ -433,55 +475,9 @@ On the two island population of Bioko and Mayotte no pyrethroid resistance, targ
 
 
 
-
-%% CAS9
-\subsection*{Implications for CAS9 gene drive}
-%%
-
-In a recent study investigating possibilities of gene drive as a means of vector control, a Cas9 target was designed against a 23bp region spanning an intron-exon boundary that is subject to alternative splicing in the doublesex (\textit{dsx}) gene on chromosome 2R \cite{kyrou2018}.
-%
-Lack of diversity in the Cas9 target is crucial to the success of this gene drive method, as any variation could inhibit the drive mechanism and thus constitute a resistant genotype that could spread and resist control.
-%
-This region was found to contain very little genetic diversity, with only one variant site being discovered in the Ag1000G Phase 1 samples \cite{kyrou2018}.
-%
-We used the Phase 2 dataset to extend the study of diversity in the \textit{dsx} Cas9 target region to more samples and new populations. 
-%
-No further variant sites were discovered, and the mutant allele at the known site was not found in any of the additional populations in phase 2.
-%
-The mutant allele was present at 2.9\% frequency in Phase 1, and is now at 2.5\% frequency in Phase 2, being found in \textit{An.coluzzii} from Angola (26.5\% frequency), and \textit{An. gambiae} from Cameroon (1.3\%) and Gabon (5.8\%).
-%
-This site has previously been shown not to interfere with the gene drive process \cite{kyrou2018}, as the guide RNA was able to cleave both the wild-type and the mutant forms of this sequence. 
-%
-Since we found no other variant sites, there is no evidence from the 1142 samples in Phase 2 of naturally-occurring variation that could disrupt this gene drive target. 
-
-The occurrence of alternative splicing at the site of this gene drive target may explain the low diversity in the region, and could impose purifying selection pressures on a wider area than these 23bp.
-%
-We investigated variation in the wider region around the target and found that it was lower than the mean variation in other genes on chromsome 2R (\ref{dsx1}). 
-%
-Diversity was particularly low in the region of the intron near the intron-exon boundary.
-%
-After removing filtered positions, mean genetic diversity ($\pi$) over the last 100bp of the intron was 0.00046, which was smaller than 99.2\% of comparable introns (at least 300bp in size, with at least 70 of the first 100bp passing filtering) on the chromsome.
-%
-Diversity in the exon was also low, with $\pi = 0.00055$ over the 92bp of the exon, which is lower than 91.9\% of comparable exons (smaller than 100bp, with at least 70bp passing filtering) on the chromosome. 
-
-%[in case anyone asks, if we only look at the third coding position then about 88\% of exons have higher diversity than this one].
-
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics*[width=5.5in]{artwork/temp-cas9dsx/Cas9_target_diversity.jpg}
-	\end{center}
-	\caption{Genetic variation (orange line) around the intron-exon boundary targeted by the gene drive mechanism in \textcite{kyrou2018} is low compared to the average intronic (green bars) or exonic (blue bars) variation on chromosome 2R. Bars show mean and 95\% confidence intervals for each position relative to the start (light blue) or end (green and dark blue) of the genomic feature. To adequately compare with the \textit{dsx} exon and intron plotted here, mean exonic diversity was calculated using exons smaller than 100bp whose first base was the second codon position, and mean intronic diversity was caculated using introns larger than 300bp. Red points indicate positions on the \textit{dsx} gene that were inaccessible and thus where diversity could not be calculated.}
-	\label{dsx1}
-\end{figure}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Discussion}
-%%
-TO DO
-%%
 
 %1. what is phase 2
 %Phase 2 of the Ag1000G project sees an add
@@ -491,53 +487,33 @@ TO DO
 
 %Re-analysis of qc demonstrated robustness, the optimum cutoffs from %phase 1 remain qualitatively unchanged with addition on of new %samples and variation.
 
-%3.Pop structure and diversity
-%%
-%Success or failure of ITN choice (@@ref), insecticide type (@@ref) %and genetically modified mosquitoes release may all depend on %%correctly predicting the response of the natural vector %populations to these perturbations.
-%
-%Increased sampling of natural populations, therefore, increases our %knowledge about  the pan-Africa distributions of medically %important traits that could be used to parameterise predictive %models.
-%
-%Analyses of Phase 2 genetic diversity and other demographic %investigations clearly elucidate the benefits of adding mosquito %populations to the Ag1000G public data resource.
-%%
+
+
+\subsection*{isolation by distance discussion}
 
 %%
-%Additional sampling, novel to Ag1000G, reveals that ...not %allisland pops are the same. ...colonies appear very %different...something about tajD and selection...something about %IBD?
+Research into the migration of mosquitoes dates back to Ronald Ross, shortly after his discovery that mosquitoes transmitted malaria over 100 years ago \cite{ross1905, ross1911}, and interest in the topic has not waned since then \textit{e.g.} \cite{service1997,dao2014}.
+%
+Understanding this aspect of basic biology is important for optimising many aspects vector control, one currently pressing concern is the application of gene-drive to vector control.
+%
+Here, mosquito migration affects spread of the driven gene through populations \cite{eckhoff2017} and potentially the spread of drive-resistant alleles into susceptible populations (\cite{Ag1000gConsortium2017}. 
+%
+The expanded geographical sampling in Phase 2 allowed fine-scale analysis of how geographic distance between populations is related to genetic distance (isolation by distance), enabling inference of mosquito migration.
+%
+We found much lower isolation by distance in \textit{An. gambiae} than \textit{An. coluzzii}, suggesting long distance gene flow, and therefore long distance migration in the former but not the latter species.
+%
+These findings are in agreement with conclusions made from a study using time-series analyses (collecting 40,000 mosquitoes over five years), that \textit{An. gambiae} migrates long distances to repopulate areas after dry seasons, where as \textit{An. coluzzii} aestivates \textit{in situ} \cite{dao2014}.
+%
 
-%4.
-%Isolation by distance - how relates to IR/gene-drive
-%% 
-
-
-
-\subsection*{isolation by distance discussion + cas9}
-
+\subsection*{cas9}
+%
+Continuing with the theme of gene-drive, whole genome sequencing allowed us to investigate genetic variation in and around the dsx gene, a target for gene-drive modification.
+%
+Our findings of ...
+RNA binding constraint on non-coding positions may be generating these unusual patterns of diversity. Other regions of the genome displaying the 
 %%
-WIP
-%%
-
-%%
-The movement of mosquitoes has been a long-standing question in malaria vector control -
-%
-can mosquitoes move their genes long geographical distances during a single lifetime or is long distance gene-flow trans-generational?
-%
-Understanding this aspect of basic biology is important for optimising many aspects vector control,for example gene-drive... 
-
-%
-
-...The expanded geographical sampling in Phase 2 allowed fine-scale analysis of how geographic distance between populations is related to genetic distance.
-%
-Our calculations of Wright's Neighborhood Size \cite{wright1946isolation}...
-%
-Talk about differences between species, changes in local neigbourhood size and then link in the cas9 results to finish.
-%
 
 
-
-
-
-
-
-\subsection*{PBO net deployment discussion}
 %%
 With the reliance on pyrethroid insecticides for ITNs and the ubiquity of pyrethroid resistance \cite{Hemingway2016}, it is essential for NMCPs to be able to access information about which regions might benefit from new (and more expensive \cite{churcher2016}) PBO bed-net roll-out.
 %
@@ -562,8 +538,13 @@ It is likely that the four loci we analysed do not explain all phenotypic variat
 To be most informative, future analysis should be routinely run on recently collected and sequenced samples and resistance associated loci regularly updated;
 %
 data fitting this profile are currently being generated by the Malaria Gen Vector Observatory (www.malariagen.net).
+%%
+
+
+%%
+Here, a brief overview of this rich data resource, demonstrates how the Ag1000G project data can quickly, easily and relatively cheaply inform gene-drive vector control development, PBO net-rollout and insecticide choice.
 %
-Our analyses show the value of genomic data that (with small amounts of bioassay based ground-truthing) could quickly, easily and relatively cheaply inform PBO net-rollout and more generally NMCP insecticide choice.
+Our findings reiterate the value of large publicly available genomic data, that can inform many aspects of malaria control while filling gaps in our understanding mosquito evolution and  elucidating basic biological/ecological processes.
 %%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
