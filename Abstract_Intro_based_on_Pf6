@@ -1,0 +1,27 @@
+Phase 2 
+
+
+**Abstract**
+
+MalariaGen in a data sharing network that enables groups around the world to the use genomic tools to study malaria disease and transmission.
+
+Here we describe a new release of curated whole genome variation data on 1142 malaria vector mosquito 
+samples from 16 populations in 13 sub-Saharan African countries as phase 2 of the Anopheles gambiae 1000 Genomes Project.
+
+High-quality genotype calls on ~58 million single nucleotide polymorphisms (SNPs) were produced using a standardised analysis pipeline.
+
+~~something about general pop structure
+
+Most populations show evidence of resistance to at least one family of insecticides, with nn samples carrying at least one potential resistance allele.
+
+As expected, markers in the Vgsc gene for target-site resistance to pyrethroid insecticides were widespread, however we also show that many individuals also carry potential markers for 
+metabolic resistance to pyrethoids.
+
+These results can inform the roll-out of pyrethoid plus cytochrome P450 synergist bednets, which provide increased protection in the presence of pyrethroid metabolic resistance, and
+demonstrate the power of these genomic datasets in the fight against malaria.
+
+By continually enlarging this open dataset of mosquito genomes, we aim to accelerate research into medically important aspects of vector evolution and the development of an insecticide
+resistance monitoring framework required for malaria elimination.
+
+
+
