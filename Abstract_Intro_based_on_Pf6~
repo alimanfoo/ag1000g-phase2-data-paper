@@ -6,16 +6,16 @@ Phase 2
 MalariaGen in a data sharing network that enables groups around the world to the use genomic tools to study malaria disease and transmission.
 
 Here we describe a new release of curated whole genome variation data on 1142 malaria vector mosquito 
-samples from 16 populations in 13 sub-Saharan African countries as part of Phase 2 of the Anopheles gambiae 1000 Genomes Project.
+sampling from 16 populations in 13 sub-Saharan African countries as part of Phase 2 of the Anopheles gambiae 1000 Genomes Project.
 
 High-quality genotype calls on ~58 million single nucleotide polymorphisms (SNPs) were produced using a standardised analysis pipeline.
 
 Investigations into population structure and genetic diversity highlight medically relevant demographic features differentiated between geographic regions.
 
-The island populations, novel to Phase 2 reveal divergent evolutionary histories, high diversity and low Tajima's D in Bioko island samples but the inverse in those from the island of
+For example the island populations, novel to Phase 2 reveal divergent evolutionary histories, high diversity and low Tajima's D in Bioko island samples but the inverse in those from the island of
  Mayotte.
 
-Differentiation between the two species sampled here, Anopheles gambiae and An. coluzzii, was also uncovered using isolation by distance analyses.
+Differentiation between the two species sampled here, Anopheles gambiae and An. coluzzii, was also uncovered.
 
 An. coluzzii was found to have stronger population structure and therefore potentially lower dispersal than An. gambiae, a result highly deterministic to the success of cas-9 mediated 
 gene-drive vector control.
