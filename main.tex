@@ -70,7 +70,9 @@ TODO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Introduction}
 %%
-(lifted entirely from DK intro) - A major obstacle to malaria elimination is the great capacity of the parasite and vector populations to evolve in response to malaria control interventions. 
+(lifted entirely from DK intro).
+%
+- A major obstacle to malaria elimination is the great capacity of the parasite and vector populations to evolve in response to malaria control interventions. 
 %
 The widespread use of chloroquine and DDT in the 1950’s led to high levels of drug and insecticide resistance, and the same pattern has been repeated for other first-line antimalarial drugs and insecticides.
 %
@@ -80,20 +82,36 @@ A deep understanding of local patterns of resistance and the continually changin
 manage the use of drugs and insecticides and to deploy public health resources for maximum sustainability and impact.
 %%
 
+
 %%
-TALK ABOUT RESISTANCE GENERALLY HERE - GET IN MODE??
+Kai intro version.
+%%
+During the 1950s, the widespread use the insecticide DDT and the antimalarial drug chloroquine in the fight against malaria demonstrated both the strength that anthropogenic pressure can exert and the speed at which selection can generate phenotypes to counteract it.
+%
+As new first-line insecticides and antimalarials have been developed and deployed, this pattern has been repeated for over half a century. 
+%
+However, the last 15 years witnessed a change in fortunes, mass bed-net distributions and artemisin combination therapy (ACT) saw substantial gains with large reductions in malaria prevalence \cite{Bhatt2015} (@@get a citation for parasite).
+%
+2018 alone saw 172 million long-lasting insecticide treated nets (LLINs) distributed for free in sub-Saharan Africa.
+%
+Unfortunately the levels of pyrethroid IR have become so widespread that there are fears of vector control failure and ACT resistance is now prevalent in South East Asia and spreading fast.
+%
+With pyrethroids still currently used in all LLINs and no new anti-malarials, it is clear esistance surveillance is therefore essential to maximise the impact and sustainability of national malaria control programs (NMCPs). 
 %%
 
 
 %%
-Currently, most surveillance of insecticide resistance in natural vector populations involves two approaches:
+Currently, surveillance of insecticide resistance in natural malaria vector populations involves two approaches:
 %
 resistance susceptibility testing with insecticide coated paper (\textit{e.g.} WHO tube assay \cite{world2016test}) and/or the detection of genetic loci associated with resistance via molecular assays (\textit{e.g.} PCR \cite{Ranson2000} and TaqMan \cite{bass2007}).
 %
-Measuring the insecticide resistance phenotypes of live mosquitoes samples, bred from natural populations provides an almost real-time picture (perhaps just one generation removed) of the strength of resistance.
+Measuring the insecticide resistance phenotypes of live mosquitoes samples, provides an almost real-time picture (perhaps just one generation removed) of the strength of resistance.
+%
 All soluble insecticides can be tested with no prior knowledge about potential modes of resistance or of causative resistance loci.
 %
-However, this approach is laborious, plus it requires expensive environmentally controllable spaces (humidity/temperature/light) to enable mosquito breeding and to ensure repeatability of testing \cite{kleinschmidt2018}.
+Monitoring natural populations is important but this approach is laborious, plus it requires expensive environmentally controllable spaces (humidity/temperature/light) to enable mosquito breeding and to ensure repeatability of testing \cite{kleinschmidt2018}.
+%
+Detecting a resistance phenotype within a mosquito population in this way may also be difficult unless resistance is widespread (Lucas 2019 - Bioxiv).
 %%
 
 %%
@@ -103,24 +121,30 @@ The specificity of molecular assays, which can indicate the genetic loci SNP con
 %
 Historically the development and validation of new molecular markers is slow, although several have been identified for \textit{Anopheles gambiae/coluzzii} in the last 20 years \cite{du2005, jones2012, martinez1998, mitchell2014, ranson2000, riveron2014, weetman2018, weill2003}.
 %
-These markers also explain just a fraction of the variance in resistance phenotype \cite{donnelly2009, donnelly2016}, for example a combination of three molecular markers were able to explain ~50\% of the variation of resistance to the insecticide DDT \cite{mitchell2014}.
-%%
-%Translation from development of markers in the lab to field application is compounded by the speeds at which vector insects can adapt in response to insecticides \cite{lynd2010}.
-
-
-
-%%
-It has become apparent that resistance testing and molecular techniques alone are unable to keep pace of resistance evolution \cite{donnelly2016} and if 
+However, these markers explain just a fraction of the variance in resistance phenotype \cite{donnelly2009, donnelly2016}, for example a combination of three molecular markers were able to explain ~50\% of the variation of resistance to the insecticide DDT \cite{mitchell2014}.
 %%
 
 
 %%
-GENOMICS AND THE AG1000G Project - see pf6
+The \textit{Anopheles gambiae} 1000 Genomes Project (Ag1000G), an international collaboration, was established with the aim of using a catalogue of deep-sequencing-generated genomic variation from natural mosquito populations to better understand and thus more effectively combat the principal African malaria vectors.
 %
-genomics - scan whole genomes for signals of potential insecticide resistance >> suggestive of both insecticides involved and the mode of resistance (NEED TO GET <MODE> IN EARLIER - PBO NETS!!). These can, overtime, be moclecularly validated and ground truthed using traditional methods, but genomics allows these approximations/estimations of resistance to keep pace with the fast changing evolutionary landscape...
+These data allow the mosquito genome to be scanned for genetic features that may be associated with insecticide resistance.
+%
+Selection scans can reveal signatures in the genome that may harbour...
+%
+Of the nn variants for which exists molecular assays (see above), only nn are associated 
 
-- THE GENOMIC SOLUTION
+%
+...but because both SNP and CNV information can be extracted from deep sequencing, these data allow investigation into these different modes of resistance.
+%
 
+
+
+
+
+
+-lucas
+To maintain effective malaria control, accurate assessment of the insecticide resistance profile of mosquito populations is essential. Furthermore, as new insecticides are brought to market, it will be crucial to identify and track resistance to these new products in order to react appropriately before the failure of malaria control.
 
 
 
@@ -129,7 +153,7 @@ Pyrethroid insecticides are currently used in all LLINs, consequently the pervas
 %
 To ameliorate the risk of vector control failure, pyrethoid LLINs containing the synergist PBO have been in development and testing for some time \cite{darriet2011, protopopoff2018}.
 %
-PBO enhances the potency of certain insecticides (including pyrethroids), where resistance to these chemicals is cytochrome P450 mediated (metabolic resistance).
+PBO enhances the potency of certain insecticides (including pyrethroids), where resistance to these chemicals is cytochrome P450 mediated (metabolic resistance), though where resistance is purely target-site mediated .
 %
 A study using  meta-analysis to parameterise mathematical models suggests that PBO bednets could avert up to 0.5 clinical cases per person per year in some locations \cite{churcher2016}.
 %
@@ -142,8 +166,22 @@ An important question, therefore, is where deployment of PBO nets could most imp
 %%
 Here, we describe the population diversity, structure and insecticide resistance marker status of the vector populations publicly available as the Ag1000G Project Phase 2 data release.
 %
-Analyses reveal the breadth of demography and evolutionary histories now represented in these data and illustrate the power of this genomic resource to inform malaria eradication efforts.
+Analyses reveal the breadth of demography and evolutionary histories now represented in these data.
+%
+Investigations into both tar and illustrate the power of this genomic resource to inform malaria eradication efforts.
 %%
+
+
+%%
+SANDBOX
+%%
+%%
+GENOMICS AND THE AG1000G Project - see pf6
+%
+genomics - scan whole genomes for signals of potential insecticide resistance >> suggestive of both insecticides involved and the mode of resistance (NEED TO GET <MODE> IN EARLIER - PBO NETS!!). These can, overtime, be moclecularly validated and ground truthed using traditional methods, but genomics allows these approximations/estimations of resistance to keep pace with the fast changing evolutionary landscape...
+
+- THE GENOMIC SOLUTION
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
