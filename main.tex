@@ -86,49 +86,44 @@ TALK ABOUT RESISTANCE GENERALLY HERE - GET IN MODE??
 
 
 %%
-Currently, the surveillance of insecticide resistance in natural vector populations in achieved via insecticide resistance testing of natural populations (e.g. WHO tube assay) and molecular (PCR/TaqMan) assays of known genetic resistance loci.
+Currently, most surveillance of insecticide resistance in natural vector populations involves two approaches:
 %
-Measuring the resistance of live mosquitoes samples, bred from natural populations provides an almost real-time (one generation removed) picture of the strength of resistance and most insecticides (all?) can be tested with no prior knowledge of their resistance loci or mode of resistance.
+resistance susceptibility testing with insecticide coated paper (\textit{e.g.} WHO tube assay \cite{world2016test}) and/or the detection of genetic loci associated with resistance via molecular assays (\textit{e.g.} PCR \cite{Ranson2000} and TaqMan \cite{bass2007}).
 %
-However, this approach requires high levels of training/technique and environmentally controllable spaces (humidity/temperature/light) to enable the breeding of enough mosquitoes for testing .
+Measuring the insecticide resistance phenotypes of live mosquitoes samples, bred from natural populations provides an almost real-time picture (perhaps just one generation removed) of the strength of resistance.
+All soluble insecticides can be tested with no prior knowledge about potential modes of resistance or of causative resistance loci.
 %
-Molecular assays conversely, can be quickly run on dead samples collected directly from natural populations without requirement for breeding the high numbers of mosquitoes necessary for tube assays plus reagents and equipment are relatively inexpensive. 
-%
-Unfortunately, the specificity of molecular assays, which can indicate which genetic loci which may contributing to resistance, is also restrictive as only known resistance markers can be tested.
-%
-Historically the development and validation of new molecular markers is slow (how many do we have in gambiae / how many years have we been looking), compounded by the high rates of insect adaptation that are found in response to insecticides.
-%
-It has become apparent that resistance testing and molecular techniques alone are unable to keep pace of resistance evolution (Donnelley 2016?) and if 
-%
+However, this approach is laborious, plus it requires expensive environmentally controllable spaces (humidity/temperature/light) to enable mosquito breeding and to ensure repeatability of testing \cite{kleinschmidt2018}.
+%%
 
+%%
+Molecular assays can, conversely, be quickly run on dead samples collected directly from natural populations without requirement for breeding the high numbers of mosquitoes that are necessary for resistance assays plus reagents and equipment are relatively inexpensive. 
+%
+The specificity of molecular assays, which can indicate the genetic loci SNP contributing to resistance, is also restrictive, as only known resistance markers can be tested.
+%
+Historically the development and validation of new molecular markers is slow, although several have been identified for \textit{Anopheles gambiae/coluzzii} in the last 20 years \cite{du2005, jones2012, martinez1998, mitchell2014, ranson2000, riveron2014, weetman2018, weill2003}.
+%
+These markers also explain just a fraction of the variance in resistance phenotype \cite{donnelly2009, donnelly2016}, for example a combination of three molecular markers were able to explain ~50\% of the variation of resistance to the insecticide DDT \cite{mitchell2014}.
+%%
+%Translation from development of markers in the lab to field application is compounded by the speeds at which vector insects can adapt in response to insecticides \cite{lynd2010}.
+
+
+
+%%
+It has become apparent that resistance testing and molecular techniques alone are unable to keep pace of resistance evolution \cite{donnelly2016} and if 
+%%
+
+
+%%
+GENOMICS AND THE AG1000G Project - see pf6
+%
 genomics - scan whole genomes for signals of potential insecticide resistance >> suggestive of both insecticides involved and the mode of resistance (NEED TO GET <MODE> IN EARLIER - PBO NETS!!). These can, overtime, be moclecularly validated and ground truthed using traditional methods, but genomics allows these approximations/estimations of resistance to keep pace with the fast changing evolutionary landscape...
 
-- molecular benefits and issues
 - THE GENOMIC SOLUTION
 
 
-%
-Maybe have a more general malaria vector intro without details of Cas9/PBO?
-%
-
-%
-\subsection*{Introduction Cas9}
-%%
-??.
-%%
-The spread of introduced genes will also be affected by the distances move during their lives.
-%%
-
-%%
-\subsection*{Introduction Migration}
-%%
-??
-%%
 
 
-%%
-%intro PBO nets
-\subsection*{possible introduction on PBO}
 %%
 Pyrethroid insecticides are currently used in all LLINs, consequently the pervasive increase in pyrethroid resistance detected across Sub-Saharan Africa is raising fears of vector control failure ultimately leading to increases in malaria morbidity and morbidity \cite{churcher2016, Hemingway2016}.
 %
@@ -144,17 +139,11 @@ An important question, therefore, is where deployment of PBO nets could most imp
 %%
 
 
-
 %%
-Intro outro. --
-%%
-Here, firstly we describe the population diversity and structure of the vector populations now publicly available as Phase 2 the of Ag1000G project, revealing the breadth of demography and evolutionary histories now represented in these data.
+Here, we describe the population diversity, structure and insecticide resistance marker status of the vector populations publicly available as the Ag1000G Project Phase 2 data release.
 %
-Next, we illustrate the power of this genomic resource to inform malaria eradication efforts.
-%
-Using the data set, we shed new light on three important questions in vector control: migration/estivation of mosquitoes, the introduction of next-generation cytochrome P450 synergist bed-nets and the development of gene-drive technologies. 
+Analyses reveal the breadth of demography and evolutionary histories now represented in these data and illustrate the power of this genomic resource to inform malaria eradication efforts.
 %%
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -455,7 +444,7 @@ An important question currently facing malaria vector control programmes concern
 %
 There are no published markers for P450-based pyrethroid resistance, however it is known that P450 resistance can be achieved via over-expression of P450 genes, which in turn can be driven by copy number amplification of the relevant gene within the genome \cite{riveron2014, muller2008}.
 %
-We scanned the genomes of the mosquitoes in the Phase 2 cohort for evidence of copy number variation, described in more detail in (Lucas et al. 2019), these CNV results are released as part of the Phase 2 data resource.
+We scanned the genomes of the mosquitoes in the Phase 2 cohort for evidence of copy number variation, described in more detail in \cite{lucas2019}, these CNV results are released as part of the Phase 2 data resource.
 %
 At two P450 loci in particular, the \textit{Cyp6p/aa} gene cluster and the \textit{cyp9k1} gene (referred to hereafter as \textit{Cyp6} and \textit{Cyp9} respectively), we found a high frequency of copy number variation in multiple populations.
 %
@@ -564,7 +553,7 @@ The outcome of PBO nets is less intuitive in these regions, as the addition of t
 %%
 It must be reiterated that our results are a snapshot of predicated pyrethroid resistance at the time of sample collection (Table \ref{table:sampling_locations}).
 %
-It is likely that the four loci we analysed do not explain all phenotypic variation in all locations \cite{donnelly2009}, and although all loci involve resistance associated genomic regions, the specific P450 CNVs used here have yet to undergo molecular validation (lucas et al 2019).
+It is likely that the four loci we analysed do not explain all phenotypic variation in all locations \cite{donnelly2016, mitchell2014}, and although all loci involve resistance associated genomic regions, the specific P450 CNVs used here have yet to undergo molecular validation \cite{lucas2019}.
 %
 To be most informative, future analysis should be routinely run on recently collected and sequenced samples and resistance associated loci regularly updated;
 %
