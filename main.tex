@@ -514,11 +514,11 @@ On the two island population of Bioko and Mayotte no pyrethroid resistance, targ
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Discussion}
 
-%what is this data resource based on and what is being released to public
+
 %%
-Herein, we have briefly described Phase 2 of the Ag1000G Project, a data release consisting of deep-sequenced whole genome variation from 1142 wild caught \emph{Anopheles} mosquitoes.
+Here, we have given an overview of Ag1000G Phase 2, a data release consisting of deep-sequenced whole genome variation from 1142 wild caught \emph{Anopheles} mosquitoes.
 %
-Genomic variation and meta-data are now available to download from www.MalariaGen.net for 16 distinct populations of mosquitoes, sampled from 13 countries across Sub-Saharan Africa. 
+Genomic variation and meta-data are now available to download via FTP from www.malariagen.net for 16 distinct populations of mosquitoes, sampled from 13 countries across Sub-Saharan Africa. 
 %
 We defined 61\% (140Mbp) of the genome to be accessible (where we confidenly call SNPs) and from these accessible regions we identified 57,837,885 high-quality SNPs, an average of one variant allele every 1.9 bases of accessible genome.
 %
@@ -526,92 +526,75 @@ Ag1000G Phase 2 also sees the release of 11 colony crosses, parents and offsprin
 %%
 
 
-
-
 %%
-These data have been released in analysis ready formats.
+For ease of access and research, these data have been released in various analysis ready formats.
 %
-biallelic. 44,076,901
+Genotype calls for wild caught and lab colony samples are released in three data storage formats, VCF, HDF5 and Zarr, widely accepted as input types for population genomic software.
 %
-Whole genome phasing was performed for all samples.
+Due to the high diversity of \textit{Anopheles gambiae} and \{coluzzii}, raw genotype call files may be prohibitively large in some situations, for this reason we have also released these data in three versions (each in the three formats): 
 %
-analysis ready data - formats/meta-data/haplotypes/resistance typing - quickly and easy look at frequencies of ir loci by region etc/
-%%
-
-
-
-
-
-%%what kind of analyses these data enable
-high level structure/pop gen - /ibd/cas9/ir 
-%%
-
-\subsection*{isolation by distance discussion}
-
-%%
-Research into the migration of mosquitoes dates back to Ronald Ross, shortly after his discovery that mosquitoes transmitted malaria over 100 years ago \cite{ross1905, ross1911}, and interest in the topic has not waned since then \textit{e.g.} \cite{service1997,dao2014}.
+"raw" data containing all genotype calls, "pass" data containing calls that pass our hard filtering regime from accessible regions of the genome and "biallelic" data, potentially the most useful as both the smallest and the standard input for most population genetic analyses.
 %
-Understanding this aspect of basic biology is important for optimising many aspects vector control, one currently pressing concern is the application of gene-drive to vector control.
+Biallelic data are the subset of pass data where variants have two alleles, a reference allele and a single alternative allele, in Phase 2 this subset consists of 44,076,901 SNPs.
 %
-Here, mosquito migration affects spread of the driven gene through populations \cite{eckhoff2017} and potentially the spread of drive-resistant alleles into susceptible populations (\cite{Ag1000gConsortium2017}. 
+Whole genome phasing was performed using these biallelic variants, estimating chromosomal haplotypes for each sample, a data resource useful for many population genetic analyses including scans for selection.
 %
-The expanded geographical sampling in Phase 2 allowed fine-scale analysis of how geographic distance between populations is related to genetic distance (isolation by distance), enabling inference of mosquito migration.
+Alongside meta-data for each sample containing details on where and when the sample was collected we have also added presence/absence information for known insecticide resistance loci.
 %
-We found much lower isolation by distance in \textit{An. gambiae} than \textit{An. coluzzii}, suggesting long distance gene flow, and therefore long distance migration in the former but not the latter species.
-%
-West African gambiae's connectedness makes it more susceptible to gene-drive escaping and to resistnace arriving... 
-%
-Interestingly these findings are in agreement with conclusions made from the results of a study using time-series analyses (collecting 40,000 mosquitoes over five years), that \textit{An. gambiae} migrates long distances to repopulate areas after dry seasons, where as \textit{An. coluzzii} aestivates \textit{in situ} \cite{dao2014}.
-%
-
-\subsection*{cas9}
-%
-Continuing with the theme of gene-drive, whole genome sequencing allowed us to investigate genetic variation in and around the dsx gene, a target for gene-drive modification.
-%
-Our findings of ...
-RNA binding constraint on non-coding positions may be generating these unusual patterns of diversity. Other regions of the genome displaying the 
+These meta-data will therefore allow quick and easy access to population resistance frequencies without requiring access to bioinformatic tools. 
 %%
 
 
-
-
-
-
-
-
+%%
+As evidenced by research made possible by the first phase of Ag1000g \cite{Ag1000gConsortium2017} (\textit{e.g.} selection scans \cite{xue2019} and demographic modelling \cite{khatri2018}), this genomic resource holds a huge potential for furthering our understanding of mosquito evolution and improving vector control.
+%
+While describing this data release using population genetic measures of diversity and structure we show that, when applied genome-wide, these measurements can reveal medically relevant characteristics.
+%
+For example,the expanded geographical sampling of Phase 2 allowed fine-scale analysis of how geographic distance between populations is related to genetic distance (isolation by distance), enabling inference of mosquito migration.
+%
+These analyses found much lower isolation by distance in \textit{An. gambiae} than \textit{An. coluzzii}, suggesting long distance gene flow, and therefore long distance migration in the former but not the latter species (concordant with conclusions made from the results of a study using time-series analyses \cite{dao2014}).
+%
+West African gambiae’s genetic connectedness may make it more susceptible for gene-drive resistance loci to spread quickly into regions where, conversely ...
+%
+Gene-drive resistance could be caused by genetic diversity in Cas9 binding target, variation could inhibit the drive mechanism and thus constitute a resistant genotype that could spread and resist control.
+%
+Fortunately, scans of selection in a potential gene-drive target gene find no evidence in Phase 2 of any naturally-occurring variation that could disrupt. 
+%%
 
 
 %%
+We also utilised the deep-sequencing and broad geographic coverage of these data to describe a genomic approach to insecticide resistance management.
+%
 With the reliance on pyrethroid insecticides for ITNs and the ubiquity of pyrethroid resistance \cite{Hemingway2016}, it is essential for NMCPs to be able to access information about which regions might benefit from new (and more expensive \cite{churcher2016}) PBO bed-nets.
 %
 By combining genomic data on loci associated with pyrethroid target-site and metabolic resistance, we were able to create a snapshot of resistance topology across Africa.
 %
 Results revealed that resistance topology fell broadly into three types (Figure \ref{ir}), each informative to the potential impact of PBO nets on vector populations:
-%
+%to vector control
 \textbf{1.} Regions with only metabolic pyrethroid resistance loci, where the PBO nets may drastically reduce the resistance phenotype.
 %
 \textbf{2.} Regions with both high target-site and high metabolic pyrethroid resistance associated loci frequencies, in these regions many individuals carry markers for both modes of resistance.
-%
+%to vector control
 The outcome of PBO nets is less intuitive in these regions, as the addition of the synergist can only reduce the metabolic resistance mediated fraction of the pyrethroid resistance phenotype.
 %
 \textbf{3.} Regions with low frequency or no markers for metabolic resistance, here the combination of low potential benefits and the increased cost of the nets may render distribution inadvisable.
-%%
+%%to vector control
 
 %%
 It must be reiterated that these results, though informative, are a predication of pyrethroid resistance at the time of sample collection (Table \ref{table:sampling_locations}).
 %
 It is also likely that the four loci we analysed do not explain all phenotypic variation in all locations \cite{donnelly2016, mitchell2014}, and although all loci involve resistance associated genomic regions, the specific P450 CNVs used here have yet to undergo molecular validation \cite{lucas2019}.
-%
+%to vector control
 In order to extract the maximum value from future genomic insecticide resistance monitoring we suggest a two stage approach.
 %
 Firstly, sampling should be conducted on a wider geographic scale to cement understanding on population structure and diversity across sub-Saharan Africa, ensuring that genetically representative sentinel collection sites can be chosen and established.
 %
 Baseline frequencies for known resistance associated loci can then be established and putative resistance loci validated.
 %
-Secondly, samples should be collected regularly from sentinel sites across Africa, changes in frequencies of resistance associated loci can then be detected and this information can be quickly relayed to stakeholders to inform vector control programs.
+Secondly, samples shto vector controlould be collected regularly from sentinel sites across Africa, changes in frequencies of resistance associated loci can then be detected and this information can be quickly relayed to stakeholders to inform vector control programs.
 %
 This temporal genomic sampling also allows detection new loci potentially linked to resistance by monitoring changes in frequency of alleles across the whole genome.
-%%
+%%to vector control
 
 %%
 MalariaGen is committed to sequencing and releasing data that will make this approach to genomic insecticide resistance surveillance possible. 
