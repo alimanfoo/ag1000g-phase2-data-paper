@@ -360,6 +360,97 @@ Such marked differences in IBD between these populations may suggest a distinct 
 
 
 
+\subsection*{Insecticide resistance}
+%%
+
+%
+An important question currently facing malaria vector control programmes concerns the procurement and deployment of "next-generation" LLINs which combine a pyrethroid with a PBO synergist, counteracting metabolic resistance caused by cytochrome P450 genes \cite{churcher2016, killeen2018, toe2018}.
+%
+There are no published markers for P450-based pyrethroid resistance, however it is known that P450 resistance can be achieved via over-expression of P450 genes, which in turn can be driven by copy number amplification of the relevant gene within the genome \cite{riveron2014, muller2008}.
+%
+We scanned the genomes of the mosquitoes in the Phase 2 cohort for evidence of copy number variation, described in more detail in \cite{lucas2019}, these CNV results are released as part of the Phase 2 data resource.
+%
+At two P450 loci in particular, the \textit{Cyp6p/aa} gene cluster and the \textit{cyp9k1} gene (referred to hereafter as \textit{Cyp6} and \textit{Cyp9} respectively), we found a high frequency of copy number variation in multiple populations.
+%
+These loci have also been found under recent positive selection in multiple populations \cite{Ag1000gConsortium2017}, and have been associated with mosquito pyrethroid resistance in other studies (\textit{Cyp6} - \cite{nikou2003, edi2014, faucon2015, main2018}, \textit{Cyp9} - \cite{main2018, tchigossou2018, vontas2018}).
+%
+Thus it is reasonable to assume that the presence of CNVs at these loci is an adaptation to pyrethroids, although this remains to be tested.
+%%
+
+
+%%
+We combined the amplification data with data on nucleotide variation within the \textit{Vgsc} gene (Clarkson et al, 2019 biorxiv), the target for pyrethroids, to provide an estimate for the population frequencies of mosquitoes carrying some form of \textit{kdr} target-site pyrethroid resistance, amplifications at either of the two P450 loci, or both (Figure \ref{ir}). 
+%
+In the "Far-West" populations of Guinea Bissau and The Gambia \cite{caputo2011}, no known \textit{kdr} mutations are detected, however many individuals carry P450 amplifications (in Guinea Bissau 58\% samples carry a P450 amplification, The Gambia 11\%).
+%
+Individuals sampled from Guinea, Burkina Faso and C\^{o}te d'Ivoire have high levels of \textit{kdr} mutations but also the highest frequencies of P450 amplifications (Guinea 84\%, Burkina Faso 93\%, C\^{o}te d'Ivoire 97\%).
+%
+Heading further east, in samples from Ghana, Gabon, Cameron and Angola, lower frequencies of P450 amplification are found (27\%, 1\%, 7\%, 15\% respectively), alongside high \textit{kdr} frequencies.
+%
+The resistance loci status of Ugandan and Kenyan population appears split by the rift valley system, with Uganda presenting high frequencies of P450 mutations (81\%), whereas Kenya has almost no P450 amplification (4\%) (Figure \ref{ir}).
+%
+On the two island population of Bioko and Mayotte no pyrethroid resistance, target-site or metabolic, markers are detected.
+%%
+
+
+%%
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=6.3in]{artwork/pyrethroid_resistance_simplified.jpg}
+	\end{center}
+	\caption{Pyrethroid resistance genotypes. The geographical distribution of four pyrethroid insecticide resistance genotype states for all 1142 Phase 2 wild caught mosquitoes are shown by country across Sub-Saharan Africa. The four pie chart colours represent geneotype state: purple - these individuals were either homozygous or heterozygous for at least one of the two widespread \textit{kdr} pyrethroid target site mutations \textit{Vgsc-995F/S}; yellow - these individuals carried any duplication within genes contained in either the \textit{Cyp6} or \textit{Cyp9} gene clusters; orange - these individuals carried at least one \textit{kdr} mutation and one \textit{Cyp} cluster duplication; grey - these individuals carried no known pyrethroid resistance genotypes (no \textit{kdr} or \textit{Cyp} duplications).}
+	\label{ir}
+\end{figure}
+%%
+
+
+%% CAS9
+\subsection*{Tool development - CAS9 gene drive}
+%%
+
+In a recent study investigating possibilities of gene drive as a means of vector control, a Cas9 target was designed against a 23bp region spanning an intron-exon boundary that is subject to alternative splicing in the doublesex (\textit{dsx}) gene on chromosome 2R \cite{kyrou2018}.
+%
+Lack of diversity in the Cas9 target is crucial to the success of this gene drive method, as any variation could inhibit the drive mechanism and thus constitute a resistant genotype that could spread and resist control.
+%
+This region was found to contain very little genetic diversity, with only one variant site being discovered in the Ag1000G Phase 1 samples \cite{kyrou2018}.
+%
+We used the Phase 2 dataset to extend the study of diversity in the \textit{dsx} Cas9 target region to more samples and new populations. 
+%
+No further variant sites were discovered, and the variant allele at the known site was not found in any of the additional populations in phase 2.
+%
+The mutant allele was present at 2.9\% frequency in Phase 1, and is now at 2.5\% frequency in Phase 2, being found in \textit{An.coluzzii} from Angola (26.5\% frequency), and \textit{An. gambiae} from Cameroon (1.3\%) and Gabon (5.8\%).
+%
+This site has previously been shown not to interfere with the gene drive process \cite{kyrou2018}, as the guide RNA was able to cleave both the wild-type and the mutant forms of this sequence. 
+%
+Since we found no other variant sites, there is no evidence from the 1142 samples in Phase 2 of naturally-occurring variation that could disrupt this gene drive target. 
+
+The occurrence of alternative splicing at the site of this gene drive target may explain the low diversity in the region, and could impose purifying selection pressures on a wider area than these 23bp.
+%
+We investigated variation in the wider region around the target and found that it was lower than the mean variation in other genes on chromsome 2R (\ref{dsx1}). 
+%
+Diversity was particularly low in the region of the intron near the intron-exon boundary.
+%
+After removing filtered positions, mean genetic diversity ($\pi$) over the last 100bp of the intron was 0.00046, which was smaller than 99.2\% of comparable introns (at least 300bp in size, with at least 70 of the first 100bp passing filtering) on the chromsome.
+%
+Diversity in the exon was also low, with $\pi = 0.00055$ over the 92bp of the exon, which is lower than 91.9\% of comparable exons (smaller than 100bp, with at least 70bp passing filtering) on the chromosome. 
+
+%[in case anyone asks, if we only look at the third coding position then about 88\% of exons have higher diversity than this one].
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=5.5in]{artwork/temp-cas9dsx/Cas9_target_diversity.jpg}
+	\end{center}
+	\caption{Genetic variation (orange line) around the intron-exon boundary targeted by the gene drive mechanism in \textcite{kyrou2018} is low compared to the average intronic (green bars) or exonic (blue bars) variation on chromosome 2R. Bars show mean and 95\% confidence intervals for each position relative to the start (light blue) or end (green and dark blue) of the genomic feature. To adequately compare with the \textit{dsx} exon and intron plotted here, mean exonic diversity was calculated using exons smaller than 100bp whose first base was the second codon position, and mean intronic diversity was caculated using introns larger than 300bp. Red points indicate positions on the \textit{dsx} gene that were inaccessible and thus where diversity could not be calculated.}
+	\label{dsx1}
+\end{figure}
+
+
+
+
+\subsection*{Fundamental biology - isolation by distance}
+%%
+
 %%
 The expanded sampling of the phase 2 dataset also allows analysis of fine-scale geographic differentiation among \textit{Anopheles} populations of both \textit{An. gambiae} and \textit{An. coluzzii}.
 %
@@ -401,101 +492,7 @@ Dips in estimated neighbourhood sizes were also observed in one or both species 
 
 
 
-%% CAS9
-\subsection*{Implications for CAS9 gene drive}
-%%
 
-In a recent study investigating possibilities of gene drive as a means of vector control, a Cas9 target was designed against a 23bp region spanning an intron-exon boundary that is subject to alternative splicing in the doublesex (\textit{dsx}) gene on chromosome 2R \cite{kyrou2018}.
-%
-Lack of diversity in the Cas9 target is crucial to the success of this gene drive method, as any variation could inhibit the drive mechanism and thus constitute a resistant genotype that could spread and resist control.
-%
-This region was found to contain very little genetic diversity, with only one variant site being discovered in the Ag1000G Phase 1 samples \cite{kyrou2018}.
-%
-We used the Phase 2 dataset to extend the study of diversity in the \textit{dsx} Cas9 target region to more samples and new populations. 
-%
-No further variant sites were discovered, and the variant allele at the known site was not found in any of the additional populations in phase 2.
-%
-The mutant allele was present at 2.9\% frequency in Phase 1, and is now at 2.5\% frequency in Phase 2, being found in \textit{An.coluzzii} from Angola (26.5\% frequency), and \textit{An. gambiae} from Cameroon (1.3\%) and Gabon (5.8\%).
-%
-This site has previously been shown not to interfere with the gene drive process \cite{kyrou2018}, as the guide RNA was able to cleave both the wild-type and the mutant forms of this sequence. 
-%
-Since we found no other variant sites, there is no evidence from the 1142 samples in Phase 2 of naturally-occurring variation that could disrupt this gene drive target. 
-
-The occurrence of alternative splicing at the site of this gene drive target may explain the low diversity in the region, and could impose purifying selection pressures on a wider area than these 23bp.
-%
-We investigated variation in the wider region around the target and found that it was lower than the mean variation in other genes on chromsome 2R (\ref{dsx1}). 
-%
-Diversity was particularly low in the region of the intron near the intron-exon boundary.
-%
-After removing filtered positions, mean genetic diversity ($\pi$) over the last 100bp of the intron was 0.00046, which was smaller than 99.2\% of comparable introns (at least 300bp in size, with at least 70 of the first 100bp passing filtering) on the chromsome.
-%
-Diversity in the exon was also low, with $\pi = 0.00055$ over the 92bp of the exon, which is lower than 91.9\% of comparable exons (smaller than 100bp, with at least 70bp passing filtering) on the chromosome. 
-
-%[in case anyone asks, if we only look at the third coding position then about 88\% of exons have higher diversity than this one].
-
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics*[width=5.5in]{artwork/temp-cas9dsx/Cas9_target_diversity.jpg}
-	\end{center}
-	\caption{Genetic variation (orange line) around the intron-exon boundary targeted by the gene drive mechanism in \textcite{kyrou2018} is low compared to the average intronic (green bars) or exonic (blue bars) variation on chromosome 2R. Bars show mean and 95\% confidence intervals for each position relative to the start (light blue) or end (green and dark blue) of the genomic feature. To adequately compare with the \textit{dsx} exon and intron plotted here, mean exonic diversity was calculated using exons smaller than 100bp whose first base was the second codon position, and mean intronic diversity was caculated using introns larger than 300bp. Red points indicate positions on the \textit{dsx} gene that were inaccessible and thus where diversity could not be calculated.}
-	\label{dsx1}
-\end{figure}
-
-\subsection*{Insecticide resistance}
-%%
-
-%
-An important question currently facing malaria vector control programmes concerns the procurement and deployment of "next-generation" LLINs which combine a pyrethroid with a PBO synergist, counteracting metabolic resistance caused by cytochrome P450 genes \cite{churcher2016, killeen2018, toe2018}.
-%
-There are no published markers for P450-based pyrethroid resistance, however it is known that P450 resistance can be achieved via over-expression of P450 genes, which in turn can be driven by copy number amplification of the relevant gene within the genome \cite{riveron2014, muller2008}.
-%
-We scanned the genomes of the mosquitoes in the Phase 2 cohort for evidence of copy number variation, described in more detail in \cite{lucas2019}, these CNV results are released as part of the Phase 2 data resource.
-%
-At two P450 loci in particular, the \textit{Cyp6p/aa} gene cluster and the \textit{cyp9k1} gene (referred to hereafter as \textit{Cyp6} and \textit{Cyp9} respectively), we found a high frequency of copy number variation in multiple populations.
-%
-These loci have also been found under recent positive selection in multiple populations \cite{Ag1000gConsortium2017}, and have been associated with mosquito pyrethroid resistance in other studies (\textit{Cyp6} - \cite{nikou2003, edi2014, faucon2015, main2018}, \textit{Cyp9} - \cite{main2018, tchigossou2018, vontas2018}).
-%
-Thus it is reasonable to assume that the presence of CNVs at these loci is an adaptation to pyrethroids, although this remains to be tested.
-%%
-
-
-%%
-We combined the amplification data with data on nucleotide variation within the \textit{Vgsc} gene (Clarkson et al, 2019), the target for pyrethroids, to provide an estimate for the population frequencies of mosquitoes carrying some form of \textit{kdr} target-site pyrethroid resistance, amplifications at either of the two P450 loci, or both (Figure \ref{ir}). 
-%
-PBO impregnated nets may only offer benefits over traditional LLINs where metabolic resistance to pyrethroids is present at appreciable frequencies.
-%
-Our analysis reveals several features of the pyrethroid resistance landscape that could determine the effectiveness of PBO bed-nets and therefore inform national malaria control programmes (NMCPs) with respect to bed-net roll-out.
-%%
-
-
-%%
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics*[width=6.3in]{artwork/pyrethroid_resistance_simplified.jpg}
-	\end{center}
-	\caption{Pyrethroid resistance genotypes. The geographical distribution of four pyrethroid insecticide resistance genotype states for all 1142 Phase 2 wild caught mosquitoes are shown by country across Sub-Saharan Africa. The four pie chart colours represent geneotype state: purple - these individuals were either homozygous or heterozygous for at least one of the two widespread \textit{kdr} pyrethroid target site mutations \textit{Vgsc-995F/S}; yellow - these individuals carried any duplication within genes contained in either the \textit{Cyp6} or \textit{Cyp9} gene clusters; orange - these individuals carried at least one \textit{kdr} mutation and one \textit{Cyp} cluster duplication; grey - these individuals carried no known pyrethroid resistance genotypes (no \textit{kdr} or \textit{Cyp} duplications).}
-	\label{ir}
-\end{figure}
-%%
-
-
-%%
-In West Africa, P450 amplification frequency appears geographically clustered and therefore the potential impact of a PBO bed-net over a traditional LLIN may be regionally described (Figure \ref{ir}).
-%
-In the "Far-West" populations of Guinea Bissau and The Gambia \cite{caputo2011}, no known \textit{kdr} mutations are detected, however many individuals carry P450 amplifications (in Guinea Bissau 58\% samples carry a P450 amplification, The Gambia 11\%); 
-%
-a result which suggests PBO net roll-out may be highly advantageous, particularly in Guinea Bissau.
-%
-The individuals sampled from Guinea, Burkina Faso and C\^{o}te d'Ivoire have high levels of \textit{kdr} mutations but also the highest frequencies of P450 amplifications (Guinea 84\%, Burkina Faso 93\%, C\^{o}te d'Ivoire 97\%), therefore the addition of PBO may increase the level of protection bed-nets provide.
-%
-Further east, in samples from Gabon, Cameron, Angola and Ghana, lower frequencies of P450 amplification (Gabon 1\%, Cameroon 7\%, Angola 15\%, Ghana 27\%), alongside high \textit{kdr} frequencies, suggest the net gain of PBO inclusion may be small.
-%
-Eastern populations appear split by the rift valley system, with Uganda presenting high frequencies of P450 mutations (81\%), and therefore the potential for PBO gains, whereas Kenya has almost no P450 amplification (4\%) (Figure \ref{ir}).
-%
-On the two island population of Bioko and Mayotte no pyrethroid resistance, target-site or metabolic, markers are detected.
-%%
 
 
 
