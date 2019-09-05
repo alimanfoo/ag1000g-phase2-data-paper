@@ -59,12 +59,13 @@ Genome variation and population structure among 1,142 mosquitoes of the African 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
 
+
 %%
 Mosquito control remains a central pillar of efforts to reduce malaria burden in sub-Saharan Africa, but insecticide resistance is entrenched in malaria vector populations, and countries with high malaria burden face a daunting challenge to sustain malaria control with a limited set of surveillance and intervention tools. 
 %
-Here we report on the second phase of a project to build an open resource of high quality data on genome variation among natural populations of the major African malaria vector species Anopheles gambiae and Anopheles coluzzii. 
+Here we report on the second phase of a project to build an open resource of high quality data on genome variation among natural populations of the major African malaria vector species \textit{Anopheles gambiae} and \textit{Anopheles coluzzii}. 
 %
-We analysed whole genomes of 1,142 individual mosquitoes sampled from the wild in 13 African countries, and a further @@N individuals comprising parents and progeny of 11 lab crosses. 
+We analysed whole genomes of 1,142 individual mosquitoes sampled from the wild in 13 African countries, and a further 234 individuals comprising parents and progeny of 11 lab crosses. 
 %
 The data resource includes high confidence single nucleotide polymorphism (SNP) calls at 57 million variable sites, genome-wide copy number variation calls, and haplotypes phased at biallelic SNPs.
 %
@@ -83,98 +84,71 @@ This data resource provides a foundation for developing new operational systems 
 \section*{Introduction}
 
 
+%% Need for molecular surveillance. Need for open genomic data resources to underpin surveillance.
+%
+The 10 countries with the highest malaria burden in Africa account for 65\% of all malaria cases globally, and attempts to reduce that burden are facing significant challenges @@REF.
+%
+Not least among these, resistance to pyrethroid insecticides is widespread throughout African malaria mosquito populations, potentially compromising the efficacy of mosquito control interventions which remain at the core of global malaria strategy @@REF.
+%
+There is a broad consensus that further progress cannot be made if interventions are applied blindly, but must instead be targeted and adapted based on data from surveillance of malaria parasite and mosquito populations @@REF.
+%
+To emphasize this, surveillance is now recommended as a core intervention @@REF, and national surveillance programmes are seeking the capability to capture high resolution molecular data alongside epidemiological and entomological variables.
+%
+Genome sequencing technologies are widely considered to be a key element of future surveillance systems, and projects are beginning to lay the ground work to enable the scale up and deployment of sequencing technology for public health operations in malaria-endemic countries.
+%
+These molecular surveillance systems will not work in isolation, but will depend on high quality open genomic data resources, including baseline data on genetic variation from multiple mosquito species and geographical locations, against which comparisons can be made and inferences regarding new events can be drawn.
 %%
-During the 1950s, the widespread use of the insecticide DDT and the antimalarial drug chloroquine in the fight against malaria resulted in high levels of insecticide and drug resistance \cite{hemingway2000, trape2001}, demonstrating both the strength that anthropogenic pressure can exert and the speed at which selection can generate phenotypes to counteract it.
-%% alternative ending - ...highlighting the challenging nature or malaria eradication when both paraiste and vector are able to respond to rapidly evolve defenses against control interventions.
+
+%% Need to accelerate malaria vector research and development of new vector control tools. Role of open genomic data in accelerating R&D.
 %
-This pattern has been repeated for over half a century as new insecticides and antimalarials have been developed, deployed, then rendered ineffective by resistance in an evolutionary 'arms race'.
+Better surveillance can increase the impact and longevity of available mosquito control tools, but it is also widely recognised that sustaining malaria control will require the development and deployment of new control tools.
 %
-However, the last 15 years witnessed an increase in malaria control efforts, mass bed-net distributions and artemisinin combination therapy (ACT) saw large reductions in malaria morbidity and mortality \cite{Bhatt2015}.
+This includes repurposing existing insecticides not previously used in public health @@REF, developing entirely new insecticide classes @@REF, and developing tools that don't rely on insecticides, such as attractive toxic sugar baits @@REF and genetic modification of mosquito populations @@REF.
 %
-In 2018 alone, 172 million long-lasting insecticide treated nets (LLINs) were distributed for free in sub-Saharan Africa (www.allianceformalariaprevention.com/net-mapping-project/).
+Research and development of new mosquito control tools has been greatly facilitated by the availability of open genomic data resources, including high quality genome assemblies and annotations, and more recently by high quality resources on genetic variation among natural mosquito populations @@REFs. 
 %
-Unfortunately these successes may be difficult to sustain.
-%
-In recent years vector resistance to pyrethroid insecticides has become so widespread that there are now fears of control failure \cite{churcher2016, Hemingway2016} and ACT resistance is now prevalent in South East Asia and spreading fast (@@what is best Pf ref?).
-%
-With pyrethroids still currently used in all LLINs and no new anti-malarial drugs since (@@?), it is clear that effective resistance surveillance is essential to maximise the impact and manage sustainability of national malaria control programs (NMCPs). 
+Further expansion of these open data resources to incorporate unsampled mosquito populations and new types of genetic variation can provide new insights into a range of biological and ecological processes, and help to accelerate scientific discovery from basic biology through to operational research.
 %%
 
 
-%%
-Currently, surveillance of insecticide resistance in natural malaria vector populations involves two approaches:
+%% Introduction to Ag1000G. Summary of Ag1000G phase 1. Limitations of Ag1000G phase 1.
 %
-resistance susceptibility testing with insecticide coated paper (\textit{e.g.} WHO tube assay \cite{world2016test}) and the detection of genetic loci associated with resistance via molecular assays (\textit{e.g.} PCR \cite{Ranson2000} and TaqMan \cite{bass2007}).
+The Anopheles gambiae 1000 Genomes (Ag1000G) project @@LINK was established in 2013 to build a large scale open data resource on natural genetic variation in malaria mosquito populations.
 %
-Measuring the insecticide susceptibility phenotypes of live mosquitoes samples provides an almost real-time picture of the strength of resistance (perhaps just one generation removed) and insecticides can be tested with no prior knowledge about potential modes of resistance or of underlying causative genetic resistance loci.
+The Ag1000G project forms part of the Malaria Epidemiology Network (MalariaGEN @@LINK), a data-sharing community of researchers investigating how genetic variation in humans, malaria parasites and malaria vectors can inform biology, epidemiology and control of malaria.
 %
-Monitoring natural populations is important but this approach is laborious, it also requires expensive environmentally controllable spaces (humidity/temperature/light) to enable mosquito breeding and to ensure repeatability of testing \cite{kleinschmidt2018}.
+The first phase of the Ag1000G project released data from whole genome Illumina deep sequencing of mosquitoes from 8 African countries, including SNP calls and phased haplotypes @@REF.
 %
-Detecting a resistance phenotype within a mosquito population using this methodology may also be difficult unless resistance is present at high frequencies.
-%%
-
-
-%%
-Molecular insecticide resistance assays can, conversely, be run quickly and cheaply on dead samples collected directly from natural populations without requirement for breeding the high numbers of mosquitoes necessary for resistance assays.
+Mosquitoes were sampled from a broad geographical range, spanning Guinea-Bissau in West Africa to Kenya in East Africa.
 %
-The specificity of molecular assays is useful, as the frequency of a specific genetic locus contributing to resistance can be measured within a population, although this is also restrictive, as only known resistance markers can be tested using this method.
+Both \textit{Anopheles gambiae} and \textit{Anopheles coluzzii} were sampled, two closely related sibling species within the \textit{Anopheles gambiae} species complex.
 %
-Historically the development and validation of new molecular markers has been slow, though several have been identified for \textit{Anopheles gambiae/coluzzii} in the last 20 years \cite{du2005, jones2012, martinez1998, mitchell2014, ranson2000, riveron2014, weetman2018, weill2003} (Lucas et al 2019 - biorxiv).
+Genetic diversity was found to be high in nearly all populations, but there were marked patterns of population structure, and clear differences between populations in the magnitude and architecture of genetic diversity, indicating complex and varied demographic histories.
 %
-However, these markers do not explain all of the variance in resistance phenotype \cite{donnelly2009, donnelly2016}, for example a combination of three molecular markers were able to explain only ~50\% of the variation of resistance to the insecticide DDT \cite{mitchell2014}.
+However, both of these species have a large geographical range, and many countries and ecological settings are not represented in the Ag1000G phase 1 resource.
 %
-If we are to improve our understanding of insecticide resistance evolution in malaria vectors, an alternative approach is required to both find this missing variation and to better monitor resistance levels in country. 
+Also, only SNPs were studied in Ag1000G phase 1, but other types of genetic variation are known to be important.
+%
+In particular, copy number variation (CNV) has long been suspected to play a key role in insecticide resistance @@REFs, but no previous attempts to call genome-wide CNVs have been made in these species.
 %%
 
 
+%% Introduction to Ag1000G phase 2.
+%
+This paper describes the data resource produced by the second phase of the Ag1000G project.
+%
+Within this phase, sampling and sequencing was expanded to include additional wild-caught mosquitoes sampled from five new countries not sampled in phase 1.
+%
+This includes three new locations with \textit{Anopheles coluzzii}, providing greater power for genetic comparisons with \textit{Anopheles gambiae}, and two island populations, providing a useful reference point to compare against mainland populations.
+%
+Seven new lab crosses are also included, providing a substantial resource for studying genome variation and recombination within known pedigrees.
+%
+In this phase we studied both SNPs and CNVs, and rebuilt a haplotype reference panel using all wild-caught specimens.
+%
+Here we describe the data resource, and use it to re-evaluate major population divisions and characterise genetic diversity.
+%
+We also illustrate the broad utility of the data by providing some preliminary insights into patterns of pyrethroid resistance; analyse genetic diversity within a gene in the sex-determination pathway currently targeted for gene drive development; and compare geographical population structure between the two mosquito species to investigate evidence for differences in dispersal behaviour.
 %%
-The \textit{Anopheles gambiae} 1000 Genomes Project (Ag1000G), an international collaboration, was established with the aim of generating a catalogue of deep-sequencing-generated genomic variation from natural mosquito populations to better understand and thus more effectively combat the principal African malaria vectors. 
-%
-The project forms part of the Malaria Epidemiology Network (MalariaGen - www.malariagen.net) a community of data-sharing and researchers investigating how genetic variation in humans, malaria parasites and malaria vectors can inform biology, epidemiology and ultimately global malaria eradication.
-%
-The output of Ag1000G includes whole genome variation, phased haplotypes, meta-data and genomic scans for signatures of selection, all of which are freely available to analyse under MalariaGen's guiding principles on data sharing \cite{network2008, chokshi2006, parker2009}.
-%
-Phase 1 of the project saw sequencing data released from 765 wild caught \textit{Anopheles} \cite{Ag1000gConsortium2017}, which have already been used to address a wide range of scientific questions regarding malaria control that would be difficult or impossible to investigate without access to this kind of data repository:
-%
-Ag1000G Phase 1 data have been used for highlighting new potential signals of insecticide resistance (Harding biorxiv?), to develop new methods for selection scans using deep-learning \cite{xue2019}, to identify genomic targets for CRISPR-Cas9 mediated gene drive vector control \cite{kyrou2018} and to improve demographic modelling of vectors \cite{khatri2018}.
-%
-@@Do we have anything else from the modelling guys we can put here?@@.
-%
-Recent research into the metabolic mode of insecticide resistance, made possible through the Ag1000g's deep sequencing data, has also elucidated previously unknown complexity of copy number variation which may hold the key to the discovering the 'missing' variation apparent when resistance association is measured \cite{lucas2019, mitchell2014}.
-%
-It has become evident that datasets which can be used to quickly and cheaply to identify potential markers of resistance or improve the vector control 'genetic toolkit' are essential to augment current vector control efforts.
-%
-To transition to predictive (proactive) rather than reactive insecticide resistance management, a deeper understanding of resistance evolution and the ability to parameterise models for resistance spread is required; genomic surveillance of natural populations has the power to facilitate this.
-%%
-
-
-%%
-The pervasive increase in pyrethroid resistance detected across Sub-Saharan Africa is raising fears of LLIN failures leading to increases in malaria \cite{churcher2016, Hemingway2016}.
-%
-To ameliorate the risk of vector control failure, pyrethoid LLINs containing the synergist piperonyl butoxide (PBO) have been in development and testing for some time \cite{darriet2011, protopopoff2018}.
-%
-PBO enhances the potency of certain insecticides (including pyrethroids), where resistance to these chemicals is mediated by cytochrome P450s (metabolic resistance) by inhibiting P450 activity (@ref).
-%
-However, where resistance is purely target-site mediated (\textit{e.g. kdr} mutations), gains are less likely to be seen.
-%
-A study using  meta-analysis to parameterise predictive mathematical models suggests that PBO bednets could avert up to 0.5 clinical cases of malaria per person per year in some locations \cite{churcher2016}.
-%
-More recently an experimental hut trial in Tanzania found that PBO nets were more effective than traditional LLINS where pyrethroid resistance was prevalent \cite{protopopoff2018}, however, these bed-nets are more expensive than pyrethroid only LLINs \cite{churcher2016}.
-%
-An important question is therefore whether we can predict where PBO net distribution could have most impact on vector populations and conversely, where there is no benefit over traditional LLINs \cite{protopopoff2018, toe2018}.
-%%
-
-
-%%
-Here, we describe population diversity and structure, and report on genetic marker of insecticide resistance   of the vector populations now publicly available as the Ag1000G Project Phase 2 data release.
-%
-This includes whole genome sequencing data for 1142 mosquitoes, sequenced to an average depth of 30x coverage, from 16 natural populations in 13 sub-Saharan African countries, alongside 11 laboratory crosses.
-%
-Analyses reveal the breadth of epidemiologically relevant demography and evolutionary histories that are now represented in these data.
-%
-The description of target site and metabolic resistance distribution across natural populations shows the importance of this genomic resource to inform future malaria eradication efforts.
-%%
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
