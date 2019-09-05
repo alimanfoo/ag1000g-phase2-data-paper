@@ -155,40 +155,25 @@ We also illustrate the broad utility of the data by providing some preliminary i
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Results}
 
-\subsection*{Population Sampling}
+
+\subsection*{Population sampling and sequencing}
+
+
+%% Paragraph on population sampling and sequencing.
 %
-In Phase 2 of the Ag1000G Project we sequenced the genomes of 1142 wild caught \emph{Anopheles} mosquitoes; 655 \textit{Anopheles gambiae} individuals, 283 \textit{An. coluzzii} and 204 individuals of undetermined species (individuals with apparent mixed or unclear ancestry).
+We performed whole genome sequencing of 377 individual mosquitoes collected from the wild in 3 continental locations (The Gambiae, Cote d'Ivoire, Ghana) and two offshore islands (Bioko Island, Mayotte Island), of which @@N where female and @@M where male. 
 %
-The project now includes 16 distinct populations of mosquitoes, sampled from 13 countries across Sub-Saharan Africa (Figure 1; Table 1). 
+We also sequenced 152 individuals comprising parents and progeny from seven lab crosses, where parents were drawn from the Ghana, Kisumu, Pimperena, Mali and Akron colonies. 
 %
-Single nucleotide polymorphism (SNPs) were identified after read alignment to the AgamP4 reference genome \cite{Holt2002}.
+We then combined these data with the sequencing data previously generated during phase 1 of the project, to create a total resource of data from 1,142 wild-caught mosquitoes from 13 countries (Figure 1; Table 1) and 234 mosquitoes from 11 lab crosses (Table S1). 
 %
-We identified accessible regions of the genome; regions in which we can call SNPs with sufficient confidence to be used in analysis of population variation.
+As in the previous project phase, all mosquitoes were sequenced individually on Illumina technology using 100 bp paired-end reads to a target depth of 30x, and only mosquitoes obtaining a mean depth above 15x were included in the final resource. 
 %
-Inaccessibility may be caused by frequent repeats and consequent mapping errors, copy number variants violating the diploid model, or regions of very high divergence from the reference.
+All mosquitoes were typed using conventional species diagnostic assays @@REFs and found to be either \textit{An. gambiae} or \textit{An. coluzzii} or to have an apparent \textit{An. gambiae}/\textit{An. coluzzii} hybrid genotype. 
 %
-Following analysis we defined 61\% (140Mbp) of the genome as accessible, including 91\% (18Mbp) of the exome and 58\% (121Mbp) of non-coding positions.
-%
-From these genomic regions we identified 57,837,885 high-quality SNPs (an addition of over 5 million variants from Phase 1\cite{Ag1000gConsortium2017}), of which 24\% were classed as multi-allelic (three or more alleles), generating an average of one variant allele every 1.9 bases of accessible genome.
-%
-Alongside new wild caught sample genomes, Phase 2 also sees the public release of 7 additional lab colony crosses including genomes from both parents and between 14-20 offspring per cross, bringing the total number of available crosses from 4 to 11 (Table \ref{table:colony crosses}).
-%
-Crosses from lab colonies provide a valuable resource for calibration and validation of population genetic analyses.
-%
-Whole genome phasing was performed for all samples. 
-%
-Phasing was evaluated based on successful recovery of haplotypes of cross parents, which were phased by transmission using their progeny.
+We did not, however, assign a species to each individual mosquito based on these assays, as we found in the previous project phase that these assays are not sufficient to fully characterise species ancestry in some populations @@REF, described further below.
 %%
-Quality of phasing varied across the genome. 
-%
-The overall phasing accuracy rate over the autosomes was 92.2\%, and 89.0\% on the X chromosome.
-%
-In the autosomes the mean switch distance of 2Mbp regions varied between 26.5kb and 1.7kb, with a median of 2.7kb.
-%
-On the X chromosome the median switch distance was 3.3kb, with a low of 1.9kb and high of 30.8kbp.
-%
-Distance between switch errors in the centromeric region was much higher, the 10 windows with the greatest switch distance all appeared after 15Mbp.
-%%
+
 
 \begin{figure}[H]
 	\begin{center}
@@ -231,19 +216,40 @@ Distance between switch errors in the centromeric region was much higher, the 10
 %% end Table 1
 
 
-\subsection*{Divergence from the AgamP4 reference genome}
+\subsection*{Nucleotide variation and haplotype phasing}
 
-The genomes of \textit{An. coluzzii} and \textit{An. gambiae} samples were similarly diverged from the reference genome used for alignment, AgamP4 \cite{Holt2002}, indicating that unbiased comparisons can be made between the two species based on our results (Fig. \ref{refdiff}a).
+
+%% Paragraph on SNP discovery and genome accessibility.
 %
-The similarity in levels of divergence reflect the mixed ancestry of the PEST strain from which the reference genome was derived \cite{Holt2002}.
+Sequence reads from all individuals were aligned to the AgamP4 reference genome @@REF and SNPs were discovered using methods previously described @@REF.
 %
-An exception to this is the pericentromeric region of chromosome X, a known region of divergence between the two species \cite{Ag1000gConsortium2017} where the reference genome is closer to \textit{An. coluzzii} than to \textit{An. gambiae}.
+In total we discovered 57,837,885 SNPs passing all variant quality filters (Methods). 
 %
-The similarity of this region to \textit{An. coluzzii} may be due to artificial selection for the X-linked pink eye mutation in the reference strain \cite{Holt2002}, as this originated in the \textit{An. coluzzii} parent it may have led to the removal of any \textit{An. gambiae} ancestry in this region.
+Of these high quality SNPs, 24\% were found to be multiallelic (three or more alleles), and @@N\% were newly discovered in this project phase.
 %
-Reductions in divergence from the reference genome in regions of low recombination are apparent in the centromeres and telomeres, as well as in the large 2La polymorphic inversion in both species \cite{coluzzi2002} (Figure \ref{refdiff}b \& c). 
+We also performed an analysis of genome accessibility, to identify all genomic positions where read alignments were of sufficient quality and consistency to support accurate discovery and genotyping of nucleotide variation.
 %
-All analyses of geographical population structure were conducted on euchromatic regions of Chromosome 3, which avoids regions of polymorphic inversions, reduced recombination and unequal divergence from the reference genome \cite{Ag1000gConsortium2017}.
+Similar to the previous project phase, we found that 61\% (140 Mbp) of genome positions were accessible, including 91\% (18 Mbp) of the exome and 58\% (121 Mbp) of non-coding positions.
+%
+Overall we discovered an average of one variant allele every 1.9 bases of the accessible genome.
+%%
+
+
+%% Paragraph on haplotype phasing.
+%
+We used high quality biallelic SNPs to construct a haplotype reference panel including all 1,142 wild-caught individuals. 
+%
+To improve haplotype accuracy, we used a combination of read-backed phasing and statistical phasing, as described previously @@REF. 
+%
+To evaluate phasing quality on the autosomes, we first phased the cross parents together with their progeny using pedigree information, then included the cross parents in the wild population phasing, and compared the results from the two phasing methods.
+%
+To evaluate phasing quality on the X Chromosome, we constructed synthetic female diploid data from males, then compared the phased haplotypes from the synthetic females with the known male haplotypes. 
+%
+@@TODO report phasing results, and compare with previous project phase?
+%%
+
+
+% @@TODO move results regarding divergence from reference genome until after species assignments have been made.
 
 
 \subsection*{Population structure}
