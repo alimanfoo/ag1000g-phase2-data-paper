@@ -216,14 +216,14 @@ We did not, however, assign a species to each individual mosquito based on these
 %% end Table 1
 
 
-\subsection*{Nucleotide variation and haplotype phasing}
+\subsection*{Genome variation}
 
 
-%% Paragraph on SNP discovery and genome accessibility.
+%% Paragraph on nucleotide variation, including SNP discovery, genome accessibility and haplotype phasing.
 %
-Sequence reads from all individuals were aligned to the AgamP4 reference genome @@REF and SNPs were discovered using methods previously described @@REF.
+Sequence reads from all individuals were aligned to the AgamP4 reference genome @@REF and SNPs were discovered using methods described previously @@REF.
 %
-In total we discovered 57,837,885 SNPs passing all variant quality filters (Methods). 
+In total, we discovered 57,837,885 SNPs passing all variant quality filters. 
 %
 Of these high quality SNPs, 24\% were found to be multiallelic (three or more alleles), and @@N\% were newly discovered in this project phase.
 %
@@ -232,21 +232,22 @@ We also performed an analysis of genome accessibility, to identify all genomic p
 Similar to the previous project phase, we found that 61\% (140 Mbp) of genome positions were accessible, including 91\% (18 Mbp) of the exome and 58\% (121 Mbp) of non-coding positions.
 %
 Overall we discovered an average of one variant allele every 1.9 bases of the accessible genome.
+%
+We then used high quality biallelic SNPs to construct a new haplotype reference panel including all 1,142 wild-caught individuals, via a combination of read-backed phasing and statistical phasing as described previously @@REF. 
 %%
 
 
-%% Paragraph on haplotype phasing.
-%
-We used high quality biallelic SNPs to construct a haplotype reference panel including all 1,142 wild-caught individuals. 
-%
-To improve haplotype accuracy, we used a combination of read-backed phasing and statistical phasing, as described previously @@REF. 
-%
-To evaluate phasing quality on the autosomes, we first phased the cross parents together with their progeny using pedigree information, then included the cross parents in the wild population phasing, and compared the results from the two phasing methods.
-%
-To evaluate phasing quality on the X Chromosome, we constructed synthetic female diploid data from males, then compared the phased haplotypes from the synthetic females with the known male haplotypes. 
-%
-@@TODO report phasing results, and compare with previous project phase?
 %%
+In this project phase we also performed a genome-wide CNV analysis, described in detail elsewhere @@REF.
+%
+For each individual mosquito, we called CNVs by fitting a hidden Markov model to windowed data on depth of sequence read coverage, then compared calls between individuals to identify shared CNVs.
+%
+The CNV callset includes 1,557 distinct CNVs present at at least 5\% frequency in one or more populations, of which 250 contain at least one gene.
+%
+These common CNVs affect a total of @@N bp and overlap 267 distinct genes.
+%
+CNVs were significantly enriched in gene families associated with metabolic resistance to insecticides, confirming that CNVs are in important mode of adaptation to mosquito control interventions.
+%% 
 
 
 % @@TODO move results regarding divergence from reference genome until after species assignments have been made.
