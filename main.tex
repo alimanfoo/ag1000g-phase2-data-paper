@@ -250,15 +250,24 @@ CNVs were significantly enriched in gene families associated with metabolic resi
 %% 
 
 
-% @@TODO move results regarding divergence from reference genome until after species assignments have been made.
+\subsection*{Species assignment}
 
 
-\subsection*{Population structure}
-
-Analysis of population structure in the nine Ag1000G Phase 1 populations revealed medically relevant demographic features including connectivity between populations and movement of insecticide resistance mutations across Sub-Saharan Africa \cite{Ag1000gConsortium2017}.
-% 
-Here we revisit population structure analyses to include the 7 additional populations included in Phase 2.
+%% Paragraph about species ancestry, reporting results of AIM analysis.
+%
+The conventional molecular assay for differentiating An. gambiae from An. coluzzii is based on a fixed genetic difference at a single locus on the X Chromosome @@REF.
+%
+In the first phase of Ag1000G we compared the results of this assay with genotypes at @@N ancestry-informative SNPs distributed across all chromosome arms, and found that in some cases the conventional assay was not concordant with alleles at other genome locations.
+%
+In particular, all individuals from two sampling locations (Kenya, Guinea-Bissau) carried a mixture of \textit{An. gambiae} and \textit{An. coluzzii} alleles, creating uncertainty regarding the appropriate species assignment. 
+%
+Applying the same analysis to the new samples in Ag1000G phase 2, we found that mosquitoes from The Gambia also carried a mixture of alleles from both species, in similar proportions to mosquitoes from Guinea-Bissau @@FIG.
+%
+In all other locations, alleles at ancestry-informative SNPs were concordant with conventional diagnostics, except on Chromosome arm 2L where there has been a known introgression event carrying an insecticide resistance allele from \textit{An. gambiae} into \textit{An. coluzzii} @@REFs.
+%
+We observed this introgression in \textit{An. coluzzii} from both Burkina Faso and Angola in the phase 1 cohort, and it was also present among \textit{An. coluzzii} from Cote d'Ivoire, Ghana and Guinea in the phase 2 cohort, and thus has spread widely.
 %%
+
 
 \begin{figure}[H]
 	\begin{center}
@@ -268,19 +277,25 @@ Here we revisit population structure analyses to include the 7 additional popula
 	\label{pca}
 \end{figure}
 
+
+\subsection*{Population structure}
+
+
+%% Paragraph with results on population structure.
 %
-In Phase 1, two of the nine populations were \textit{An. coluzzii} and these, Burkina Faso (BFcol) and Angola (AOcol), were highly differentiated (principal component analysis (PCA), doubleton sharing and F\raisebox{-.4ex}{\scriptsize ST}).
+We investigated genetic population structure within the cohort of wild-caught mosquitoes by performing principal components analysis (PCA) (@@FIG).
 %
-This limited our ability to draw general conclusions about the history and population structure of this major malaria vector, and its relationship to its sister species \textit{An. gambiae} difficult to investigate \cite{Ag1000gConsortium2017}.
+To complement PCA, we also computed two measures of genetic differentiation -- average $F_{ST}$ and rates of rare variant sharing -- between all pairs of 16 populations defined by country of origin and species, excluding \textit{An. coluzzii} from Guinea due to small sample size @@FIG.
 %
-The three additional \textit{An. coluzzii} populations, C\^{o}te d'Ivoire (CIcol), Guinea (GNcol) and Ghana (GHcol) (Figure \ref{sample_map}) are therefore of particular importance to the Phase 2 data release.
+From these analyses, the following groupings of samples from multiple locations were evident: \textit{An. coluzzii} from West Africa (Burkina Faso, Ghana, Cote d'Ivoire, Guinea); \textit{An. gambiae} from West and Central Africa (Burkina Faso, Ghana, Guinea, Cameroon, Bioko); far West (Guinea-Bissau, The Gambia). 
 %
-Substantially less population structure is found between the the three additional Phase 2 \textit{An. coluzzii} populations than between BFcol and AOcol from Phase 1, 
+Within each of these groupings, samples clustered together in the PCA, and differentiation between sampling locations was weak, consistent with ongoing gene flow between locations.
 %
-PCA analyses found CIcol, GNcol and GHcol clustering together in initial PCA components, BFcol clusters closely but is separated by PC1, with AOcol distant by both PC1 and PC2 (Figure \ref{pca}).
+Each of the remaining PCA clusters comprised samples from a single location and species (\textit{An. coluzzii} from Angola; \textit{An. gambiae} from Uganda; \textit{An. gambiae} from Gabon, \textit{An. gambiae} from Mayotte; Kenya), and each of these populations was relatively strongly differentiated from all other populations, consistent with geographical factors limiting gene flow.
 %
-Despite the PC1 separation of BFcol from the new \textit{An. coluzzii} samples, doubleton sharing and F\raisebox{-.4ex}{\scriptsize ST}) analyses reveal high sharing and weak allelic differentiation respectively between all \textit{An. coluzzii} populations with the exception of AOcol (Figure \ref{fstdbl}).
+A comparison of the two \textit{An. gambiae} island populations is interesting because Mayotte was highly differentiated, but individuals from Bioko clustered closely with other West African \textit{An. gambiae}, suggesting that Bioko is not isolated from continental populations despite a physical separation of more than 30 km.
 %%
+
 
 \begin{figure}[H]
 	\begin{center}
@@ -291,20 +306,6 @@ Despite the PC1 separation of BFcol from the new \textit{An. coluzzii} samples, 
 	\label{fstdbl}
 \end{figure}
 
-%
-The Phase 2 Gambian (GM) population is strikingly similar in multiple aspects to the the samples from neighbouring Guinea Bissau (GW).
-%
-Both populations have similar patterns of ancestry informative marker painting (Figure \ref{aim}), fall together in early principal components (Figure \ref{pca}), show high doubleton sharing with each other but not between other populations (Figure \ref{fstdbl}b) and are weakly differentiated (F\raisebox{-.4ex}{\scriptsize ST} = 0.007 Figure \ref{fstdbl}a).
-%
-The Phase 2 cohort also includes two \textit{An. gambiae} populations collected from islands, Bioko (GQgam) off the west coast of Africa and Mayotte (FRgam) off the eastern seaboard; despite their island collection our analyses found them highly dissimilar. 
-%
-GQgam clusters with Ugandan (UGcol), Ghanaian (GHcol) and Cameroonian (CMcol) \textit{An. gambiae} in early PCA components (Figure \ref{pca}), though has elevated levels of genetic differentiation when compared to other 
-\textit{An. gambiae vs. An. gambiae} F\raisebox{-.4ex}{\scriptsize ST} values (exluding FRgam) (Figure \ref{fstdbl}a). 
-%
-FRgam is an outlier in principal components three and four, has almost no doubleton sharing with any other populations and the only population more genetically differentiated in pairwise comparisons is Kenya (KE) which is known to be highly bottlenecked \cite{Ag1000gConsortium2017} (Figure \ref{fstdbl}).
-% 
-Unlike KE, which appears 'hybridised' in AIM analysis, FRgam is comparable to other An. gambiae populations (Figure S1).
-%%
 
 
 \subsection*{Genetic diversity within populations}
