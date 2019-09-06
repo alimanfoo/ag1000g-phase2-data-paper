@@ -1,0 +1,58 @@
+Phase 2 
+
+
+**Abstract**
+
+MalariaGen is a data sharing network that enables groups around the world to the use genomic tools to study malaria disease and transmission.
+
+Here we describe a new release of curated whole-genome variation data on 1,142 malaria vector mosquitoes, 
+sampling from 16 populations in 13 sub-Saharan African countries as part of Phase 2 of the Anopheles gambiae 1000 Genomes Project.
+
+High-quality genotype calls on ~58 million single nucleotide polymorphisms (SNPs) were produced using a standardised analysis pipeline.
+
+The expanded sampling of the Phase 2 data set allowed investigations into population structure and genetic diversity which highlight medically relevant demographic features differentiated between geographic regions.
+
+For example the island populations, novel to Phase 2 reveal divergent evolutionary histories, high diversity and low Tajima's D in Bioko island samples but the inverse in those from the island of
+ Mayotte.
+
+Important differentiation between the two species sampled here, Anopheles gambiae and An. coluzzii, was also uncovered.
+
+An. coluzzii was found to have stronger population structure and therefore potentially lower dispersal than An. gambiae, a result highly relevant to the success of cas-9 mediated 
+gene-drive vector control.
+
+Most populations show evidence of at least one mode of resistance to insecticides, with @@nn samples carrying at least one potential resistance allele.
+
+As expected, markers in the Vgsc gene for target-site resistance to pyrethroid insecticides were widespread, however we also show that many individuals also carry potential markers for 
+metabolic resistance to pyrethoids.
+
+These results can inform national malaria control program (NMCP) roll-out of next-generation cytochrome P450 synergist bednets, which provide increased protection in the presence of 
+pyrethroid metabolic resistance, and more generally demonstrate the power of large genomic datasets in the fight against malaria.
+
+By continually enlarging this open dataset of mosquito genomes, we aim to accelerate research into medically important aspects of vector evolution and the development of an insecticide
+resistance monitoring framework required for malaria elimination.
+
+
+
+**Introduction**
+
+-lifted entirely from DK intro
+A major obstacle to malaria elimination is the great capacity of the parasite and vector populations to evolve in response to malaria control interventions. 
+
+The widespread use of chloroquine and DDT in the 1950’s led to high levels of drug and insecticide resistance, and the same pattern has been repeated for other 
+first-line antimalarial drugs and insecticides.
+
+Over the past 15 years, mass distribution of pyrethroid-treated bednets in Africa and worldwide use of artemisinin combination therapy (ACT) initially led to substantial
+reductions in malaria prevalence and mortality, but the rate of progress has now tailed off, with rising levels of ACT resistance in Southeast Asian parasites and 
+of pyrethroid resistance in African mosquitoes. 
+
+A deep understanding of local patterns of resistance and the continually changing nature of the local parasite and vector populations is necessary to
+manage the use of drugs and insecticides and to deploy public health resources for maximum sustainability and impact.
+-
+
+
+Currently, the surveillance of insecticide resistance in natural vector populations in achieved via insecticide bottle/tube assays (e.g. WHO) and molecular (PCR/TaqMan)
+ of known resistance loci. 
+- Paper assay benefits and issues
+- molecular benefits and issues
+- THE GENOMIC SOLUTION
+
