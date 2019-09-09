@@ -305,6 +305,33 @@ A comparison of the two \textit{An. gambiae} island populations is interesting b
 \end{figure}
 
 
+%% Paragraph on isolation by distance.
+%
+The additional locations sampled in this project phase allow more comparisons to be made between the two species, and there are many open questions regarding their behaviour, ecology and evolutionary history.
+%
+For example, it would be valuable to know whether there are any differences in dispersal behaviour between the two species @@REFs. 
+%
+Providing a comprehensive answer to this question is beyond the scope of this study, but we performed a preliminary analysis by estimating Wright's neighbourhood size for each species @@REF.
+%
+This statistic is an approximation for the effective number of potential mates for an individual, and can be viewed as a measurement of how genetic differentiation between populations correlates with the geographical distance between them (isolation by distance).
+%
+We used Rousset's method for estimating neighbourhood size based on a regression of normalised $F_{ST}$ against the logarithm of geographical distance @@REF.
+%
+We found that average neighbourhood sizes are significantly lower in \textit{An. coluzzii} (median=85) than in \textit{An. gambiae} (median=261) (Figure \ref{fig:ibd_fig}) (@@TODO P value or 95\% CIs), indicating stronger isolation by distance among \textit{An. coluzzii} populations and suggesting a lower rate and/or range of dispersal.
+%
+We caution, however, that we do not have representation of both species at all sampling locations, and further sampling is needed to confirm this result.
+%%
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=6.3in]{artwork/west_africa_multipanel_edit.pdf}
+	\end{center}
+	\caption{Isolation by distance in west African \textit{Anopheles}. \textbf{(a)} Study region and pairwise $F_{st}$. \textbf{(b)} Regressions of average genome-wide $F_{st}$ against geographic distance, following Rousset \cite{rousset1997genetic}. Neighbourhood size is estimated as the inverse slope of the regression line. \textbf{(c)} Difference in neighbourhood size estimates by species, with each point representing a 200kb region of the genome. \textbf{(d)} Neighbourhood size estimates across the genome, demonstrating heterogeneity relating to inversions (grey bars) and sites implicated in insecticide resistance (black triangles).}
+	\label{fig:ibd_fig}
+\end{figure}
+
+
 \subsection*{Genetic diversity within populations}
 
 %%
@@ -449,50 +476,6 @@ Diversity in the exon was also low, with $\pi = 0.00055$ over the 92bp of the ex
 	\label{dsx1}
 \end{figure}
 
-
-
-
-\subsection*{Vector biology - isolation by distance}
-%%
-
-%%
-The expanded sampling of the phase 2 dataset also allows analysis of fine-scale geographic differentiation among \textit{Anopheles} populations, improving our understanding of vector migration behaviour.
-%
-To assess how the geographic distance of collection sites relates to the genetic differentiation of sample we calculated Wright's "Neighbourhood Size" \cite{wright1946isolation} for \textit{An. gambiae} and \textit{An. coluzzii} in West Africa (Figure \ref{fig:ibd_fig}a), a measurement of isolation by distance.
-%
-This statistic is an approximation of the (effective) number of potential mates for an individual and can be viewed as a measure of the strength of isolation by distance - low values indicate strong differentiation across space, and high values weak differentiation.
-%
-We used Rousset's \cite{rousset1997genetic} method for estimating neighbourhood size based on a regression of normalized $F_{st}$ against the logarithm of geographic distance, and calculated this statistic in 200,000bp windows across the genome for all pairs of localities in western Africa, excluding Angola. 
-%
-Comparisons were limited to pairs for which both populations belonged to the same species.
-%%
-
-
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics*[width=6.3in]{artwork/west_africa_multipanel_edit.pdf}
-	\end{center}
-	\caption{Isolation by distance in west African \textit{Anopheles}. \textbf{(a)} Study region and pairwise $F_{st}$. \textbf{(b)} Regressions of average genome-wide $F_{st}$ against geographic distance, following Rousset \cite{rousset1997genetic}. Neighbourhood size is estimated as the inverse slope of the regression line. \textbf{(c)} Difference in neighbourhood size estimates by species, with each point representing a 200kb region of the genome. \textbf{(d)} Neighbourhood size estimates across the genome, demonstrating heterogeneity relating to inversions (grey bars) and sites implicated in insecticide resistance (black triangles).}
-	\label{fig:ibd_fig}
-\end{figure}
-
-
-%%
-We found that average neighbourhood sizes are lower in \textit{An. coluzzii} (median=84.7) than in \textit{A. gambiae} (median=260.5; Figure \ref{fig:ibd_fig}b, c), reflecting stronger population structure and potentially lower dispersal in \textit{An. coluzzii} populations.
-%
-Though both figures are strikingly low relative to census population sizes, our estimate for \textit{A. gambiae} is quite similar to a recent study in a Malaysian population of \textit{An. aegypti} in which neighborhood size was estimated at 268 \cite{jasper2019genomic}.
-%
-Levels of isolation by distance also vary across the genome in both species (Figure \ref{fig:ibd_fig}d).
-%
-These patterns appear to reflect the influence of local $N_{e}$ and selection on population differentiation.
-%
-Deviations from local genomic neighbourhood size coincide with a number of inversions.
-%
-The large 2La inverted region on chromosome 2L shows a roughly 10-fold drop in neighbourhood size relative to surrounding regions of the genome in both \textit{An. coluzzii} and \textit{An. gambiae}.
-%
-Dips in estimated neighbourhood sizes were also observed in one or both species near several genes/gene-clusters implicated in insecticide resistance (Figure \ref{fig:ibd_fig}d). 
-%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
