@@ -285,9 +285,9 @@ We investigated genetic population structure within the cohort of wild-caught mo
 %
 To complement PCA, we also computed two measures of genetic differentiation -- average $F_{ST}$ and rates of rare variant sharing -- between all pairs of 16 populations defined by country of origin and species, excluding \textit{An. coluzzii} from Guinea due to small sample size @@FIG.
 %
-From these analyses, the following groupings of samples from multiple locations were evident: \textit{An. coluzzii} from West Africa (Burkina Faso, Ghana, Cote d'Ivoire, Guinea); \textit{An. gambiae} from West and Central Africa (Burkina Faso, Ghana, Guinea, Cameroon, Bioko); far West (Guinea-Bissau, The Gambia). 
+From these analyses, the three major groupings of samples from multiple locations were evident: \textit{An. coluzzii} from West Africa (Burkina Faso, Ghana, Cote d'Ivoire, Guinea); \textit{An. gambiae} from West and Central Africa (Burkina Faso, Ghana, Guinea, Cameroon, Bioko); far West (Guinea-Bissau, The Gambia). 
 %
-Within each of these groupings, samples clustered together in the PCA, and differentiation between sampling locations was weak, consistent with ongoing and relatively unrestricted gene flow between locations.
+Within each of these groupings, samples clustered together in the PCA, and differentiation between sampling locations was weak, consistent with relatively unrestricted gene flow between locations.
 %
 Each of the remaining PCA clusters comprised samples from a single location and species (\textit{An. coluzzii} from Angola; \textit{An. gambiae} from Uganda; \textit{An. gambiae} from Gabon, \textit{An. gambiae} from Mayotte; Kenya), and each of these populations was relatively strongly differentiated from all other populations, consistent with geographical factors limiting gene flow.
 %
@@ -332,53 +332,18 @@ We caution, however, that we do not have representation of both species at all s
 \end{figure}
 
 
-\subsection*{Genetic diversity within populations}
+\subsection*{Genetic diversity}
 
-%%
-We carried out analyses of the genetic diversity within populations to enable inference of their evolutionary histories.
-%
-An understanding of historical evolutionary trajectories is essential to parameterise mathematical models and predict future outcomes of vector control methods.
-%
-%
-All but three populations carry similar levels of median genetic diversity (from Guinea \textit{coluzzii} $\pi$ = 0.014 to Guinea \textit{gambiae} $\pi$ = 0.016), with only Angola ($\pi$ = 0.012), Mayotte ($\pi$ = 0.010) and Kenya ($\pi$ = 0.009) presenting lower levels (Figure \ref{div}a).
-%
-Mayotte and Kenyan samples also stood out in estimations of Tajima's D, which compares the average number of pairwise differences with the number of segregating sites, as the only populations carrying positive median values  (Mayotte Tajima's D = 1.11, Kenya Tajima's D = 1.97 Figure \ref{div}b).
-%
-The other populations presented Tajima's D values between 0 and -2 (from Angola \textit{coluzzii} D = -0.24 to Cameroon \textit{gambiae} D = -2.058).
-%%
 
-%%
-Runs of homozygosity present within individuals can be informative with regard to population demography.
+%% Introduction to genetic diversity metrics.
 %
-Both high counts and high fractions of the genome with contiguous runs of homozygosity (ROH) can be indicative of inbreeding.
+The populations represented in the Ag1000G phase 2 cohort can serve as a reference point for comparisons with populations sampled by other studies at other times and locations. 
 %
-A previous analysis of Phase 1 populations \cite{Ag1000gConsortium2017} saw Kenya stand out with ROH tracts taking up to ~60\% of the genome, a much higher percentage than all other natural populations and similar to individuals from the  Mali lab colony (these were cross parents) (Figure \ref{div}c). 
+To facilitate population comparisons, we characterised genetic diversity within each of 16 populations in our cohort defined by country of origin and species by computing a variety of summary statistics using data from the whole genome.
 %
-The additional colony cross parents available for analysis in Phase 2 reveal a much broader spread in both count and fraction ROH between colonies, suggestive of different histories.
+These statistics included nucleotide diversity ($\theta_{\pi}$; Figure @@X), Watterson's theta ($\theta_{W}$; Fig @@X), Tajima's $D$ (Figure @@X) and site frequency spectra (SFS; Figure @@X). 
 %
-Ghana colony samples appear outbred with similar ROH distributions to wild caught samples, whereas samples from the Kisumu colony have extremely high levels of ROH.    
-%%
-
-%%
-While the population from Kenya remain an outlier in terms of the high fraction of genomes contained in a ROH, values from the new Phase 2 population from Mayotte were also striking.
-%
-The island population demonstrates significantly elevated ROH fractions, some samples even matching Kisumu colony's samples with counts of ROH >100, though the ROH were distributed as many smaller regions rather than the large chunks observed in Kenya.
-%%
-
-%%
-Within population Identity by descent (IBD) was computed across the cohort. 
-%
-The distribution of IBD can be informative about population demographic history. 
-%
-As expected given the results above, we see elevated IBD in Kenya, Mayotte, Gabon and Angola (Figure \ref{div}).
-%
-Compared to other \emph{gambiae} populations, Cameroon shows a large number of small chunks of shared ancestry.
-%
-Pairs from Cameroon \emph{gambiae} showed a mean of 23 IBD chunks, compared to 11 in the otherwise similar Burkina Faso \emph{gambiae} population.
-%
-These chunks also tended to be slightly smaller in Cameroon \emph{gambiae} than in Burkina Faso (10.4kb vs 18.3kb). 
-%
-Such marked differences in IBD between these populations may suggest a distinct population history for Cameroon.
+We also estimated runs of homozygosity (ROH; Figure @@X) within each individual and runs of identity by descent (IBD; Figure @@X) between individuals, both of which provide additional information about haplotype sharing and patterns of relatedness within populations. 
 %%
 
 
@@ -390,6 +355,21 @@ Such marked differences in IBD between these populations may suggest a distinct 
 	\label{div}
 \end{figure}
 
+
+%% Summary of main patterns in the diversity data.
+%
+The two Eastern-most populations (Kenya, Mayotte \textit{An. gambiae}) were outliers in all statistics calculated, with lower diversity, a deficit of rare variants relative to neutral expectation, and a higher degree of haplotype sharing within and between individuals.
+%
+The Kenyan population was represented in Ag1000G phase 1, and we previously described how the patterns of diversity in this population were consistent with a severe and recent population bottleneck.
+%
+The similarities between Kenya and Mayotte suggest that the Mayotte population has also experienced a population bottleneck, which would be expected given that Mayotte is an offshore island and may have been colonised by \textit{An. gambiae} via a small number of founding events.
+%
+Although ROH and IBD were elevated in both populations, Mayotte individuals had a larger number of shorter tracts than Kenyan individuals, which may reflect differences in the timing and/or strength of the bottleneck.
+%
+In contrast, the \textit{An. gambiae} individuals from Bioko Island had very similar patterns of diversity to \textit{An. gambiae} populations from West and Central Africa, supporting other evidence suggesting that this population is not isolated from continental populations.
+%
+The additional \textit{An. coluzzii} populations (Ghana, Cote d'Ivoire) were similar to the previously sampled Burkina Faso \textit{An. coluzzii} population, and the newly sampled Gambian population with uncertain species status was similar to the previously sampled Guinea-Bissau population, consistent with evidence from PCA that these populations form groupings with shared demographic histories and ongoing gene flow.
+%%
 
 
 \subsection*{Genomic insecticide resistance surveillance}
