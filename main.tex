@@ -372,6 +372,14 @@ The additional \textit{An. coluzzii} populations (Ghana, Cote d'Ivoire) were sim
 %%
 
 
+\subsection*{Design of Cas9 gene drives}
+
+
+%%
+@@TODO
+
+
+
 \subsection*{Genomic insecticide resistance surveillance}
 %%
 
@@ -420,41 +428,6 @@ On the two island population of Bioko and Mayotte no pyrethroid resistance, targ
 %%
 
 
-%% CAS9
-\subsection*{Vector control tool development - CAS9 gene drive}
-%%
-
-%
-In a recent study investigating possibilities of gene drive as a means of mosquito vector control, a Cas9 target was designed against a 23bp region spanning an intron-exon boundary that is subject to alternative splicing in the doublesex (\textit{dsx}) gene \cite{kyrou2018}.
-%
-Lack of diversity in the Cas9 target is crucial to the success of this gene drive method, as any variation could inhibit the drive mechanism and thus constitute a resistant genotype that could spread and resist control.
-%
-The mutant allele was present at 2.9\% frequency in Ag1000G Phase 1, and is now at 2.5\% frequency in Phase 2, being found in \textit{An.coluzzii} from Angola (26.5\% frequency), and \textit{An. gambiae} from Cameroon (1.3\%) and Gabon (5.8\%).
-%
-This site has previously been shown not to interfere with the gene drive process \cite{kyrou2018}, and since we find no other variant sites in the region, there is no evidence of any naturally-occurring variation that could disrupt this gene drive target. 
-%%
-
-%%
-The occurrence of alternative splicing at the site of this gene drive target may explain the low diversity in the region, and could impose purifying selection pressures on a wider area than these 23bp.
-%
-We investigated variation in the wider region around the \textit{dsx} target and found that it was lower than the mean variation in other genes on the 2R chromsome (\ref{dsx1}). 
-%
-Diversity was particularly low in the region of the intron near the intron-exon boundary.
-%
-After removing filtered positions, mean genetic diversity ($\pi$) over the last 100bp of the intron was 0.00046, which was smaller than 99.2\% of comparable introns (at least 300bp in size, with at least 70 of the first 100bp passing filtering) on the chromsome.
-%
-Diversity in the exon was also low, with $\pi = 0.00055$ over the 92bp of the exon, which is lower than 91.9\% of comparable exons (smaller than 100bp, with at least 70bp passing filtering) on the chromosome. 
-
-%[in case anyone asks, if we only look at the third coding position then about 88\% of exons have higher diversity than this one].
-
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics*[width=5.5in]{artwork/temp-cas9dsx/Cas9_target_diversity.jpg}
-	\end{center}
-	\caption{Genetic variation (orange line) around the intron-exon boundary targeted by the gene drive mechanism in \textcite{kyrou2018} is low compared to the average intronic (green bars) or exonic (blue bars) variation on chromosome 2R. Bars show mean and 95\% confidence intervals for each position relative to the start (light blue) or end (green and dark blue) of the genomic feature. To adequately compare with the \textit{dsx} exon and intron plotted here, mean exonic diversity was calculated using exons smaller than 100bp whose first base was the second codon position, and mean intronic diversity was caculated using introns larger than 300bp. Red points indicate positions on the \textit{dsx} gene that were inaccessible and thus where diversity could not be calculated.}
-	\label{dsx1}
-\end{figure}
 
 
 
@@ -879,8 +852,11 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\clearpage
+
 \section*{Supplementary figures and tables}
 
+\clearpage
 
 \begin{figure}[H]
 	\begin{center}
@@ -890,6 +866,7 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 	\label{refdiff}
 \end{figure}
 
+\clearpage
 
 \begin{figure}[H]
 	\begin{center}
@@ -899,14 +876,32 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 	\label{aim}
 \end{figure}
 
+\clearpage
 
 \begin{figure}[H]
-    \begin{center}
-    \includegraphics[width=\textwidth]{artwork/fst_by_dist_species_VGSC_edit.pdf}
-    \end{center}
-    \caption{$F_{st}$ as a function of geographic distance on chromosome 2L at sites more and less than 500kb from \textit{Vgsc}, a gene involved in insecticide resistance. Differentiation of the \textit{Vgsc} regions is strongly related to geographic distance within \textit{An. gambiae}, but not in \textit{An. coluzzii}.}
-    \label{fig:vgsc_ibd}
+    \centering
+    \textbf{a}
+    \includegraphics[width=1.0\linewidth]{artwork/dsx_a.pdf}
+    \textbf{b}
+    \includegraphics[width=1.0\linewidth]{artwork/dsx_b.pdf}
+    \caption{%
+    Nucleotide diversity within the female-specific exon 5 of the \textit{doublesex} gene (\textit{dsx}; AGAP004050), a key component of the sex determination pathway and a gene targeted for Cas9-based homing endonuclease gene drive.
+    %
+    In both plots, the location of exon 5 is shown above (black = coding sequence; grey = untranslated region), with additional annotations to show the location of the Cas9 target sequence described in \cite{kyrou2018}, and the putative exon splice enhancing sequences reported in @@REF (``RE'').
+    %
+    The main region of the plot shows nucleotide diversity averaged across all Ag1000G phase 2 populations, computed in 23 bp moving windows.
+    %
+    Regions shaded pale red indicate regions not accessible to SNP calling.
+    %
+    Triangle markers below show the locations of SNPs discovered in Ag1000G phase 2 (green = passed variant filters; red = failed variant filters).
+    %
+    \textbf{a}, exon5/intron4 boundary.
+    %
+    \textbf{b}, exon5/intron6 boundary.
+}
+    \label{fig:dsx}
 \end{figure}
+
 
 %% Table S1 - crosses.
 %
