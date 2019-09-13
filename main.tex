@@ -376,8 +376,48 @@ The additional \textit{An. coluzzii} populations (Ghana, Cote d'Ivoire) were sim
 
 
 %%
-@@TODO
+%
+One of the ways the nucleotide variation data in this resource is being used is to inform the development of gene drives, a novel mosquito control technology using engineered selfish genetic elements to cause mosquito population suppression or modification @@REFs.
+%
+Promising results have been obtained with a Cas9 homing endonuclease gene drive targeting a locus in the doublesex gene (\textit{dsx}), which is a critical component of the sex determination pathway @@REF.
+%
+This locus was chosen in part because it has extremely low genetic diversity both within and between species in the \textit{An. gambiae} complex @@REF.
+%
+Low diversity is required because any natural variation within the target sequence could inhibit association with the Cas9 guide RNA and cause resistance to the gene drive.
+%
+We reviewed nucleotide variation within \textit{dsx} using the expanded cohort of wild-caught samples in the phase 2 cohort.
+%
+We found no new nucleotide variants within the target sequence used by @@REF, other than the previously known SNP at position @@X, which has been shown not to interfere with the gene drive process @@REF.
+%
+To faciliate the search for other potential gene drive targets in \textit{dsx} and other genes, we computed allele frequencies for all SNPs in all populations and included those data in the resource.
+%
+We also compiled a table of all potential Cas9 target sites (23 bp regions with a protospacer-adjacent motif) in the genome, ordered by nucleotide diversity.
+%
+This table includes @@N viable Cas9 targets that overlap a gene coding sequence and that have complete nucleotide conservation within the Ag1000G phase 2 cohort.
+%%
 
+
+%%
+The presence of highly conserved sequences within \textit{dsx} is also relevant to the molecular biology of sex determination in \textit{An. gambiae}, which remains poorly understood.
+%
+Insect sex determination depends on sex-specific splicing of \textit{dsx}, with exon 5 being retained in the female transcript and skipped in the male transcript @@REF.
+%
+In \textit{Drosophila melanogaster} this differential splicing depends on female-specific regulatory factors which bind to the exon 5 region of the \textit{dsx} pre-mRNA and promote inclusion of exon 5 within the final transcript @@REFs.
+%
+Any sequences required for the proper binding of this splicing machinery to the pre-mRNA will be subject to strong purifying selection, because disruption of \textit{dsx} splicing is highly deleterious in females @@REF. 
+%
+\textit{D. melanogaster} female splice enhancing factors bind to a series of six 13 bp sequences (\textit{dsx}REs) located in the untranslated region of exon 5 @@REF.
+%
+Putative homologs of these \textit{dsx}REs are present in \textit{An. gambiae},  located towards the end of exon 5 near the boundary with intron 6 @@REF.
+%
+We examined diversity within the putative \textit{dsx}REs and found that five out of six are located in tracts of near-complete nucleotide conservation, consistent with purifying selection and an active role in pre-mRNA binding (Figure \ref{fig:dsx}b).
+%
+However, the region of conservation at the intron 4 / exon 5 boundary targeted for gene drive by \cite{kyrou2018} is mysterious, because it is distant from any of these known regulatory sequences.
+%
+This region of conservation in fact extends over a 200 bp region, including ~50 bp of untranslated sequence within exon 5, the entire @@ bp coding sequence of exon 5, and 50 bp of intron 4 (Figure \ref{fig:dsx}a).
+%
+The conservation of both coding and non-coding sites within this region, extending well beyond the immediate vicinity of the splice junction, suggests it is also somehow involved in sex-specific splicing of exon 5, and adds further evidence for key differences in the molecular biology of sex determination between \textit{Anopheles} and \textit{Drosophila} @@REF. 
+%
 
 
 \subsection*{Genomic insecticide resistance surveillance}
@@ -879,15 +919,18 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 \clearpage
 
 \begin{figure}[H]
-    \centering
     \textbf{a}
-    \includegraphics[width=1.0\linewidth]{artwork/dsx_a.pdf}
+	\begin{center}
+        \includegraphics[width=1.0\linewidth]{artwork/dsx_a.pdf}
+	\end{center}
     \textbf{b}
-    \includegraphics[width=1.0\linewidth]{artwork/dsx_b.pdf}
+	\begin{center}
+        \includegraphics[width=1.0\linewidth]{artwork/dsx_b.pdf}
+	\end{center}
     \caption{%
-    Nucleotide diversity within the female-specific exon 5 of the \textit{doublesex} gene (\textit{dsx}; AGAP004050), a key component of the sex determination pathway and a gene targeted for Cas9-based homing endonuclease gene drive.
+    Nucleotide diversity within the female-specific exon 5 of the doublesex gene (\textit{dsx}; AGAP004050), a key component of the sex determination pathway and a gene targeted for Cas9-based homing endonuclease gene drive.
     %
-    In both plots, the location of exon 5 is shown above (black = coding sequence; grey = untranslated region), with additional annotations to show the location of the Cas9 target sequence described in \cite{kyrou2018}, and the putative exon splice enhancing sequences reported in @@REF (``RE'').
+    In both plots, the location of exon 5 within the female-specific isoform (AGAP004050-RB) is shown above (black = coding sequence; grey = untranslated region), with additional annotations to show the location of the Cas9 target sequence described in \cite{kyrou2018}, and the putative exon splice enhancing sequences (``RE'') reported in @@REF.
     %
     The main region of the plot shows nucleotide diversity averaged across all Ag1000G phase 2 populations, computed in 23 bp moving windows.
     %
