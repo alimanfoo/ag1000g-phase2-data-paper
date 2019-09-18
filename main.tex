@@ -420,40 +420,29 @@ The conservation of both coding and non-coding sites within this region, extendi
 %
 
 
-\subsection*{Genomic insecticide resistance surveillance}
-%%
-
-%
-An important question currently facing malaria vector control programmes concerns the procurement and deployment of "next-generation" LLINs.
-%
-These new bed-nets combine a pyrethroid with a PBO synergist, to counteract metabolic pyrethroid resistance caused by cytochrome P450 genes \cite{churcher2016, killeen2018, toe2018}.
-%
-Here we demonstrate the power of Ag1000g Phase 2 to perform genomic surveillance of insecticide resistance in natural populations which could inform NMCPs about the potential outcomes of PBO LLIN distribution.
-%
-Though there are no published markers for P450-based pyrethroid resistance it is known that this kind of resistance can be achieved via over-expression of P450 genes, which in turn can be driven by copy number amplification of the relevant gene within the genome \cite{riveron2014, muller2008}.
-%
-Due to deep sequencing we were able to scan the genomes of the mosquitoes in the Phase 2 cohort for evidence of copy number variation, described in more detail in \cite{lucas2019}, these CNV results are released as part of the Phase 2 data resource.
-%
-At two P450 loci in particular, the \textit{Cyp6p/aa} gene cluster and the \textit{cyp9k1} gene (referred to hereafter as \textit{Cyp6} and \textit{Cyp9} respectively), we found a high frequency of copy number variation in multiple populations.
-%
-These loci have also been found under recent positive selection in multiple populations \cite{Ag1000gConsortium2017}, and have been associated with mosquito pyrethroid resistance in other studies (\textit{Cyp6} - \cite{nikou2003, edi2014, faucon2015, main2018}, \textit{Cyp9} - \cite{main2018, tchigossou2018, vontas2018}).
-%
-Thus it is reasonable to assume that the presence of CNVs at these loci is an adaptation to pyrethroids, although this remains to be tested.
-%%
+\subsection*{Resistance to pyrethroid insecticides}
 
 
 %%
-We combined the amplification data with data on nucleotide variation within the \textit{Vgsc} gene (Clarkson et al, 2019 biorxiv), the target for pyrethroids, to provide an estimate for the population frequencies of mosquitoes carrying some form of \textit{kdr} target-site pyrethroid resistance, amplifications at either of the two P450 loci, or both (Figure \ref{ir}). 
+Malaria control in Africa depends heavily on mass distribution of long-lasting insecticidal bed-nets (LLINs) impregnated with pyrethroid insecticides @@REFs.
 %
-In the "Far-West" populations of Guinea Bissau and The Gambia \cite{caputo2011}, no known \textit{kdr} mutations are detected, however many individuals carry P450 amplifications (in Guinea Bissau 58\% samples carry a P450 amplification, The Gambia 11\%).
+Entomological surveillance programs regularly test malaria vector populations for pyrethroid resistance using standardised bioassays, and these data have shown that pyrethroid resistance has become widespread in \textit{An. gambiae} @@REFs.
 %
-Individuals sampled from Guinea, Burkina Faso and C\^{o}te d'Ivoire have high levels of \textit{kdr} mutations but also the highest frequencies of P450 amplifications (Guinea 84\%, Burkina Faso 93\%, C\^{o}te d'Ivoire 97\%).
+However, pyrethroid resistance can be conferred by different molecular mechanisms, and it is not known which molecular mechanisms are responsible for resistance in which populations.
 %
-Heading further east, lower frequencies of P450 amplification are found in samples from Ghana, Gabon, Cameron and Angola (27\%, 1\%, 7\%, 15\% respectively), with high \textit{kdr} frequencies present throughout.
+The nucleotide variation data in this resource include @@N non-synonymous SNPs within the \textit{Vgsc} gene that encodes the binding target for pyrethroid insecticides, of which two SNPs (\texttt{L995F}, \texttt{L995S}) are known to confer a pyrethroid resistance phenotype, and one SNP (\texttt{N1570Y}) has been shown to substantially increase pyrethroid resistance when present in combination with \texttt{L995F} @@REF. 
 %
-The resistance loci status of Ugandan and Kenyan population appears split by the rift valley system, though \textit{kdr} frequencies are high, Uganda presents high frequencies of P450 mutations (81\%), whereas these are almost absent in Kenya (4\%) (Figure \ref{ir}).
+These SNPs can serve as markers of target-site resistance to pyrethroids, but no study has previously identified any genetic markers of metabolic resistance in \textit{An. gambiae}.
 %
-On the two island population of Bioko and Mayotte no pyrethroid resistance, target-site or metabolic, markers are detected.
+Metabolic resistance to pyrethroids is mediated at least in part by increased expression of mixed-function oxidase (MFO) enzymes @@REFs, and we found that copy number variation was highly enriched at two loci containing MFO genes @@REF.
+%
+One MFO locus is on chromosome arm 2R and overlaps a cluster of @@N genes, including \textit{Cyp6p3} previously shown to metabolise pyrethroids @@REF.
+%
+The second MFO locus occurs on the X chromosome and spans a single gene, \textit{Cyp9k1}, previously @@WHAT @@REFs. 
+%
+At each of these loci we found at least @@N distinct CNV alleles, several of which had reached population frequencies above @@X\% and were associated with signatures of positive selection @@REF.
+%
+The phenotype of these CNVs remains to be confirmed, but given the multiple lines of evidence it seems reasonable to assume that CNVs at either of these loci can serve as a molecular marker of metabolic resistance to pyrethroids.
 %%
 
 
@@ -468,6 +457,29 @@ On the two island population of Bioko and Mayotte no pyrethroid resistance, targ
 %%
 
 
+%%
+We constructed an overview of the prevalence of these two pyrethroid resistance mechanisms within the Ag1000G phase 2 cohort by combining the data on nucleotide and copy number variation.
+%
+The sampling of these populations was conducted at different times in different locations, and the geographical sampling is relatively sparse, so we cannot draw any general conclusions about the current distribution of resistance from our data.
+%
+However, some patterns were clear.
+%
+For example, West African populations of both species (Burkina Faso, Guinea, Cote d'Ivoire) all had more than @@X\% of individuals carrying both target-site and metabolic resistance markers.
+%
+Towards Central Africa (Ghana, Cameroon, Gabon, Angola), target-site resistance was nearly fixed in all populations, but metabolic resistance markers were at lower frequencies, and the samples from Bioko Island carried no resistance markers at all.
+%
+The Bioko samples were collected in 2000, and so the lack of resistance may be related to the fact that sampling predated any major scale-up of vector control interventions.
+%
+However, the Gabon samples were also collected in 2000, and show that high levels of target-site resistance were present in at least some populations at that time.
+%
+In the Far West (Guinea Bissau, The Gambia), target-site resistance was absent, but metabolic resistance was present, and thus any molecular surveillance that assays only target site resistance at those locations could be missing an important signal.
+%
+In East Africa, both Kenya and Uganda had high frequencies of target-site resistance, but @@X\% of Uganda individuals also had metabolic resistance, whereas Kenyans did not.
+%
+We know from previous analyses of Ag1000G data that target-site resistance has spread between these two populations @@REF, and so it is interesting that metabolic resistance appears not to have spread.
+%
+Denser spatiotemporal sampling and sequencing would enable us to build a more complete picture of the prevalence and spread of these different resistance mechanisms, and would be highly relevant to the design of insecticide resistance management plans.
+%%
 
 
 
