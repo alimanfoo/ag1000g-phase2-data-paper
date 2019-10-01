@@ -61,7 +61,9 @@ Genome variation and population structure among 1,142 mosquitoes of the African 
 
 
 %%
-Mosquito control remains a central pillar of efforts to reduce malaria burden in sub-Saharan Africa, but insecticide resistance is entrenched in malaria vector populations, and countries with high malaria burden face a daunting challenge to sustain malaria control with a limited set of surveillance and intervention tools. 
+Mosquito control remains a central pillar of efforts to reduce malaria burden in sub-Saharan Africa.
+%
+However, insecticide resistance is entrenched in malaria vector populations, and countries with high malaria burden face a daunting challenge to sustain malaria control with a limited set of surveillance and intervention tools. 
 %
 Here we report on the second phase of a project to build an open resource of high quality data on genome variation among natural populations of the major African malaria vector species \textit{Anopheles gambiae} and \textit{Anopheles coluzzii}. 
 %
@@ -113,31 +115,31 @@ Further expansion of these open data resources to incorporate unsampled mosquito
 
 %% Introduction to Ag1000G. Summary of Ag1000G phase 1. Limitations of Ag1000G phase 1.
 %
-The Anopheles gambiae 1000 Genomes (Ag1000G) project @@LINK was established in 2013 to build a large scale open data resource on natural genetic variation in malaria mosquito populations.
+The Anopheles gambiae 1000 Genomes project (Ag1000G - \url{https://www.malariagen.net/projects/ag1000g}) was established in 2013 to build a large scale open data resource on natural genetic variation in malaria mosquito populations.
 %
-The Ag1000G project forms part of the Malaria Epidemiology Network (MalariaGEN @@LINK), a data-sharing community of researchers investigating how genetic variation in humans, malaria parasites and malaria vectors can inform biology, epidemiology and control of malaria.
+The Ag1000G project forms part of the Malaria Epidemiology Network (MalariaGEN - \url{https://www.malariagen.net}), a data-sharing community of researchers investigating how genetic variation in humans, malaria parasites and malaria vectors can inform biology, epidemiology and control of malaria.
 %
-The first phase of the Ag1000G project released data from whole genome Illumina deep sequencing of mosquitoes from 8 African countries, including SNP calls and phased haplotypes @@REF.
+The first phase of the Ag1000G project released data from whole genome Illumina deep sequencing of mosquitoes from 8 African countries, including SNP calls and phased haplotypes \cite{Ag1000gConsortium2017}.
 %
 Mosquitoes were sampled from a broad geographical range, spanning Guinea-Bissau in West Africa to Kenya in East Africa.
 %
-Both \textit{Anopheles gambiae} and \textit{Anopheles coluzzii} were sampled, two closely related sibling species within the \textit{Anopheles gambiae} species complex.
+Both \textit{Anopheles gambiae} and \textit{Anopheles coluzzii} were sampled, two closely related sibling species within the \textit{Anopheles gambiae} species complex \cite{coetzee2013}.
 %
 Genetic diversity was found to be high in nearly all populations, but there were marked patterns of population structure, and clear differences between populations in the magnitude and architecture of genetic diversity, indicating complex and varied demographic histories.
 %
-However, both of these species have a large geographical range, and many countries and ecological settings are not represented in the Ag1000G phase 1 resource.
+However, both of these species have a large geographical range \cite{wiebe2017}, and many countries and ecological settings are not represented in the Ag1000G Phase 1 resource.
 %
-Also, only SNPs were studied in Ag1000G phase 1, but other types of genetic variation are known to be important.
+Also, only SNPs were studied in Ag1000G Phase 1, but other types of genetic variation are known to be important.
 %
-In particular, copy number variation (CNV) has long been suspected to play a key role in insecticide resistance @@REFs, but no previous attempts to call genome-wide CNVs have been made in these species.
+In particular, copy number variation (CNV) has long been suspected to play a key role in insecticide resistance \cite{schimke1978, devonshire1991, weetman2015}, but no previous attempts to call genome-wide CNVs have been made in these species.
 %%
 
 
-%% Introduction to Ag1000G phase 2.
+%% Introduction to Ag1000G Phase 2.
 %
 This paper describes the data resource produced by the second phase of the Ag1000G project.
 %
-Within this phase, sampling and sequencing was expanded to include additional wild-caught mosquitoes sampled from five new regions not sampled in phase 1.
+Within this phase, sampling and sequencing was expanded to include additional wild-caught mosquitoes sampled from five new regions not sampled in Phase 1.
 %
 This includes three new locations with \textit{Anopheles coluzzii}, providing greater power for genetic comparisons with \textit{Anopheles gambiae}, and two island populations, providing a useful reference point to compare against mainland populations.
 %
@@ -147,7 +149,7 @@ In this phase we studied both SNPs and CNVs, and rebuilt a haplotype reference p
 %
 Here we describe the data resource, and use it to re-evaluate major population divisions and characterise genetic diversity.
 %
-We also illustrate the broad utility of the data by providing some preliminary insights into patterns of pyrethroid resistance; analyse genetic diversity within a gene in the sex-determination pathway currently targeted for gene drive development; and compare geographical population structure between the two mosquito species to investigate evidence for differences in dispersal behaviour.
+We also illustrate the broad utility of the data by comparing geographical population structure between the two mosquito species to investigate evidence for differences in dispersal behaviour; analyse genetic diversity within a gene in the sex-determination pathway currently targeted for gene drive development; and provide some preliminary insights into patterns of pyrethroid resistance.
 %%
 
 
@@ -161,15 +163,15 @@ We also illustrate the broad utility of the data by providing some preliminary i
 
 %% Paragraph on population sampling and sequencing.
 %
-We performed whole genome sequencing of 377 individual wild-caught mosquitoes, including individuals collected from 3 countries (The Gambiae, Cote d'Ivoire, Ghana) and two offshore islands (Bioko Island, Mayotte Island) not represented in the previous project phase. 
+We performed whole genome sequencing of 377 individual wild-caught mosquitoes, including individuals collected from 3 countries (The Gambia, Cote d'Ivoire, Ghana) and two offshore islands (Bioko Island, Mayotte Island) not represented in the previous project phase. 
 %
 We also sequenced 152 individuals comprising parents and progeny from seven lab crosses, where parents were drawn from the Ghana, Kisumu, Pimperena, Mali and Akron colonies. 
 %
-We then combined these data with the sequencing data previously generated during phase 1 of the project, to create a total resource of data from 1,142 wild-caught mosquitoes (1,058 female, 84 male) from 13 countries (Figure 1; Table 1) and 234 mosquitoes from 11 lab crosses (Table S1). 
+We then combined these data with the sequencing data previously generated during Phase 1 of the project, to create a total resource of data from 1,142 wild-caught mosquitoes (1,058 female, 84 male) from 13 countries (Figure 1; Table 1) and 234 mosquitoes from 11 lab crosses (Table S1). 
 %
 As in the previous project phase, all mosquitoes were sequenced individually on Illumina technology using 100 bp paired-end reads to a target depth of 30x, and only mosquitoes obtaining a mean depth above 15x were included in the final resource. 
 %
-All mosquitoes were typed using conventional species diagnostic assays @@REFs and found to be either \textit{An. gambiae} or \textit{An. coluzzii} or to have an apparent \textit{An. gambiae}/\textit{An. coluzzii} hybrid genotype. 
+All mosquitoes were typed using conventional species diagnostic assays \cite{scott1993, fanello2002, santolamazza2008} and found to be either \textit{An. gambiae} or \textit{An. coluzzii} or to have an apparent \textit{An. gambiae}/\textit{An. coluzzii} hybrid genotype. 
 %%
 
 
@@ -177,7 +179,7 @@ All mosquitoes were typed using conventional species diagnostic assays @@REFs an
 	\begin{center}
 		\includegraphics*[width=5.8in]{artwork/collection_site_map.jpg}
 	\end{center}
-	\caption{Ag1000G Phase 2 sampling locations. Colour of circle denotes species collected at location and area represents sample size. Colours on the map represent ecosystem classes; dark green designates forest ecosystems; see figure 9 in \cite{sayre2013} for a compete colour legend.}
+	\caption{Ag1000G Phase 2 sampling locations. Colour of circle denotes species collected at location and area represents sample size. Map colours represent ecosystem classes; dark green designates forest ecosystems; see figure 9 in \cite{sayre2013} for a compete colour legend.}
 	\label{sample_map}
 \end{figure}
 
@@ -238,13 +240,13 @@ We then used high quality biallelic SNPs to construct a new haplotype reference 
 %%
 In this project phase we also performed a genome-wide CNV analysis, described in detail elsewhere \cite{lucas2019}.
 %
-For each individual mosquito, we called CNVs by fitting a hidden Markov model to windowed data on depth of sequence read coverage, then compared calls between individuals to identify shared CNVs.
+In brief, for each individual mosquito, we called CNVs by fitting a hidden Markov model to windowed data on depth of sequence read coverage, then compared calls between individuals to identify shared CNVs.
 %
 The CNV callset comprises 31,335 distinct CNVs, of which 7,086 were found in more than one individual, and 1,557 were present at at least 5\% frequency in one or more populations.
 %
 CNVs spanned more than 68 Mbp in total and overlapped 7,190 genes.
 %
-CNVs were significantly enriched in gene families associated with metabolic resistance to insecticides, confirming that CNVs are an important mode of adaptation to mosquito control interventions.
+CNVs were significantly enriched in gene families associated with metabolic resistance to insecticides, suggesting that CNVs are an important mode of adaptation to mosquito control interventions.
 %% 
 
 
@@ -253,17 +255,17 @@ CNVs were significantly enriched in gene families associated with metabolic resi
 
 %% Paragraph about species ancestry, reporting results of AIM analysis.
 %
-The conventional molecular assay for differentiating \textit{An. gambiae} from \textit{An. coluzzii} is based on a fixed genetic difference at a single locus on the X Chromosome @@REF.
+The conventional molecular assay for differentiating \textit{An. gambiae} from \textit{An. coluzzii} is based on a fixed genetic difference at a single locus on the X Chromosome \cite{santolamazza2008}.
 %
-In the first phase of Ag1000G, we compared the results of this assay with genotypes at @@N ancestry-informative SNPs distributed across all chromosome arms, and found that in some cases the conventional assay was not concordant with alleles at other genome locations.
+In the first phase of Ag1000G, we compared the results of this assay with genotypes at 506 ancestry-informative SNPs distributed across all chromosome arms, and found that in some cases the conventional assay was not concordant with alleles at other genome locations.
 %
-In particular, all individuals from two sampling locations (Kenya, Guinea-Bissau) carried a mixture of \textit{An. gambiae} and \textit{An. coluzzii} alleles, creating uncertainty regarding the appropriate species assignment. 
+In particular, all individuals from two sampling locations (Kenya, Guinea-Bissau) carried a mixture of \textit{An. gambiae} and \textit{An. coluzzii} alleles, creating uncertainty regarding the appropriate species assignment \cite{Ag1000gConsortium2017}. 
 %
-Applying the same analysis to the new samples in Ag1000G phase 2, we found that mosquitoes from The Gambia also carried a mixture of alleles from both species, in similar proportions to mosquitoes from Guinea-Bissau @@FIG.
+Applying the same analysis to the new samples in Ag1000G Phase 2, we found that mosquitoes from The Gambia also carried a mixture of alleles from both species, in similar proportions to mosquitoes from Guinea-Bissau (Figure S1).
 %
-In all other locations, alleles at ancestry-informative SNPs were concordant with conventional diagnostics, except on Chromosome arm 2L where there has been a known introgression event carrying an insecticide resistance allele from \textit{An. gambiae} into \textit{An. coluzzii} @@REFs.
+In all other locations, alleles at ancestry-informative SNPs were concordant with conventional diagnostics, except on Chromosome arm 2L where there has been a known introgression event carrying an insecticide resistance allele from \textit{An. gambiae} into \textit{An. coluzzii} \cite{weill2000, diabate2004, clarkson2014, norris2015}.
 %
-We observed this introgression in \textit{An. coluzzii} from both Burkina Faso and Angola in the phase 1 cohort, and it was also present among \textit{An. coluzzii} from Cote d'Ivoire, Ghana and Guinea in the phase 2 cohort, confirming that this introgression has spread widely throughout \textit{An. coluzzii}.
+We observed this introgression in \textit{An. coluzzii} from both Burkina Faso and Angola in the Phase 1 cohort, and it was also present among \textit{An. coluzzii} from Cote d'Ivoire, Ghana and Guinea in the Phase 2 cohort, confirming that this introgression has spread widely throughout \textit{An. coluzzii}.
 %%
 
 
@@ -271,7 +273,7 @@ We observed this introgression in \textit{An. coluzzii} from both Burkina Faso a
 	\begin{center}
 		\includegraphics*[width=6.3in]{artwork/main_pca.jpeg}
 	\end{center}
-	\caption{Principal component analysis of the 1142 wild-caught mosquitoes derived from nucleotide variation in the accessible region of chromosome 3L.}
+	\caption{Principal component analysis (components 1-8) of the 1142 wild-caught mosquitoes. Bar-chart shows the percentage of variance explained by each component.}
 	\label{pca}
 \end{figure}
 
@@ -281,9 +283,9 @@ We observed this introgression in \textit{An. coluzzii} from both Burkina Faso a
 
 %% Paragraph with results on population structure.
 %
-We investigated genetic population structure within the cohort of wild-caught mosquitoes by performing principal components analysis (PCA) (@@FIG).
+We investigated genetic population structure within the cohort of wild-caught mosquitoes by performing principal components analysis (PCA) (Figure 2).
 %
-To complement PCA, we also computed two measures of genetic differentiation -- average $F_{ST}$ and rates of rare variant sharing -- between all pairs of 16 populations defined by country of origin and species, excluding \textit{An. coluzzii} from Guinea due to small sample size @@FIG.
+To complement PCA, we also computed two measures of genetic differentiation -- average $F_{ST}$ and rates of rare variant sharing -- between all pairs of 16 populations defined by country of origin and species, excluding \textit{An. coluzzii} from Guinea due to small sample size (Figure 1, Table 1).
 %
 From these analyses, the three major groupings of samples from multiple locations were evident: \textit{An. coluzzii} from West Africa (Burkina Faso, Ghana, Cote d'Ivoire, Guinea); \textit{An. gambiae} from West and Central Africa (Burkina Faso, Ghana, Guinea, Cameroon, Bioko); far West (Guinea-Bissau, The Gambia). 
 %
@@ -309,13 +311,13 @@ A comparison of the two \textit{An. gambiae} island populations is interesting b
 %
 The additional locations sampled in this project phase allow more comparisons to be made between the two species, and there are many open questions regarding their behaviour, ecology and evolutionary history.
 %
-For example, it would be valuable to know whether there are any differences in dispersal behaviour between the two species @@REFs. 
+For example, it would be valuable to know whether there are any differences in dispersal behaviour between the two species \cite{dao2014, north2019}. 
 %
-Providing a comprehensive answer to this question is beyond the scope of this study, but we performed a preliminary analysis by estimating Wright's neighbourhood size for each species @@REF.
+Providing a comprehensive answer to this question is beyond the scope of this study, but we performed a preliminary analysis by estimating Wright's neighbourhood size for each species \cite{wright1946}.
 %
 This statistic is an approximation for the effective number of potential mates for an individual, and can be viewed as a measurement of how genetic differentiation between populations correlates with the geographical distance between them (isolation by distance).
 %
-We used Rousset's method for estimating neighbourhood size based on a regression of normalised $F_{ST}$ against the logarithm of geographical distance @@REF.
+We used Rousset's method for estimating neighbourhood size based on a regression of normalised $F_{ST}$ against the logarithm of geographical distance \cite{rousset1997genetic}.
 %
 We found that average neighbourhood sizes are significantly lower in \textit{An. coluzzii} (median=85) than in \textit{An. gambiae} (median=261) (Figure \ref{fig:ibd_fig}) (@@TODO P value or 95\% CIs), indicating stronger isolation by distance among \textit{An. coluzzii} populations and suggesting a lower rate and/or range of dispersal.
 %
@@ -327,7 +329,7 @@ We caution, however, that we do not have representation of both species at all s
 	\begin{center}
 		\includegraphics*[width=6.3in]{artwork/west_africa_multipanel_edit_NOD.pdf}
 	\end{center}
-	\caption{Isolation by distance in west African \textit{Anopheles}. \textbf{(a)} Study region and pairwise $F_{st}$. \textbf{(b)} Regressions of average genome-wide $F_{st}$ against geographic distance, following Rousset \cite{rousset1997genetic}. Neighbourhood size is estimated as the inverse slope of the regression line. \textbf{(c)} Difference in neighbourhood size estimates by species, with each point representing a 200kb region of the genome.}
+	\caption{Isolation by distance in west African \textit{Anopheles}. \textbf{(a)} Study region and pairwise $F_{st}$ . \textbf{(b)} Regressions of average genome-wide $F_{st}$ against geographic distance, following Rousset \cite{rousset1997genetic}. Neighbourhood size is estimated as the inverse slope of the regression line. \textbf{(c)} Difference in neighbourhood size estimates by species, with each point representing a 200kb region of the genome.}
 	\label{fig:ibd_fig}
 \end{figure}
 
@@ -337,13 +339,13 @@ We caution, however, that we do not have representation of both species at all s
 
 %% Introduction to genetic diversity metrics.
 %
-The populations represented in the Ag1000G phase 2 cohort can serve as a reference point for comparisons with populations sampled by other studies at other times and locations. 
+The populations represented in the Ag1000G Phase 2 cohort can serve as a reference point for comparisons with populations sampled by other studies at other times and locations. 
 %
-To facilitate population comparisons, we characterised genetic diversity within each of 16 populations in our cohort defined by country of origin and species by computing a variety of summary statistics using data from the whole genome.
+To facilitate population comparisons, we characterised genetic diversity within each of 16 populations in our cohort -- defined by country of origin and species -- by computing a variety of summary statistics using data from the whole genome.
 %
-These statistics included nucleotide diversity ($\theta_{\pi}$; Figure @@X), Watterson's theta ($\theta_{W}$; Fig @@X), Tajima's $D$ (Figure @@X) and site frequency spectra (SFS; Figure @@X). 
+These statistics included nucleotide diversity ($\theta_{\pi}$; Figure 5a), Watterson's theta ($\theta_{W}$; Figure S2), Tajima's $D$ (Figure 5b) and site frequency spectra (SFS; Figure S3). 
 %
-We also estimated runs of homozygosity (ROH; Figure @@X) within each individual and runs of identity by descent (IBD; Figure @@X) between individuals, both of which provide additional information about haplotype sharing and patterns of relatedness within populations. 
+We also estimated runs of homozygosity (ROH; Figure 5c) within each individual and runs of identity by descent (IBD; Figure 5d) between individuals, both of which provide additional information about haplotype sharing and patterns of relatedness within populations. 
 %%
 
 
@@ -351,7 +353,8 @@ We also estimated runs of homozygosity (ROH; Figure @@X) within each individual 
 	\begin{center}
 		\includegraphics*[width=6.3in]{artwork/diversity_composite.jpeg}
 	\end{center}
-	\caption{Nucleotide diversity (pi)...}
+	\caption{Genetic diversity. \textbf{(a)} Population nucleotide diversity ($\theta_{\pi}$) calculated in non-overlapping 20-kb genomic windows. \textbf{(b)} Tajima's $D$ calculated in non-overlapping 20-kb genomic windows. \textbf{(c)} Runs of homozygosity
+(ROH) in individual mosquitoes. \textbf{(d)} Runs of identity by descent, measured between samples.}
 	\label{div}
 \end{figure}
 
@@ -360,7 +363,7 @@ We also estimated runs of homozygosity (ROH; Figure @@X) within each individual 
 %
 The two Eastern-most populations (Kenya, Mayotte \textit{An. gambiae}) were outliers in all statistics calculated, with lower diversity, a deficit of rare variants relative to neutral expectation, and a higher degree of haplotype sharing within and between individuals.
 %
-The Kenyan population was represented in Ag1000G phase 1, and we previously described how the patterns of diversity in this population were consistent with a severe and recent population bottleneck.
+The Kenyan population was represented in Ag1000G Phase 1, and we previously described how the patterns of diversity in this population were consistent with a severe and recent population bottleneck \cite{Ag1000gConsortium2017}.
 %
 The similarities between Kenya and Mayotte suggest that the Mayotte population has also experienced a population bottleneck, which would be expected given that Mayotte is an offshore island and may have been colonised by \textit{An. gambiae} via a small number of founding events.
 %
@@ -377,23 +380,23 @@ The additional \textit{An. coluzzii} populations (Ghana, Cote d'Ivoire) were sim
 
 %%
 %
-One of the ways the nucleotide variation data in this resource is being used is to inform the development of gene drives, a novel mosquito control technology using engineered selfish genetic elements to cause mosquito population suppression or modification @@REFs.
+One of the ways the nucleotide variation data in this resource is being used is to inform the development of gene drives, a novel mosquito control technology using engineered selfish genetic elements to cause mosquito population suppression or modification \cite{burt2003, gantz2015, hammond2016, eckhoff2017, kyrou2018}.
 %
-Promising results have been obtained with a Cas9 homing endonuclease gene drive targeting a locus in the doublesex gene (\textit{dsx}), which is a critical component of the sex determination pathway @@REF.
+Promising results have been obtained with a Cas9 homing endonuclease gene drive targeting a locus in the doublesex gene (\textit{dsx}), which is a critical component of the sex determination pathway \cite{kyrou2018}.
 %
-This locus was chosen in part because it has extremely low genetic diversity both within and between species in the \textit{An. gambiae} complex @@REF.
+This locus was chosen in part because it has extremely low genetic diversity both within and between species in the \textit{An. gambiae} complex \cite{Ag1000gConsortium2017}.
 %
-Low diversity is required because any natural variation within the target sequence could inhibit association with the Cas9 guide RNA and cause resistance to the gene drive.
+Low diversity is required because any natural variation within the target sequence could inhibit association with the Cas9 guide RNA and cause resistance to the gene drive \cite{unckless2017}.
 %
-We reviewed nucleotide variation within \textit{dsx} using the expanded cohort of wild-caught samples in the phase 2 cohort.
+We reviewed nucleotide variation within \textit{dsx} using the expanded cohort of wild-caught samples in the Phase 2 cohort.
 %
-We found no new nucleotide variants within the target sequence used by @@REF, other than the previously known SNP at position @@X, which has been shown not to interfere with the gene drive process @@REF.
+We found no new nucleotide variants within the target sequence used by Kyrou \textit{et. al.}, other than the previously known SNP at 2R:48714641, which has been shown not to interfere with the gene drive process \cite{kyrou2018}.
 %
-To faciliate the search for other potential gene drive targets in \textit{dsx} and other genes, we computed allele frequencies for all SNPs in all populations and included those data in the resource.
+To facilitate the search for other potential gene drive targets in \textit{dsx} and other genes, we computed allele frequencies for all SNPs in all populations and included those data in the resource (@@link to ftp?).
 %
-We also compiled a table of all potential Cas9 target sites (23 bp regions with a protospacer-adjacent motif) in the genome, ordered by nucleotide diversity.
+We also compiled a table of all potential Cas9 target sites (23 bp regions with a protospacer-adjacent motif) in the genome, ordered by nucleotide diversity (@@link to ftp?).
 %
-This table includes @@N viable Cas9 targets that overlap a gene coding sequence and that have complete nucleotide conservation within the Ag1000G phase 2 cohort.
+This table includes @@N viable Cas9 targets that overlap a gene coding sequence and that have complete nucleotide conservation within the Ag1000G Phase 2 cohort.
 %%
 
 
@@ -412,9 +415,9 @@ Putative homologs of these \textit{dsx}REs are present in \textit{An. gambiae}, 
 %
 We examined diversity within the putative \textit{dsx}REs and found that five out of six are located in tracts of near-complete nucleotide conservation, consistent with purifying selection and an active role in pre-mRNA binding (Figure \ref{fig:dsx}b).
 %
-However, the region of conservation at the intron 4 / exon 5 boundary targeted for gene drive by \cite{kyrou2018} is mysterious, because it is distant from any of these known regulatory sequences.
+However, the region of conservation at the intron 4/exon 5 boundary targeted for gene drive by Kyrou \textit{et. al.} \cite{kyrou2018} is mysterious, because it is distant from any of these known regulatory sequences.
 %
-This region of conservation in fact extends over a 200 bp region, including ~50 bp of untranslated sequence within exon 5, the entire @@ bp coding sequence of exon 5, and 50 bp of intron 4 (Figure \ref{fig:dsx}a).
+This region of conservation in fact extends over a 200 bp region, including ~50 bp of untranslated sequence within exon 5, the entire 1,267bp coding sequence of exon 5, and 50 bp of intron 4 (Figure \ref{fig:dsx}a).
 %
 The conservation of both coding and non-coding sites within this region, extending well beyond the immediate vicinity of the splice junction, suggests it is also somehow involved in sex-specific splicing of exon 5, and adds further evidence for key differences in the molecular biology of sex determination between \textit{Anopheles} and \textit{Drosophila} @@REF. 
 %
@@ -424,23 +427,23 @@ The conservation of both coding and non-coding sites within this region, extendi
 
 
 %%
-Malaria control in Africa depends heavily on mass distribution of long-lasting insecticidal bed-nets (LLINs) impregnated with pyrethroid insecticides @@REFs.
+Malaria control in Africa depends heavily on mass distribution of long-lasting insecticidal bed-nets (LLINs) impregnated with pyrethroid insecticides \cite{Ranson2016, churcher2016}.
 %
-Entomological surveillance programs regularly test malaria vector populations for pyrethroid resistance using standardised bioassays, and these data have shown that pyrethroid resistance has become widespread in \textit{An. gambiae} @@REFs.
+Entomological surveillance programs regularly test malaria vector populations for pyrethroid resistance using standardised bioassays, and these data have shown that pyrethroid resistance has become widespread in \textit{An. gambiae} \cite{Hemingway2016}.
 %
 However, pyrethroid resistance can be conferred by different molecular mechanisms, and it is not known which molecular mechanisms are responsible for resistance in which populations.
 %
-The nucleotide variation data in this resource include @@N non-synonymous SNPs within the \textit{Vgsc} gene that encodes the binding target for pyrethroid insecticides, of which two SNPs (\texttt{L995F}, \texttt{L995S}) are known to confer a pyrethroid resistance phenotype, and one SNP (\texttt{N1570Y}) has been shown to substantially increase pyrethroid resistance when present in combination with \texttt{L995F} @@REF. 
+The nucleotide variation data in this resource include 67 non-synonymous SNPs (passing quality control filters) within the \textit{Vgsc} gene that encodes the binding target for pyrethroid insecticides, of which two SNPs (\texttt{L995F}, \texttt{L995S}) are known to confer a pyrethroid resistance phenotype, and one SNP (\texttt{N1570Y}) has been shown to substantially increase pyrethroid resistance when present in combination with \texttt{L995F} \cite{jones2012}. 
 %
 These SNPs can serve as markers of target-site resistance to pyrethroids, but no study has previously identified any genetic markers of metabolic resistance in \textit{An. gambiae}.
 %
-Metabolic resistance to pyrethroids is mediated at least in part by increased expression of mixed-function oxidase (MFO) enzymes @@REFs, and we found that copy number variation was highly enriched at two loci containing MFO genes @@REF.
+Metabolic resistance to pyrethroids is mediated at least in part by increased expression of mixed-function oxidase (MFO) enzymes \cite{kwiatkowska13, edi2014, ngufor15, vontas2018}, and we found large numbers of independent CNV alleles at these loci \cite{lucas2019}.
 %
-One MFO locus is on chromosome arm 2R and overlaps a cluster of @@N genes, including \textit{Cyp6p3} previously shown to metabolise pyrethroids @@REF.
+One MFO locus is on chromosome arm 2R and overlaps a cluster of 10 cytochrome P450 genes, including \textit{Cyp6p3} previously shown to metabolise pyrethroids \cite{muller2008}.
 %
-The second MFO locus occurs on the X chromosome and spans a single gene, \textit{Cyp9k1}, previously @@WHAT @@REFs. 
+The second MFO locus occurs on the X chromosome and spans a single cytochrome P450 gene, \textit{Cyp9k1} which has also previously be shown to  metabolise pyrethroids \cite{vontas2018}
 %
-At each of these loci we found at least @@N distinct CNV alleles, several of which had reached population frequencies above @@X\% and were associated with signatures of positive selection @@REF.
+At these loci we found genes which overlapped with at least 15 distinct CNV alleles, several of which had reached population frequencies above 50\% and were associated with signatures of positive selection \cite{lucas2019}.
 %
 The phenotype of these CNVs remains to be confirmed, but given the multiple lines of evidence it seems reasonable to assume that CNVs at either of these loci can serve as a molecular marker of metabolic resistance to pyrethroids.
 %%
@@ -458,27 +461,31 @@ The phenotype of these CNVs remains to be confirmed, but given the multiple line
 
 
 %%
-We constructed an overview of the prevalence of these two pyrethroid resistance mechanisms within the Ag1000G phase 2 cohort by combining the data on nucleotide and copy number variation.
+We constructed an overview of the prevalence of these two pyrethroid resistance mechanisms within the Ag1000G Phase 2 cohort by combining the data on nucleotide and copy number variation.
 %
 The sampling of these populations was conducted at different times in different locations, and the geographical sampling is relatively sparse, so we cannot draw any general conclusions about the current distribution of resistance from our data.
 %
 However, some patterns were clear.
 %
-For example, West African populations of both species (Burkina Faso, Guinea, Cote d'Ivoire) all had more than @@X\% of individuals carrying both target-site and metabolic resistance markers.
+For example, West African populations of both species (Burkina Faso, Guinea, Cote d'Ivoire) all had more than 84\% of individuals carrying both target-site and metabolic resistance markers.
 %
 Towards Central Africa (Ghana, Cameroon, Gabon, Angola), target-site resistance was nearly fixed in all populations, but metabolic resistance markers were at lower frequencies, and the samples from Bioko Island carried no resistance markers at all.
 %
 The Bioko samples were collected in 2000, and so the lack of resistance may be related to the fact that sampling predated any major scale-up of vector control interventions.
 %
 However, the Gabon samples were also collected in 2000, and show that high levels of target-site resistance were present in at least some populations at that time.
-%
+%%
+
+%%
 In the Far West (Guinea Bissau, The Gambia), target-site resistance was absent, but metabolic resistance was present, and thus any molecular surveillance that assays only target site resistance at those locations could be missing an important signal.
 %
-In East Africa, both Kenya and Uganda had high frequencies of target-site resistance, but @@X\% of Uganda individuals also had metabolic resistance, whereas Kenyans did not.
+In East Africa, both Kenya and Uganda had high frequencies of target-site resistance, 88\% and 100\% respectively.
 %
-We know from previous analyses of Ag1000G data that target-site resistance has spread between these two populations @@REF, and so it is interesting that metabolic resistance appears not to have spread.
+However, 81\% of Uganda individuals also had metabolic resistance, whereas only 4\% of Kenyans (two individuals) carried metabolic resistance markers, and no CNVs were found shared between these countries \cite{lucas2019}.
 %
-Denser spatiotemporal sampling and sequencing would enable us to build a more complete picture of the prevalence and spread of these different resistance mechanisms, and would be highly relevant to the design of insecticide resistance management plans.
+We know from previous analyses of Ag1000G data that target-site resistance has spread between these two populations \cite{Ag1000gConsortium2017}, and so it is interesting that metabolic resistance appears not to have spread.
+%
+Denser spatio-temporal sampling and sequencing would enable us to build a more complete picture of the prevalence and spread of these different resistance mechanisms, and would be highly relevant to the design of insecticide resistance management plans.
 %%
 
 
@@ -604,7 +611,7 @@ geographical locations in 13 sub-Saharan African countries.
 %
 Samples have been grouped into 16 populations based on collection country and species (Figure \ref{sample_map} \& Table \ref{table:sampling_locations}).
 %
-Throughout, we use species nomenclature following Coetzee \textit{et al}. \cite{Coetzee2013};	
+Throughout, we use species nomenclature following Coetzee \textit{et al}. \cite{coetzee2013};	
 %
 prior to	 Coetzee	 \textit{et al}., \textit{An. gambiae} was known as \textit{An. gambiae sensu stricto} (S form) and \textit{An. coluzzii} was known as \textit{An. gambiae sensu stricto} (M form).
 %
@@ -628,14 +635,14 @@ Samples were collected as larvae from irrigated rice fields by dipping between M
 %
 All larvae were reared to adults and females preserved over silica for DNA extraction.
 %
-Specimens from this site were all \textit{An. coluzzii}, determined by PCR assay \cite{Santolamazza2008}
+Specimens from this site were all \textit{An. coluzzii}, determined by PCR assay \cite{santolamazza2008}
 %%
 
 \textbf{Bioko Island - Equatorial Guinea (GQgam)}: Collections were performed during the rainy season in September, 2002 by overnight CDC light traps in Sacriba of Bioko island (8.7, 3.7).
 %
 Specimens were stored dry on silica gel before DNA extraction.
 %
-Specimens contributed from this site were \textit{An. gambiae} females, genotype determined by two assays \cite{Scott1993, Santolamazza2004}.
+Specimens contributed from this site were \textit{An. gambiae} females, genotype determined by two assays \cite{scott1993, santolamazza2004}.
 %
 All specimens had the 2L\textsuperscript{+a}/2L\textsuperscript{+a} karyotype as determined by the molecular PCR diagnostics \cite{White2007}. 
 %
@@ -649,7 +656,7 @@ After the intervention \textit{An. gambiae} was declining, and more recently alm
 %
 Larvae were stored in 80\% ethanol prior to DNA extraction. 
 %
-All specimens contributed to Ag1000G Phase 2 were \textit{An. gambiae} \cite{Santolamazza2004} with the standard 2L\textsuperscript{+a}/2L\textsuperscript{+a} or inverted 2L\textsuperscript{a}/2L\textsuperscript{a} karyotype as determined by the molecular PCR diagnostics \cite{White2007}.
+All specimens contributed to Ag1000G Phase 2 were \textit{An. gambiae} \cite{santolamazza2004} with the standard 2L\textsuperscript{+a}/2L\textsuperscript{+a} or inverted 2L\textsuperscript{a}/2L\textsuperscript{a} karyotype as determined by the molecular PCR diagnostics \cite{White2007}.
 %
 The samples were identified as males or females by the sequencing read coverage of the X chromosome using LookSeq \cite{Manske2009}.
 %%
@@ -697,7 +704,7 @@ Samples were collected from puddles near road construction and farms between Aug
 %
 Larvae from all collection sites were reared to adults and females preserved over silica for DNA extraction.
 %
-Both \textit{An. gambiae} and \textit{An. coluzzii} were collected from these sites, determined by PCR assay \cite{Santolamazza2008}.
+Both \textit{An. gambiae} and \textit{An. coluzzii} were collected from these sites, determined by PCR assay \cite{santolamazza2008}.
 %%
 
 %
@@ -797,7 +804,7 @@ Finally, we added INFO annotations with information about functional consequence
 
 \subsection*{2.4 Sample quality control}
 %
-A total of 1285 individual mosquitoes were sequenced as part of Ag1000G phase 2 and included in the cohort for variant discovery. 
+A total of 1285 individual mosquitoes were sequenced as part of Ag1000G Phase 2 and included in the cohort for variant discovery. 
 %
 After variant discovery, quality-control (QC) steps using coverage and contamination filters alongside principal component analysis and meta data concordance were performed to exclude individuals with poor quality sequence and/or genotype data as detailed in \cite{Ag1000gConsortium2017}.
 %
@@ -908,15 +915,6 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 
 \section*{Supplementary figures and tables}
 
-\clearpage
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics*[width=6.3in]{notebooks/refdiff/refdiff_phase2_combined.jpg}
-	\end{center}
-	\caption{Divergence from the AgamP4 reference genome, calculated as \textit{Dxy}, is largely similar for \textit{An. coluzzii} and \textit{An. gambiae}, with the exception of the centromere of chromosome X (a). Comparing three populations of \textit{An. coluzzii} (b) or \textit{An. gambiae} (c) highlights the strong effect of the 2La chromosomal inversion on the accumulation of genetic variation.}
-	\label{refdiff}
-\end{figure}
 
 \clearpage
 
@@ -927,6 +925,42 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 	\caption{Ancestry informative markers (AIM). Rows represent individual mosquitoes (grouped by population) and columns represent SNPs (grouped by chromosome arm). Colours represent species genotype. The column at the far left shows the species assignment according to the conventional molecular test based on a single marker on the X chromosome, which was performed for all populations except Guinea Bissau (GW), The Gambia (GM) and Kenya (KE). The column at the far right shows the genotype for kdr variants in \textit{Vgsc} codon 995. Lines at the lower edge show the physical locations of the AIM SNPs.}
 	\label{aim}
 \end{figure}
+
+
+
+\clearpage
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=6.3in]{artwork/Watterson_theta.jpeg}
+	\end{center}
+	\caption{Watterson's theta ($\theta_{W}$) calculated in non-overlapping 20-kb genomic windows.}
+	\label{div}
+\end{figure}
+
+\clearpage
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=6.3in]{artwork/sfs_supplementary_large.jpg}
+	\end{center}
+	\caption{SNP density. Plots depict the distribution of allele frequencies (site frequency spectrum) for each population, scaled such that a population with constant size over time is expected to have a constant SNP density over all allele frequencies.}
+	\label{div}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=6.3in]{notebooks/refdiff/refdiff_phase2_combined.jpg}
+	\end{center}
+	\caption{Divergence from the AgamP4 reference genome, calculated as \textit{Dxy}, is largely similar for \textit{An. coluzzii} and \textit{An. gambiae}, with the exception of the centromere of chromosome X (a). Comparing three populations of \textit{An. coluzzii} (b) or \textit{An. gambiae} (c) highlights the strong effect of the 2La chromosomal inversion on the accumulation of genetic variation.}
+	\label{refdiff}
+\end{figure}
+
+
 
 \clearpage
 
@@ -944,11 +978,11 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
     %
     In both plots, the location of exon 5 within the female-specific isoform (AGAP004050-RB) is shown above (black = coding sequence; grey = untranslated region), with additional annotations to show the location of the Cas9 target sequence described in \cite{kyrou2018}, and the putative exon splice enhancing sequences (``RE'') reported in @@REF.
     %
-    The main region of the plot shows nucleotide diversity averaged across all Ag1000G phase 2 populations, computed in 23 bp moving windows.
+    The main region of the plot shows nucleotide diversity averaged across all Ag1000G Phase 2 populations, computed in 23 bp moving windows.
     %
     Regions shaded pale red indicate regions not accessible to SNP calling.
     %
-    Triangle markers below show the locations of SNPs discovered in Ag1000G phase 2 (green = passed variant filters; red = failed variant filters).
+    Triangle markers below show the locations of SNPs discovered in Ag1000G Phase 2 (green = passed variant filters; red = failed variant filters).
     %
     \textbf{a}, exon5/intron4 boundary.
     %
@@ -972,7 +1006,7 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 
   \caption{
 %
-\textbf{colony crosses}.
+\textbf{Colony crosses}.
 }
   \label{table:colony crosses}
   \input{tables/crosses.tex}
