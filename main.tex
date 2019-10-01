@@ -296,6 +296,16 @@ Each of the remaining PCA clusters comprised samples from a single location and 
 A comparison of the two \textit{An. gambiae} island populations is interesting because Mayotte was highly differentiated, but individuals from Bioko clustered closely with other West African \textit{An. gambiae}, suggesting that Bioko is not isolated from continental populations despite a physical separation of more than 30 km.
 %%
 
+%%
+For comparison, we performed another PCA, this time analysing CNV variation (Figure S2).
+%
+Initial groupings (PC1 \textit{vs.} PC1) were quite different when using CNVs, with Angola clustering with the other \textit{An. coluzzii} populations and Kenya clustering with the other two populations with uncertain species assignment (Guinea Bissau and The Gambia). 
+%
+These differences are, however, likely driven by variant choice; nucleotide variants are taken from regions of the genome which best represent mosquito geography \cite{Ag1000gConsortium2017}, whereas CNV variants are taken from the whole genome due to there being far fewer variants in this class.
+%
+Later principal components pull out Angola, Kenya, Gabon and Mayotte, which are also found when analysing nucleotide diversity, though clustering appears far less distinct with CNV data.
+%%
+
 
 \begin{figure}[H]
 	\begin{center}
@@ -343,7 +353,7 @@ The populations represented in the Ag1000G Phase 2 cohort can serve as a referen
 %
 To facilitate population comparisons, we characterised genetic diversity within each of 16 populations in our cohort -- defined by country of origin and species -- by computing a variety of summary statistics using data from the whole genome.
 %
-These statistics included nucleotide diversity ($\theta_{\pi}$; Figure 5a), Watterson's theta ($\theta_{W}$; Figure S2), Tajima's $D$ (Figure 5b) and site frequency spectra (SFS; Figure S3). 
+These statistics included nucleotide diversity ($\theta_{\pi}$; Figure 5a), Watterson's theta ($\theta_{W}$; Figure S3), Tajima's $D$ (Figure 5b) and site frequency spectra (SFS; Figure S4). 
 %
 We also estimated runs of homozygosity (ROH; Figure 5c) within each individual and runs of identity by descent (IBD; Figure 5d) between individuals, both of which provide additional information about haplotype sharing and patterns of relatedness within populations. 
 %%
@@ -913,11 +923,6 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 
 \clearpage
 
-\section*{Supplementary figures and tables}
-
-
-\clearpage
-
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics*[width=6.3in]{artwork/AIM_figure_scaled.jpg}
@@ -925,6 +930,20 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 	\caption{Ancestry informative markers (AIM). Rows represent individual mosquitoes (grouped by population) and columns represent SNPs (grouped by chromosome arm). Colours represent species genotype. The column at the far left shows the species assignment according to the conventional molecular test based on a single marker on the X chromosome, which was performed for all populations except Guinea Bissau (GW), The Gambia (GM) and Kenya (KE). The column at the far right shows the genotype for kdr variants in \textit{Vgsc} codon 995. Lines at the lower edge show the physical locations of the AIM SNPs.}
 	\label{aim}
 \end{figure}
+
+
+\clearpage
+
+\section*{Supplementary figures and tables}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=6.3in]{notebooks/190-CNV-PCAs/PCA_nonsingle_full.png}
+	\end{center}
+	\caption{Principal component analysis (components 1-8) of the 1142 wild-caught mosquitoes estimated using copy number variant diversity. Bar-chart shows the percentage of variance explained by each component}
+	\label{cnv_pca}
+\end{figure}
+
 
 
 
@@ -952,17 +971,6 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 
 \clearpage
 
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics*[width=6.3in]{notebooks/refdiff/refdiff_phase2_combined.jpg}
-	\end{center}
-	\caption{Divergence from the AgamP4 reference genome, calculated as \textit{Dxy}, is largely similar for \textit{An. coluzzii} and \textit{An. gambiae}, with the exception of the centromere of chromosome X (a). Comparing three populations of \textit{An. coluzzii} (b) or \textit{An. gambiae} (c) highlights the strong effect of the 2La chromosomal inversion on the accumulation of genetic variation.}
-	\label{refdiff}
-\end{figure}
-
-
-
-\clearpage
 
 \begin{figure}[H]
     \textbf{a}
@@ -990,6 +998,22 @@ In short, scikit-allel ('1.2.0') was used to calculate windowed averages of nucl
 }
     \label{fig:dsx}
 \end{figure}
+
+
+\clearpage
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics*[width=6.3in]{notebooks/refdiff/refdiff_phase2_combined.jpg}
+	\end{center}
+	\caption{Divergence from the AgamP4 reference genome, calculated as \textit{Dxy}, is largely similar for \textit{An. coluzzii} and \textit{An. gambiae}, with the exception of the centromere of chromosome X (a). Comparing three populations of \textit{An. coluzzii} (b) or \textit{An. gambiae} (c) highlights the strong effect of the 2La chromosomal inversion on the accumulation of genetic variation.}
+	\label{refdiff}
+\end{figure}
+
+
+
+\clearpage
+
 
 
 %% Table S1 - crosses.
