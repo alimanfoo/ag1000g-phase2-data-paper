@@ -299,7 +299,7 @@ A comparison of the two \textit{An. gambiae} island populations is interesting b
 %%
 For comparison, we performed another PCA, this time analysing CNV variation (Figure S2).
 %
-Initial groupings (PC1 \textit{vs.} PC1) were quite different when using CNVs, with Angola clustering with the other \textit{An. coluzzii} populations and Kenya clustering with the other two populations with uncertain species assignment (Guinea Bissau and The Gambia). 
+Initial groupings (PC1 \textit{vs.} PC2) were quite different when using CNVs, with Angola clustering with the other \textit{An. coluzzii} populations and Kenya clustering with the other two populations with uncertain species assignment (Guinea Bissau and The Gambia). 
 %
 These differences are, however, likely driven by variant choice; nucleotide variants are taken from regions of the genome which best represent mosquito geography \cite{Ag1000gConsortium2017}, whereas CNV variants are taken from the whole genome due to there being far fewer variants in this class.
 %
@@ -851,7 +851,6 @@ Following variant filtering via QC thresholds and the accessibility map these va
 %%
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{2.6 Haplotype estimation}
 
@@ -861,6 +860,23 @@ Haplotype estimation, also known as phasing, was performed on all Phase 2 wild-c
 In short, SHAPEIT2 was used to perform statistical phasing with information from sequence reads.
 %
 Phasing performance was then evaluated by comparison with haplotypes generated from the laboratory crosses and from male X chromosome haplotypes.
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Reference validation}
+
+%%
+The genomes of \textit{An. coluzzii} and \textit{An. gambiae} samples were similarly diverged from the reference genome used for alignment, AgamP4 \cite{Holt2002}, indicating that unbiased comparisons can be made between the two species based on our results (Fig. \ref{refdiff}a).
+%
+The similarity in levels of divergence reflect the mixed ancestry of the PEST strain from which the reference genome was derived \cite{Holt2002}.
+%
+An exception to this is the pericentromeric region of chromosome X, a known region of divergence between the two species \cite{Ag1000gConsortium2017} where the reference genome is closer to \textit{An. coluzzii} than to \textit{An. gambiae}.
+%
+The similarity of this region to \textit{An. coluzzii} may be due to artificial selection for the X-linked pink eye mutation in the reference strain \cite{Holt2002}, as this originated in the \textit{An. coluzzii} parent it may have led to the removal of any \textit{An. gambiae} ancestry in this region.
+%
+Reductions in divergence from the reference genome in regions of low recombination are apparent in the centromeres and telomeres, as well as in the large 2La polymorphic inversion in both species \cite{coluzzi2002} (Figure \ref{refdiff}b \& c). 
+%
+All analyses of geographical population structure were conducted on euchromatic regions of Chromosome 3, which avoids regions of polymorphic inversions, reduced recombination and unequal divergence from the reference genome \cite{Ag1000gConsortium2017}.
 %%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
